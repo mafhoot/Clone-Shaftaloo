@@ -46,7 +46,8 @@ input {
   border: none;
   border-radius: 10px;
   background-color: #262626;
-
+  color: white;
+  font-family: gilroy;
 }
 p{
   color: white;
@@ -57,7 +58,7 @@ input:focus{
   outline: none;
   /*box-shadow: 2px 2px 2px 1px #1e2328;*/
   border: 1px solid #eeba2c;
-  
+  color: white;
 }
 
 input:focus::placeholder{
@@ -67,7 +68,7 @@ input:focus::placeholder{
 input::placeholder{
   font-size: 15px;
   font-family: gilroy;
-
+  font-weight: bold;
 }
 
 h1{
