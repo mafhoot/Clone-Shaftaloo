@@ -4,14 +4,14 @@ import { postUser } from "./services/axios";
 export const Register = (props) => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
-    const [name, setName] = useState('');
+    const [username, setUsername] = useState('');
     const [pass2, setPass2] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(email);
         postUser({
-            "username":name,
+            "username":username,
             "password": pass,
             "email": email
           } ).then(x=>{
@@ -26,8 +26,8 @@ export const Register = (props) => {
         <div className="auth-form-container">
             <h1>REGISTER</h1>
         <form className="register-form" onSubmit={handleSubmit}>
-            <label htmlFor="name">Full name</label>
-            <input value={name} onChange={(e) => setName(e.target.value)} name="name" id="name" placeholder="full Name" />
+            <label htmlFor="username">Username</label>
+            <input value={username} onChange={(e) => setUsername(e.target.value)} username="name" id="name" placeholder="Choose a username" />
             <label htmlFor="email">E-Mail</label>
             <input value={email} onChange={(e) => setEmail(e.target.value)}type="email" placeholder="Example@gmail.com" id="email" name="email" />
             <label htmlFor="password">Password</label>
