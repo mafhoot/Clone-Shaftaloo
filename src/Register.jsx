@@ -6,13 +6,14 @@ export const Register = (props) => {
     const [pass, setPass] = useState('');
     const [name, setName] = useState('');
     const [pass2, setPass2] = useState('');
+    const [emailcheck ,setEmailcheck] = useState
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        //console.log(email);
-        if (pass==pass2){
+        console.log(email);
+        //if (pass==pass2){
             
-        }
+        //}
         postUser({
             "username":name,
             "password": pass,
