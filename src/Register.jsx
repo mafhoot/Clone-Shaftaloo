@@ -6,7 +6,7 @@ export const Register = (props) => {
     const [pass, setPass] = useState('');
     const [name, setName] = useState('');
     const [pass2, setPass2] = useState('');
-    const [emailcheck ,setEmailcheck] = useState
+    const [emailcheck ,setEmailcheck] = useState("")
 
     const handleSubmit = (e) => {
         e.preventDefault();
