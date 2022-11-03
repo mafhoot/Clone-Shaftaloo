@@ -76,7 +76,7 @@ input {
   background-color: #262626;
   color: white;
   font-family: gilroy;
-  width: 18rem;
+  width: 16rem;
 }
 p{
   color: white;
@@ -125,7 +125,7 @@ button {
 }
 
 button:hover{
-  color: #fed053;
+  color: #eeba2c;
   background-color: #1e2328ce;
 }
 
