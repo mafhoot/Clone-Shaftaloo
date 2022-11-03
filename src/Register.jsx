@@ -19,15 +19,16 @@ export const Register = (props) => {
         setEmailcheck("")
         setPasscheck("")
         setPass2check("")
+        console.log(5)
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(email);
-        if (email==adminuser.email) {
+        
+        /*if (email==adminuser.email) {
             setEmailcheck ("This email is alredy exist")
             flag=1
-        }
+        }*/
         if (pass!=pass2){
             setPass2check("Passwords don't match")
             flag=1
@@ -37,22 +38,51 @@ export const Register = (props) => {
             flag=1
         }
 
-        /*postUser({
-            "username":name,
+        postUser({
+            "phoneNumber": "",
             "password": pass,
+            "fullName": name,
             "email": email
           } ).then(x=>{
             console.log(x);
-          }) ;*/
+            if (flag==0){
+                alert ("Register completed")
+            }
+          })
+          .catch(function (error) {
+            if (error.response) {
+              // The request was made and the server responded with a status code
+              // that falls out of the range of 2xx
+              console.log(error.response.data);
+              console.log(100)
+              console.log(error.response.status);
+              if (error.response.status=="400"){
+                setEmailcheck ("This email is alredy exist")
+                console.log(emailcheck)
+                console.log(200)
+                flag=1
+              }
+              console.log(error.response.headers);
+            } else if (error.request) {
+              // The request was made but no response was received
+              // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+              // http.ClientRequest in node.js
+              console.log(error.request);
+            } else {
+              // Something happened in setting up the request that triggered an Error
+              console.log('Error', error.message);
+            }
+            console.log(error.config);
+            
+          });
+          ;
 
         
-        if (flag==0){
-            alert ("Register completed")
-        }
+        
 
     }
 
-    useEffect (resetpage, [passcheck,pass2check,emailcheck])
+    useEffect (()=>{}, [passcheck,pass2check,emailcheck])
 
 
     return (
