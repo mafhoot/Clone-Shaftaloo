@@ -7,6 +7,11 @@ export const Restaurant_page = () => {
 
       <div className="HeadImage"></div>
       <div className="logo"></div>
+      <div className="info" >
+        <label className="name">My Name</label>
+        <b />
+        <p className="description" >The first and best brand of fried food in the world</p>
+      </div>
 
       </div>
     )
