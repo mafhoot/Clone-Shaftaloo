@@ -1,13 +1,12 @@
-import './App.css';
+import './App.css'
+import { Restaurant_page } from './restaurant_page'
 
 function App() {
   return (
-    <div>
-      <header>
-        <h1>blank page</h1>
-      </header>
+    <div className='App'>
+      <Restaurant_page />
     </div>
-  );
+  )
 }
 
 export default App;

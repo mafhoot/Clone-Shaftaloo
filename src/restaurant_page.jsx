@@ -1,11 +1,10 @@
-import React from 'react'
+import React from "react";
+import pic from "./Images/store-banner.jpg"
 
-function restaurant_page() {
-  return (
-    <div>
-      
-    </div>
-  )
+export const Restaurant_page = () => {
+    return (
+        
+      <div className="image"></div>
+        
+    )
 }
-
-export default restaurant_page
