@@ -8,7 +8,3 @@ export function postUser(data) {
 export function getbearer (data){
     return axios.post(url+"api/User/BearerToken",data)
 }
-
-export function getEmail(data){
-    return axios.get(url+"api/User/"+data)
-}

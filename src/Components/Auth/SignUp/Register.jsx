@@ -38,7 +38,7 @@ export const Register = (props) => {
             flag=1
         }
 
-        postUser({
+          postUser({
             "phoneNumber": "",
             "password": pass,
             "fullName": name,
@@ -61,6 +61,7 @@ export const Register = (props) => {
                 console.log(emailcheck)
                 console.log(200)
                 flag=1
+
               }
               console.log(error.response.headers);
             } else if (error.request) {
@@ -74,9 +75,7 @@ export const Register = (props) => {
             }
             console.log(error.config);
             
-          });
-          ;
-
+          })
         
         
 
