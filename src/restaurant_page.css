@@ -31,7 +31,7 @@
     justify-content: center;
     align-items: center;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin: auto;
     margin-top: -4rem;
 }
@@ -48,4 +48,8 @@
 .name { 
     font-weight: bolder;
     font-size: 2rem;
+}
+
+.rate {
+    flex-direction: row;
 }
