@@ -157,7 +157,8 @@
 
   
   .topbarCenter {
-    flex: 5;
+    flex: 10;
+    padding: 10px 20px;
   }
   
   .searchbar {
