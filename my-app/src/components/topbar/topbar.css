@@ -1,0 +1,251 @@
+/* 
+
+.topbarContainer
+{
+
+    height: 50px;
+    width: 100%;
+     kole arz ra pooshesh dahad  100% 
+
+    background-color: #1877f2;
+    display: flex;
+    /* ///با استفاده از ویژگی display در CSS میتوان حالت یا نحوه نمایش یک تگ رو مشخص کرد، مثلا میتونیم تعریف کنیم که یک تگ بصورت بلاکی ( Block ) نمایش داده شود یا نه مثلا بصورت اینلاینی ( Inline ) */
+    /* align-items: center; */
+    /* ویژگی align-items ویژگی ایست که با استفاده از آن میتوان ترازبندی ( موقعیت قرار گیری ) آیتم های یک فلکس باکس رو بصورت عمودی مشخص نمود. */
+    
+    /* position: sticky;
+    top: 0; */
+
+
+/* } */
+
+
+
+
+
+/* 
+.topbarLeft
+{
+
+    flex: 3;
+    /* background-color: red; */
+/* 
+} */ 
+
+
+
+/* 
+.topbarCenter
+{
+
+    flex: 5;
+    /* ویژگی flex طول انعطاف پذیر را در موارد انعطاف پذیر تنظیم می کند. */
+    /* background-color: rgb(110,89 ,89 ); */
+
+/* } */ 
+
+
+
+
+/* .topbarRight
+{
+
+    /* flex: 4; */
+    /* flex: 4;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    color: white;  */
+    /* background-color: rgb(43, 139, 55); */
+
+/* } */ 
+
+
+
+/* .topbarImg
+{
+    width: 32px;
+    height: 32px;
+} */
+
+
+
+
+
+/* .Logo
+{
+    font-size: 24px;
+    margin-left: 20px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+
+
+} */
+
+
+/* .searchbar
+{
+    /* font-size: 20px ; */
+    /* width: 100%;
+    height: 30px;
+    background-color: white; */
+    /* margin-left: 10 px; */
+/* } */ 
+
+/* .searchIcon
+{
+    font-size: 20px ;
+    margin-left: 10 px;
+
+} */
+
+
+/* .topbarLink {
+    margin-right: 10px;
+    font-size: 14px;
+    cursor: pointer;
+} */
+
+
+/* .topbarImg {
+    width: 32px;
+    height: 32px; */
+    /* border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer; */
+/* } */
+
+
+
+ 
+
+
+
+ /* //// مربوط به بخش نوار سیاه در بالای صفحه */
+.topbarContainer {
+    height: 50px;
+    width: 100%;
+    background-color: #0e0e0e;
+    display: flex;
+    align-items:center;
+    /* //// از بالا و پایین اون بخش اجزای داخلش در وسط آن قرار بگیرند */
+/* 
+    position:static; */
+    /* top: 1000; */
+    /* z-index: 999; */
+  }
+  
+
+
+  .topbarLeft {
+    flex: 3;
+  }
+  
+  .logo {
+    font-size: 24px;
+    margin-left: 20px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .topbarCenter {
+    flex: 5;
+  }
+  
+  .searchbar {
+    width: 100%;
+    height: 30px;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .searchIcon {
+    font-size: 20px !important;
+    margin-left: 10px;
+  }
+  
+  .searchInput {
+    border: none;
+    width: 70%;
+  }
+  
+  .searchInput:focus {
+    outline: none;
+  }
+  
+
+  
+  .topbarRight {
+    flex: 4;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* ////فاصله میده بین اجزایش */
+    color: white;
+  }
+  
+
+
+  .topbarLink {
+    margin-right: 10px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .topbarIcons {
+    display: flex;
+  }
+  
+  .topbarIconItem {
+    margin-right: 15px;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .topbarIconBadge {
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    border-radius: 50%;
+    /* //// حالت دایره میباشد */
+    color: white;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+  }
+  
+  .topbarImg {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+  }
+  
+
+
+
+  .resturant
+  {
+    display: inline;
+
+
+
+
+  }
+
+
+
+
+
+
+
+
