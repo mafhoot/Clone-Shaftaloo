@@ -122,7 +122,7 @@ export default function Topbar() {
 
 
       <div className="topbarCenter">
-        <div className="searchbar">
+        <div className="searchbar"   style={{color: "white" , fontSize:15 , paddingRight:0}}>
           <Search className="searchIcon" />
           <input
             placeholder="Search for friend, food, post or video"
@@ -139,6 +139,20 @@ export default function Topbar() {
           <h1 className="topbarLink" style={{color: "white" , fontSize:15 , marginRight:0}}>Homepage</h1>
           {/* <span className="topbarLink"></span> */}
         </div>
+        <div className="topbarLink2">
+          <h1 className="topbarLink2" style={{color: "white" , fontSize:15 , marginRight:0}}>Registration</h1>
+          {/* <span className="topbarLink"></span> */}
+        </div>
+        <div className="topbarLink3">
+          <h1 className="topbarLink3" style={{color: "white" , fontSize:15 , marginRight:0}}>Login</h1>
+          {/* <span className="topbarLink"></span> */}
+        </div>
+
+
+
+
+
+
         <div className="topbarIcons">
           <div className="topbarIconItem">
             <Person />

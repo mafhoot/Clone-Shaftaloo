@@ -148,7 +148,13 @@
     font-weight: bold;
     color: white;
     cursor: pointer;
+    padding:20px ,100px;
+    margin-right:0px;
   }
+
+
+
+
   
   .topbarCenter {
     flex: 5;
@@ -161,7 +167,15 @@
     border-radius: 30px;
     display: flex;
     align-items: center;
+    /* //// برا موقعیت علامت سرچ است */
+    /* padding: 10px 0px; */
+    margin-left: 0px;
+    margin-right: 10px;
+    /* padding: 0px; */
+    /* margin: 40px 0px; */
   }
+  
+
   
   .searchIcon {
     font-size: 20px !important;
@@ -191,10 +205,45 @@
 
 
   .topbarLink {
+    margin-right: 20px;
+    font-size: 14px;
+    padding: 15px 0px;
+    cursor: pointer;
+  }
+
+  
+
+  
+  .topbarLink2{
     margin-right: 10px;
     font-size: 14px;
     cursor: pointer;
+    padding: 15px 0px;
+    padding-left: 15px;
+    padding-right:10px ;
   }
+
+
+
+
+  
+  .topbarLink3 {
+    margin-right: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 15px 0px;
+    padding-left: ;
+    padding-right: ;
+  }
+
+
+
+
+
+
+
+
+
   
   .topbarIcons {
     display: flex;
