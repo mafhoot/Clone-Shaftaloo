@@ -30,6 +30,7 @@
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    /* //// فاصله بین اجزای داخل ساید بار است */
   }
   
   .sidebarIcon {

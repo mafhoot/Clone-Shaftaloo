@@ -18,7 +18,7 @@ export default function Home() {
       <div className="homecontainer ">
         <Sidebar/>
         <Feed/>
-        <Rightbar/>
+        {/* <Rightbar/> */}
       </div>     
      
     </>

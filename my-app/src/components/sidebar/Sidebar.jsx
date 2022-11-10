@@ -60,7 +60,7 @@ export default function Sidebar() {
           {Users.map((u) => (
             <CloseFriend key={u.id} user={u} />
           ))}
-        </ul> */}
+        </ul>  */}
       </div>
     </div>
   );
