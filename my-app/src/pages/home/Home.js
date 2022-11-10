@@ -3,11 +3,15 @@
 import "./home.css"
 import Topbar from "../../components/topbar/Topbar";
 
+// import About from "../../components/About/About"
+
+
 import Sidebar from "../../components/sidebar/Sidebar"
 
-import Rightbar from "../../components/rightbar/Rightbar"
+// import Rightbar from "../../components/rightbar/Rightbar"
 
 import Feed from "../../components/feed/Feed"
+import { AddBoxOutlined } from "@material-ui/icons";
 
 // import Topbar from "/components/topbar/Topbar"
 export default function Home() {
@@ -15,11 +19,15 @@ export default function Home() {
     // <div>This is home page</div>
     <>
       <Topbar/>
+      
       <div className="homecontainer ">
-        <Sidebar/>
-        <Feed/>
+        <Sidebar/> 
+        {/* <About  className="aa"/>  */}
+        
+        {/* <Feed/> */}
         {/* <Rightbar/> */}
-      </div>     
+      </div> 
+        
      
     </>
     // چون که از چند تا کامپوننت استفاده میشه  از <> استفاده میکنیم

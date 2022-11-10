@@ -2,10 +2,11 @@
 // import './App.css';
 
 import Home from "./pages/home/Home";
-
+import Profile from "./pages/profile/Profile";
 
 function App() {
-  return <Home/>;
+  // return <Home/>;
+  return <Profile/>;
   /// component home ra return mikonim
 }
 
