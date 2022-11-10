@@ -1,8 +1,25 @@
 import "./sidebar.css"
+import {} from "@material-ui/icons"
+
+
+
 
 export default function Sidebar() {
   return (
-    <div>Sidebar</div>
+    <div className="sidebar">
+      <div className="sidebarWrapper">
+        <ul className="sidebarList">
+          <li  className="sidebarListItem" >
+
+          </li>
+
+
+
+
+        </ul>
+
+      </div>
+    </div>
   )
 }
 
