@@ -32,11 +32,11 @@ export default function Rightbar({ profile }) {
             <span className="rightbarInfoKey">City:</span>
             <span className="rightbarInfoValue">New York</span>
             <span className="rightbarInfoValue2">Country:</span>
-            <span className="rightbarInfoValue">American</span>
+            <span className="rightbarInfoValue" style={{paddingRight:0}}>American</span>
             <span className="rightbarInfoValue2">ّFirstName:</span>
-            <span className="rightbarInfoValue">ّMahdi</span>
+            <span className="rightbarInfoValue"  style={{paddingRight:0}}>ّMahdi</span>
             <span className="rightbarInfoValue2">LastName:</span>
-            <span className="rightbarInfoValue">ّFathian</span>
+            <span className="rightbarInfoValue"  style={{ paddingRight:0}}>ّFathian</span>
           </div>
           <div className="rightbarInfoItem">
             <span className="rightbarInfoKey">From:</span>

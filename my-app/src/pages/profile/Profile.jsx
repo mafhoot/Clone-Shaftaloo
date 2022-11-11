@@ -4,25 +4,87 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import Feed from "../../components/feed/Feed";
 import Rightbar from "../../components/rightbar/Rightbar";
 
+
+// import Avator from 'react-avator-edit';
+/////برا عکس
+import AvatarEditor from 'react-avatar-editor'
+
+
+
+import React,{useEffect , useState} from "react";
+
+
+import { Dialog } from 'primereact/dialog';
+import { InputText } from 'primereact/inputtext';
+// برای عکس میباشد
+
+
+
 export default function Profile() {
+  const [src,setSrc] = useState(null);
+  const [preview , SetPreview] = useState(null);
+
+  const onClose=()=>
+  {
+    SetPreview(null);
+  }
+
+  const onCrop=view =>
+  {
+    SetPreview(view);
+  }
+
+
+
   return (
     <>
       <Topbar />
       <div className="profile">
         <Sidebar />
         <div className="profileRight">
+
+
+
           <div className="profileRightTop">
             <div className="profileCover">
+
+            {/* <AvatarEditor
+             
+             width={400}
+             height={300}
+             onCrop ={onCrop}
+             onClose={onClose}
+         
+         
+         /> */}
+              {/* <AvatarEditor/> */}
               <img
                 className="profileCoverImg"
                 src="assets/post/3.jpeg"
                 alt=""
               />
+
+
+
+
               <img
-                className="profileUserImg"
-                src="assets/person/7.jpeg"
-                alt=""
-              />
+                  className="profileUserImg"
+                  src="assets/person/7.jpeg"
+                
+                  alt=""
+                  // src={src}
+              ></img>
+           
+
+             
+              
+          
+              
+             
+            
+
+
+
             </div>
             <div className="profileInfo">
                 <h4 className="profileInfoName">Safak Kocaoglu</h4>
@@ -38,3 +100,11 @@ export default function Profile() {
     </>
   );
 }
+
+
+
+
+
+
+
+
