@@ -9,12 +9,14 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { Button, CardActionArea, CardActions } from '@mui/material';
+import BottomNavigation from '@mui/material/BottomNavigation';
+import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 
 export const Restaurant_page = () => {
   const [value, setValue] = useState(3.5);
   const tags = ["fast food" , "fried" , "chicken" ]
   const [link,setLink] = useState("https://realfood.tesco.com/media/images/Burger-31LGH-a296a356-020c-4969-86e8-d8c26139f83f-0-1400x919.jpg")
-  const foods = ["Burger" , "chicken" , "Hot Dog" ,"Pasta", "Fried Potato"]
+  const foods = ["Burger" , "Chicken" , "Hot Dog" ,"Pasta", "Fried Potato", "pizza"]
 
   const theme = createTheme({
     palette: {
@@ -44,28 +46,65 @@ export const Restaurant_page = () => {
           <span className="Rate">Rating :</span> <Rating className="rating" name="half-rating-read" defaultValue={value} precision={0.5} readOnly  />
         </div>
       </div>
-      <div className="menu">
-      {foods.map(x => (
-        <Card className="MenuCard" sx={{ maxWidth: 345 }}>
-          <CardMedia component="img" height="140" image={link} alt="green iguana" />
-          <CardContent className="card">
-            <Typography gutterBottom variant="h5" component="div" className="typo">
-              {x}
-            </Typography>
-            <Typography className="typo" variant="body2">
-              Meat, Bread, Pickle, Tomato
-            </Typography>
-          </CardContent>
-          <CardActions className="card">
-            <Button size="small">-</Button>
-            <Button size="small">0</Button>
-            <Button size="small">+</Button>
-          </CardActions>
-        </Card>
-      ))}
+      <div className="main">
+        <div className="menu">
+
+
+          <div className="categories">
+            <button className="catButton">All</button>
+            <button className="catButton">Burger</button>
+            <button className="catButton">Fried</button>
+            <button className="catButton">Dessert</button>
+            <button className="catButton">Pizza</button>
+            <button className="catButton">Sandwitch</button>
+          </div>
+
+          
+          <div className="foods">
+          {foods.map(x => (
+            <div className="newCard">
+              <img src={link} className="imageCard" />
+              <h2 className="cardTitle">{x}</h2>
+              <p className="cardDetails">Meat, Bread, Pickle, Tomato</p>
+              <div className="ButtonGroup">
+                <button className="cardButton">-</button>
+                <button className="cardButton">0</button>
+                <button className="cardButton">+</button>
+              </div>
+            </div>
+          ))}
+          </div>
+        </div>
       </div>
     </div>
     </ThemeProvider>
     </>
   )
 }
+
+
+
+
+/*
+<div className="foods">
+            {foods.map(x => (
+              <Card className="MenuCard" sx={{ maxWidth: 230 , minHeight: 300 }}>
+                <CardMedia component="img" height="140" image={link} alt="green iguana" />
+                  <CardContent className="CardDetails">
+                    <Typography gutterBottom variant="h5" component="div" className="typo">
+                      {x}
+                    </Typography>
+                    <Typography variant="body2">
+                      Meat, Bread, Pickle, Tomato
+                      asdasdads
+                    </Typography>
+                  </CardContent>
+                  <CardActions className="CardAction">
+                    <Button color="neutral" size="small">-</Button>
+                    <Button color="neutral" size="small">0</Button>
+                    <Button color="neutral" size="small">+</Button>
+                  </CardActions>
+              </Card>
+            ))}
+          </div>
+*/

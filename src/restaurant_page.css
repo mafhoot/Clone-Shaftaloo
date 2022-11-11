@@ -20,7 +20,7 @@
 
 .All {
     font-family: gilroy;
-    background-color: #262626;
+    background-color:  #161616;
     min-height: 100vh;
     margin: -8px;
 }   
@@ -36,41 +36,138 @@
 .info {
     color: white;
     text-align: left;
-    width: 1000px;
-    padding: 2rem;
-    background-color: #161616;
+    width: 1200px;
+    padding: 40px;
+    background-color: #262626;
     border-radius: 20px;
 }
 
 .name { 
     font-weight: bolder;
     font-size: 2rem;
+
 }
 
 .Rate {
     padding-top: 100px;
 }
 
-.menu {
+.main{
     display: flex;
     justify-content: center;
-    margin-top: 50px;
-    flex-wrap: wrap;
-    border: 3px;
-    border-color: #161616;
+    margin: auto;
+}
+
+.menu{
+    width: 1200;
+    background-color: #262626;
+    margin-top: 40px;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+
+.categories {
+    width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    width: 1000px;
-}
-
-.MenuCard {
-    margin: 20px;
-}
-
-.card {
     background-color: #161616;
+    border-radius: 0.5rem;
 }
 
-.typo {
+.catButton{
+    margin-right: 10px;
+    margin-left: 10px;
+    height: 35px;
+    font-size: large;
+    font-family: gilroy;
+    color: white;
+    background-color: #262626;
+    border: none;
+    border-radius: 0.5rem;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.catButton:hover {
+    background-color: #eeba2c;
+    color: black;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.catButton:focus {
+    background-color: #eeba2c;
+    color: black;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.foods {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+    background-color: #262626;
+}
+
+/*
+.MenuCard {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 20px;
+}
+
+.CardDetails {
     color: white;
 }
+
+.Card {
+    background-color: #161616;
+}
+*/
+
+.newCard {
+    display: flex;
+    flex-direction: column;
+    max-width: 230px;
+    height: 300px;
+    background-color: #161616;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.imageCard {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.cardTitle {
+    color: white;
+    padding-left: 10px;
+}
+.cardDetails{
+    margin-top: -10px;
+    color: white;
+    padding-left: 10px;
+}
+
+.cardButton {
+    margin: 10px;
+    font-size: large;
+    font-family: gilroy;
+    background-color:#161616;
+    color: #eeba2c;
+    border: none;
+    width: 20px;
+    height: 30px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
