@@ -60,7 +60,7 @@ export default function Profile() {
               {/* <AvatarEditor/> */}
               <img
                 className="profileCoverImg"
-                src="assets/post/3.jpeg"
+                src="assets/food.jpg"
                 alt=""
               />
 
@@ -69,7 +69,7 @@ export default function Profile() {
 
               <img
                   className="profileUserImg"
-                  src="assets/person/7.jpeg"
+                  src="assets/person/download.jpg"
                 
                   alt=""
                   // src={src}
@@ -87,7 +87,7 @@ export default function Profile() {
 
             </div>
             <div className="profileInfo">
-                <h4 className="profileInfoName">Safak Kocaoglu</h4>
+                <h4 className="profileInfoName">Mahdi Fathian</h4>
                 {/* <span className="profileInfoDesc">Hello my friends!</span> */}
             </div>
           </div>

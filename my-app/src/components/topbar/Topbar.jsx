@@ -125,7 +125,7 @@ export default function Topbar() {
         <div className="searchbar"   style={{color: "white" , fontSize:15 , paddingRight:0}}>
           <Search className="searchIcon" />
           <input
-            placeholder="Search for friend, food, post or video"
+            placeholder="Search for food"
             className="searchInput"
           />
         </div>
@@ -153,25 +153,25 @@ export default function Topbar() {
 
 
 
-        <div className="topbarIcons">
+        {/* <div className="topbarIcons">
           <div className="topbarIconItem">
-            <Person />
+            {/* <Person /> */}
             {/* <span className="topbarIconBadge">1</span> */}
-          </div>
-          <div className="topbarIconItem">
-            <Chat />
+          {/* </div> */}
+          {/* <div className="topbarIconItem"> */}
+            {/* <Chat /> */}
             {/* <span className="topbarIconBadge">2</span> */}
-          </div>
-          <div className="topbarIconItem">
-            <Notifications />
+          {/* </div> */}
+          {/* <div className="topbarIconItem"> */}
+            {/* <Notifications /> */}
             {/* <span className="topbarIconBadge">1</span> */}
-          </div>
-        </div>
+          {/* </div> */}
+        {/* </div> */} 
 
 
 
 
-        <img src="/assets/person/7.jpeg" alt="" className="topbarImg"/>
+        <img src="/assets/person/download.jpg" alt="" className="topbarImg"/>
       </div>
     </div>
   );

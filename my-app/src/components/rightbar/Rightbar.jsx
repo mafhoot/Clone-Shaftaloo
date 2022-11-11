@@ -49,7 +49,7 @@ export default function Rightbar({ profile }) {
             <span className="rightbarInfoValue">Single</span>
           </div>
         </div>
-        <h4 className="rightbarTitle">User friends</h4>
+        {/* <h4 className="rightbarTitle">User friends</h4>
         <div className="rightbarFollowings">
           <div className="rightbarFollowing">
             <img
@@ -100,6 +100,7 @@ export default function Rightbar({ profile }) {
             <span className="rightbarFollowingName">John Carter</span>
           </div>
         </div>
+    */}
       </>
     );
   };
