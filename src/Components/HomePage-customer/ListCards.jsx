@@ -28,14 +28,23 @@ export const ListCardRes = () => {
     const [cards, setCards] = useState();
 
     return (
+        
         <div>
           <div className="container">
             <div>
-              <p className="filters">{filters.map((filter) => (
-                                      <button className="simple-filter" id={filter.id}>{filter.name}</button>))}</p>
+              <div className="filters">
+                {filters.map((filter) => (
+                    <button className="simple-filter" id={filter.id}>{filter.name}</button>
+                  ))}
+              </div>
             </div>
             <div className="cards-list">
-              <Card/>
+              <div className="simple-card">
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+              </div>
             </div>
           </div>
         </div>
