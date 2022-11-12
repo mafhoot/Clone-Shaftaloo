@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import './Card.css'
+import './homePageCustomer.css'
 
 export const Card = (props) => {
   const [name, setName] = useState("Macdonald");

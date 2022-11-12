@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Card } from "./card";
-import './List.css'
+import './homePageCustomer.css'
 
 export const ListCardRes = () => {
 
@@ -32,10 +32,9 @@ export const ListCardRes = () => {
           <div className="container">
             <div>
               <p className="filters">{filters.map((filter) => (
-                                      <span className="filter" id={filter.id}>{filter.name}</span>))}</p>
+                                      <button className="simple-filter" id={filter.id}>{filter.name}</button>))}</p>
             </div>
             <div className="cards-list">
-              <Card/>
               <Card/>
             </div>
           </div>
