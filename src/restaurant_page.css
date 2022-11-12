@@ -190,3 +190,20 @@
     transition-duration: 0.4s;
 }
 
+.cart {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.cartList {
+    width: 1200px;
+    background-color: #262626;
+    margin-top: 40px;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.orderList {
+    color: white;
+}

@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useState , useEffect , useRef} from "react";
 //import pic from "./Images/burger.jpg"
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
@@ -18,16 +18,55 @@ export const Restaurant_page = () => {
   const [link,setLink] = useState("https://realfood.tesco.com/media/images/Burger-31LGH-a296a356-020c-4969-86e8-d8c26139f83f-0-1400x919.jpg")
   const [headImageLink ,setHeadImageLink] = useState ("https://foodexiran.com/wp-content/uploads/2022/08/store-banner.jpg")
   const [logoImage ,setLogoImage] = useState ("https://wpcdn.us-east-1.vip.tn-cloud.net/www.klkntv.com/content/uploads/2020/08/KFC-LOGO-1024x881.jpg")
-  const foods = ["Burger" , "Chicken" , "Hot Dog" ,"Pasta", "Fried Potato", "pizza"]
+  //var food = ["Burger" , "Chicken" , "Hot Dog" ,"Pasta", "Fried Potato", "pizza"]
+  const [foods,setFoords] = useState( [{"name" : "Burger" , "order" : 0 }, {"name" : "Chicken" , "order" : 0 } , {"name" : "Hot Dog" , "order" : 0 } , {"name" : "Pasta" , "order" : 0 } , {"name" : "pizza" , "order" : 0} , {"name" : "Fried Potato" , "order" : 0}])
   const foodTags = ["All", "Burger" ,"Fried", "Dessert" , "Pizza" , "Sandwitch"]
   const [count,setCount] = useState (0);
   const [cart,setCart] = useState([]);
+  const [flag, setFlag] = useState(0);
+  var forFlag = 0;
+  //const prevCount = useRef ()
 
-  const add = () => {
-    
+  foods.forEach (e =>{
+    e['price'] = 189 ;
+    e["details"] = "Meat, Bread, Pickle, Tomato";
+  })
+  
+  function inc (t) {
+    t.order+=1
+
+    for (let i = 0 ; i < cart.length ; i++){
+      if (t.name === cart[i].name) {
+        forFlag=1;
+        cart[i].order+=1
+        break ;
+      }
+    }
+    if (forFlag===0) {
+      cart.push({
+        name : t.name,
+        price : t.price ,
+        order : 1 ,
+      });
+    }
+    forFlag = 0
+    if (flag ===1 ) setFlag(0)
+    else setFlag(1)
   }
 
+  function dec (t) {
+    t.order-=1
+    for (let i = 0 ; i < cart.length ; i++){
+      if (t.name === cart[i].name) {
+        cart[i].order-=1
+      }
+    }
+    if (flag ===1 ) setFlag(0)
+    else setFlag(1)
+  }
 
+  useEffect (() => {
+  }, [flag] ) ;
 
   const theme = createTheme({
     palette: {
@@ -69,30 +108,33 @@ export const Restaurant_page = () => {
 
           
           <div className="foods">
-          {foods.map(x => (
-            <div className="newCard">
-              <img src={link} className="imageCard" />
-              <h2 className="cardTitle">{x}</h2>
-              <p className="cardDetails">Meat, Bread, Pickle, Tomato</p>
-              <p className="price">199$</p>
-              <div className="ButtonGroup">
-                <button className="cardButton" onClick={() => {if (count > 0 ) {setCount (count-1)}}} >-</button>
-                <button className="cardButton">{count}</button>
-                <button className="cardButton" onClick={() => setCount (count+1)}>+</button>
+            {foods.map(x => (
+              <div className="newCard">
+                <img src={link} className="imageCard" />
+                <h2 className="cardTitle">{x.name}</h2>
+                <p className="cardDetails">{x.details}</p>
+                <p className="price">{x.price}$</p>
+                <div className="ButtonGroup">
+                  <button className="cardButton" onClick={() => {if (x.order > 0 ) {dec(x)}}} >-</button>
+                  <button className="cardButton">{x.order}</button>
+                  <button className="cardButton" onClick={() => inc(x)}>+</button>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
           </div>
         </div>
-
-
-
-        <div className="order">
-
-        </div>
-
-
       </div>
+
+
+      <div className="cart">
+        <div className="cartList">
+          {console.log("salam")}
+          {cart.map (x => (
+            <p className="orderList">{x.name} : {x.order}x</p>
+          ))}
+        </div>
+      </div>
+      
     </div>
     </ThemeProvider>
     </>
