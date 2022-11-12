@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import './Card.css'
 
-export const Card = () => {
+export const Card = (props) => {
   const [name, setName] = useState("Macdonald");
   const [location, setLoc] = useState('atabak');
   const [image_res, setImage_res] = useState("https://www.eatthis.com/wp-content/uploads/sites/4/2021/08/mcdonalds-2.jpg?quality=82&strip=1")
