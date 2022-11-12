@@ -16,7 +16,18 @@ export const Restaurant_page = () => {
   const [value, setValue] = useState(3.5);
   const tags = ["fast food" , "fried" , "chicken" ]
   const [link,setLink] = useState("https://realfood.tesco.com/media/images/Burger-31LGH-a296a356-020c-4969-86e8-d8c26139f83f-0-1400x919.jpg")
+  const [headImageLink ,setHeadImageLink] = useState ("https://foodexiran.com/wp-content/uploads/2022/08/store-banner.jpg")
+  const [logoImage ,setLogoImage] = useState ("https://wpcdn.us-east-1.vip.tn-cloud.net/www.klkntv.com/content/uploads/2020/08/KFC-LOGO-1024x881.jpg")
   const foods = ["Burger" , "Chicken" , "Hot Dog" ,"Pasta", "Fried Potato", "pizza"]
+  const foodTags = ["All", "Burger" ,"Fried", "Dessert" , "Pizza" , "Sandwitch"]
+  const [count,setCount] = useState (0);
+  const [cart,setCart] = useState([]);
+
+  const add = () => {
+    
+  }
+
+
 
   const theme = createTheme({
     palette: {
@@ -30,8 +41,8 @@ export const Restaurant_page = () => {
     <>
     <ThemeProvider theme={theme}>
     <div className="All">
-      <div className="HeadImage"></div>
-      <div className="logo"></div>
+      <img className="HeadImage" src={headImageLink}></img>
+      <img className="logo" src={logoImage}></img>
       <div className="details">
         <div className="info" >
           <label className="name">KFC</label>
@@ -51,12 +62,9 @@ export const Restaurant_page = () => {
 
 
           <div className="categories">
-            <button className="catButton">All</button>
-            <button className="catButton">Burger</button>
-            <button className="catButton">Fried</button>
-            <button className="catButton">Dessert</button>
-            <button className="catButton">Pizza</button>
-            <button className="catButton">Sandwitch</button>
+            {foodTags.map (tag => (
+              <button className="catButton">{tag}</button>
+            ))}
           </div>
 
           
@@ -66,15 +74,24 @@ export const Restaurant_page = () => {
               <img src={link} className="imageCard" />
               <h2 className="cardTitle">{x}</h2>
               <p className="cardDetails">Meat, Bread, Pickle, Tomato</p>
+              <p className="price">199$</p>
               <div className="ButtonGroup">
-                <button className="cardButton">-</button>
-                <button className="cardButton">0</button>
-                <button className="cardButton">+</button>
+                <button className="cardButton" onClick={() => {if (count > 0 ) {setCount (count-1)}}} >-</button>
+                <button className="cardButton">{count}</button>
+                <button className="cardButton" onClick={() => setCount (count+1)}>+</button>
               </div>
             </div>
           ))}
           </div>
         </div>
+
+
+
+        <div className="order">
+
+        </div>
+
+
       </div>
     </div>
     </ThemeProvider>
