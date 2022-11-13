@@ -62,6 +62,7 @@ export const Restaurant_page = () => {
     for (let i = 0 ; i < cart.length ; i++){
       if (t.name === cart[i].name) {
         cart[i].order-=1;
+        setCartPrice(cartPrice-t.price)
         if (cart[i].order===0){
           setCart( cart.filter( a=>
             a.name !== t.name
