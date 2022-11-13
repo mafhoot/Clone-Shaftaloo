@@ -19,16 +19,16 @@ export const Restaurant_page = () => {
   const [headImageLink ,setHeadImageLink] = useState ("https://foodexiran.com/wp-content/uploads/2022/08/store-banner.jpg")
   const [logoImage ,setLogoImage] = useState ("https://wpcdn.us-east-1.vip.tn-cloud.net/www.klkntv.com/content/uploads/2020/08/KFC-LOGO-1024x881.jpg")
   //var food = ["Burger" , "Chicken" , "Hot Dog" ,"Pasta", "Fried Potato", "pizza"]
-  const [foods,setFoords] = useState( [{"name" : "Burger" , "order" : 0 }, {"name" : "Chicken" , "order" : 0 } , {"name" : "Hot Dog" , "order" : 0 } , {"name" : "Pasta" , "order" : 0 } , {"name" : "pizza" , "order" : 0} , {"name" : "Fried Potato" , "order" : 0}])
+  const [foods,setFoords] = useState( [{"name" : "Burger" , "order" : 0 , "price" : 183}, {"name" : "Chicken" , "order" : 0, "price" : 223 } , {"name" : "Hot Dog" , "order" : 0 , "price" : 375} , {"name" : "Pasta" , "order" : 0 , "price" : 343} , {"name" : "pizza" , "order" : 0, "price" : 432} , {"name" : "Fried Potato" , "order" : 0 , "price" : 99}])
   const foodTags = ["All", "Burger" ,"Fried", "Dessert" , "Pizza" , "Sandwitch"]
   const [count,setCount] = useState (0);
   const [cart,setCart] = useState([]);
   const [flag, setFlag] = useState(0);
+  const [cartPrice,setCartPrice] = useState(0)
   var forFlag = 0;
   //const prevCount = useRef ()
 
   foods.forEach (e =>{
-    e['price'] = 189 ;
     e["details"] = "Meat, Bread, Pickle, Tomato";
   })
   
@@ -49,6 +49,9 @@ export const Restaurant_page = () => {
         order : 1 ,
       });
     }
+
+    setCartPrice(cartPrice+t.price)
+
     forFlag = 0
     if (flag ===1 ) setFlag(0)
     else setFlag(1)
@@ -58,7 +61,13 @@ export const Restaurant_page = () => {
     t.order-=1
     for (let i = 0 ; i < cart.length ; i++){
       if (t.name === cart[i].name) {
-        cart[i].order-=1
+        cart[i].order-=1;
+        if (cart[i].order===0){
+          setCart( cart.filter( a=>
+            a.name !== t.name
+          ))
+          break;
+        }
       }
     }
     if (flag ===1 ) setFlag(0)
@@ -112,7 +121,9 @@ export const Restaurant_page = () => {
               <div className="newCard">
                 <img src={link} className="imageCard" />
                 <h2 className="cardTitle">{x.name}</h2>
-                <p className="cardDetails">{x.details}</p>
+                <div className="foodDetails">
+                  <p className="cardDetails">{x.details}</p>
+                </div>
                 <p className="price">{x.price}$</p>
                 <div className="ButtonGroup">
                   <button className="cardButton" onClick={() => {if (x.order > 0 ) {dec(x)}}} >-</button>
@@ -125,14 +136,26 @@ export const Restaurant_page = () => {
         </div>
       </div>
 
+      <div class="cart">
+        <div class="cartList">
 
-      <div className="cart">
-        <div className="cartList">
-          {console.log("salam")}
-          {cart.map (x => (
-            <p className="orderList">{x.name} : {x.order}x</p>
-          ))}
+          <h2 className="orderHeader">Order list</h2>
+
+          <div className="List">
+            {console.log("salam")}
+              {cart.map (x => (
+                <p className="orderList">{x.order}x : {x.name} : {x.order*x.price}$</p>
+            ))}
+          </div>
+
+          <div className="totalPrice">
+            <button className="totalPriceButton">Total price : {cartPrice}$</button>
+          </div>
+
         </div>
+        
+        
+
       </div>
       
     </div>

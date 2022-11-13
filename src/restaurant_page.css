@@ -156,6 +156,11 @@
     color: white;
     padding-left: 10px;
 }
+
+.foodDetails {
+    height: 38px;
+}
+
 .cardDetails{
     margin-top: -10px;
     color: white;
@@ -166,6 +171,7 @@
     margin-top: -5px;
     color: white;
     padding-left: 10px;
+    font-weight: bold;
 }
 
 .cardButton {
@@ -194,16 +200,60 @@
     display: flex;
     justify-content: center;
     margin: auto;
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
 }
 
 .cartList {
-    width: 1200px;
-    background-color: #262626;
+    width: 200px;
+    max-height: 210px;
+    background-color: #eeba2c ;
     margin-top: 40px;
-    padding: 40px;
+    padding: 30px;
     border-radius: 20px;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.orderList {
-    color: white;
+.orderHeader {
+    justify-content: center;
+    text-align: center; 
+    margin-top: -5px;
+    color: #161616;
 }
+
+
+
+.List {
+    max-height: 121px;
+    overflow: auto;
+    margin-bottom: 5px;
+    color: #161616;
+    font-weight: bold;
+}
+
+.List::-webkit-scrollbar {
+    width: 10px;
+  }
+
+.List::-webkit-scrollbar-thumb {
+    background-color:black;
+    border-radius: 10px;
+}
+
+.totalPriceButton {
+    height: 35px;
+    font-size: large;
+    font-family: gilroy;
+    color:#eeba2c;
+    background-color:#161616;
+    border: none;
+    border-radius: 0.5rem;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: bold;
+    margin-top: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
