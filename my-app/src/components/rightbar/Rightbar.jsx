@@ -44,12 +44,12 @@ export default function Rightbar({ profile }) {
             </span>
 
 
-            <span className="rightbarInfoValue2">Country:</span>
+            <span className="rightbarInfoValue2_3">Country:</span>
             <span className="rightbarInfoValue" style={{paddingRight:0}}>
               <input name="firstname" placeholder="American" />
             </span>
 
-            <br></br>
+            {/* <br></br> */}
 
             <span className="rightbarInfoValue2_2">ّFirstName:</span>
             <span className="rightbarInfoValue"  style={{paddingRight:0}}>
@@ -59,10 +59,6 @@ export default function Rightbar({ profile }) {
             <br></br>
 
 
-            <span className="rightbarInfoValue2">LastName:</span>
-            <span className="rightbarInfoValue"  style={{ paddingRight:0}}>
-              <input name="lastname" placeholder="Fathian" />
-            </span>
 
 
 
@@ -107,6 +103,14 @@ export default function Rightbar({ profile }) {
             <span className="rightbarInfoValue">
               <input name="job" placeholder="engineer" />
             </span>
+
+
+
+            
+            <span className="rightbarInfoValue2_2">LastName:</span>
+            <span className="rightbarInfoValue"  style={{ paddingRight:0}}>
+              <input name="lastname" placeholder="Fathian" />
+            </span>
             {/* <label>
                   <p>FirstName</p>
                   <input name="firstname" />
@@ -126,7 +130,8 @@ export default function Rightbar({ profile }) {
               <input name="Relation" placeholder="Single" />
             </span>
           </div>
-
+          
+          <br></br>
           <button type="submit" className="submit">Edit Information</button>
         </div>
         {/* <h4 className="rightbarTitle">User friends</h4>
