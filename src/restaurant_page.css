@@ -1,30 +1,39 @@
 
+*{
+    box-sizing: border-box;
+}
+
 .HeadImage {
     width: 100%;
     height: 300px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     object-fit: cover;
     object-position: 100% 50%;
+    float: none;
 }
 
 .logo {
-    height: 200px;
-    width: 200px;
+    height:var(20px);
+    width: 10%;
     margin-top: -75px;
-    margin-left: 50px;
+    /*margin-left: 50px;*/
+    justify-content: center;
     border-radius: 100%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border: solid 5px;
     border-color: #161616;
     object-fit: cover;
+    /*float:left;*/
 
 }
 
 .All {
     font-family: gilroy;
     background-color:  #161616;
-    min-height: 100vh;
+    min-height: 300vh;
     margin: -8px;
+    
+
 }   
 
 
@@ -32,7 +41,7 @@
     display: flex;
     justify-content: center;
     margin: auto;
-    margin-top: -4rem;
+    /*margin-top: -4rem;*/
 }
 
 .info {
@@ -55,22 +64,25 @@
 }
 
 .main{
-    display: flex;
-    justify-content: center;
-    margin: auto;
+    display: flex; 
+    float: left;
+    width: 80%;
+    /*background-color: aliceblue;*/
 }
 
 .menu{
-    width: 1200;
+    width: 85%;
     background-color: #262626;
     margin-top: 40px;
-    padding: 40px;
+    padding: 2.5%;
+    margin-left: 10%;
+    margin-right: 5%;
     border-radius: 20px;
 }
 
 
 .categories {
-    width: 1200px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     background-color: #161616;
@@ -113,8 +125,9 @@
     flex-wrap: wrap;
     margin-left: auto;
     margin-right: auto;
-    width: 1200px;
+    width: 100%;
     background-color: #262626;
+    float: left;
 }
 
 /*
@@ -136,11 +149,11 @@
 .newCard {
     display: flex;
     flex-direction: column;
-    width: 230px;
+    width: 24%;
     height: 350px;
     background-color: #161616;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
     margin-top: 20px;
     border-radius: 10px;
 }
@@ -199,14 +212,15 @@
 .cart {
     display: flex;
     justify-content: center;
-    margin: auto;
     position: -webkit-sticky;
     position: sticky;
-    bottom: 0;
+    top: 0;
+    float: left;
+    width: 20%;
 }
 
 .cartList {
-    width: 200px;
+    width: 80%;
     max-height: 210px;
     background-color: #eeba2c ;
     margin-top: 40px;
