@@ -55,6 +55,8 @@
 .rightbarInfoKey{
   font-weight: 500;
   margin-right: 5px;
+  /* margin-bottom: 1000px; */
+  /* padding-bottom: 3000px; */
   color: #555;
 }
 
@@ -143,10 +145,65 @@
 {
   font-weight: 500;
   margin-right: 6px;
-  margin-left: 90px;
+  margin-left: 20px;
   color: #555;
 
 }
+
+
+
+
+.rightbarInfoKey3{
+  /* padding-top: 2000px; */
+  font-weight: 300;
+  /* margin-right: 5px; */
+  /* margin-bottom: 3rem;
+  margin-bottom: 5rem; */
+  /* padding: 0.5rem 1rem 4rem; */
+  /* height: 20000px; */
+  /* padding-bottom: 3000px; */
+  /* margin-top: 20rem; */
+  color: #555;
+  margin-left: 0px;
+}
+
+
+
+
+
+
+
+.rightbarInfoValue5
+{
+  /* margin-top: 0px;
+  margin-bottom: 0px; */
+  font-weight: 500;
+  margin-right: 5px;
+  margin-left: 90px;
+  /* margin-top: 200px; */
+  /* padding-top: 20cm; */
+  color: #555;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

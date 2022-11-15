@@ -14,9 +14,10 @@ import AvatarEditor from 'react-avatar-editor'
 import React,{useEffect , useState} from "react";
 
 
+
 import { Dialog } from 'primereact/dialog';
 import { InputText } from 'primereact/inputtext';
-// برای عکس میباشد
+// // برای عکس میباشد
 
 
 
@@ -100,6 +101,25 @@ export default function Profile() {
     </>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

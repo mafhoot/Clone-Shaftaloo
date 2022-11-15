@@ -3,8 +3,9 @@ import "./rightbar.css";
 // import Online from "../online/Online";
 // import React, { useState ,useEffect} from "react";
 
+import React, {useCallback,useContext,useMemo , useState} from "react";
 
-
+import {useDropzone} from "react-dropzone";
 
 
 export default function Rightbar({ profile }) {
@@ -33,6 +34,8 @@ export default function Rightbar({ profile }) {
   };
 
   const ProfileRightbar = () => {
+
+    const [fileUrl, setfileUrl] = useState(null);
     return (
       <>
         <h4 className="rightbarTitle">User information</h4>
@@ -130,6 +133,21 @@ export default function Rightbar({ profile }) {
               <input name="Relation" placeholder="Single" />
             </span>
           </div>
+
+
+
+          <div className="rightbarInfoItem">
+            <div>
+              <span className="rightbarInfoKey3">Description:</span>
+              <br></br>
+            </div>
+            <span className="rightbarInfoValue5">
+              {/* <input name="Relation" placeholder="Single" /> */}
+              <textarea cols={30} rows={6} placeholder="Bio"></textarea>
+            </span>
+          </div>
+
+
           
           <br></br>
           <button type="submit" className="submit">Edit Information</button>
@@ -197,5 +215,12 @@ export default function Rightbar({ profile }) {
     </div>
   );
 }
+
+
+
+
+
+
+
 
 
