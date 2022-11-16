@@ -90,75 +90,74 @@ export const Restaurant_page = () => {
     <>
     <ThemeProvider theme={theme}>
     <div className="All">
-      <img className="HeadImage" src={headImageLink}></img>
-      <img className="logo" src={logoImage}></img>
-      <div className="details">
-        <div className="info" >
-          <label className="name">KFC</label>
-          <p className="description" >The first and best brand of fried foods in the world</p>
-          <p className="location">Location : North california</p>
-          <p className="Tags">Tags : <ButtonGroup color="neutral" variant="text" aria-label="text button group">
-            {tags.map(tags => (
-              <Button>{tags}</Button>
-            ))}
-            </ButtonGroup>
-          </p>
-          <span className="Rate">Rating :</span> <Rating className="rating" name="half-rating-read" defaultValue={value} precision={0.5} readOnly  />
-        </div>
-      </div>
-      <div className="main">
-        <div className="menu">
-
-
-          <div className="categories">
-            {foodTags.map (tag => (
-              <button className="catButton">{tag}</button>
-            ))}
+        <img className="HeadImage" src={headImageLink}></img>
+        <img className="logo" src={logoImage}></img>
+        <div className="details">
+          <div className="info" >
+            <label className="name">KFC</label>
+            <p className="description" >The first and best brand of fried foods in the world</p>
+            <p className="location">Location : North california</p>
+            <p className="Tags">Tags : <ButtonGroup color="neutral" variant="text" aria-label="text button group">
+              {tags.map(tags => (
+                <Button>{tags}</Button>
+              ))}
+              </ButtonGroup>
+            </p>
+            <span className="Rate">Rating :</span> <Rating className="rating" name="half-rating-read" defaultValue={value} precision={0.5} readOnly  />
           </div>
+        </div>
+        <div className="main">
+          <div className="menu">
+
+            <div> 
+              <div className="categories">
+                {foodTags.map (tag => (
+                  <button className="catButton">{tag}</button>
+                ))}
+              </div>
+
+              
+              <div className="foods">
+                {foods.map(x => (
+                  <div className="newCard">
+                    <img src={link} className="imageCard" />
+                    <h2 className="cardTitle">{x.name}</h2>
+                    <div className="foodDetails">
+                      <p className="cardDetails">{x.details}</p>
+                    </div>
+                    <p className="price">{x.price}$</p>
+                    <div className="ButtonGroup">
+                      <button className="cardButton" onClick={() => {if (x.order > 0 ) {dec(x)}}} >-</button>
+                      <span className="cardButton">{x.order}</span>
+                      <button className="cardButton" onClick={() => inc(x)}>+</button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>  
+          </div>
+
+          <div class="cart">
+          
+
+              <h2 className="orderHeader">Order list</h2>
+
+              <div className="List">
+                {console.log("salam")}
+                  {cart.map (x => (
+                    <p className="orderList">{x.order}x : {x.name} : {x.order*x.price}$</p>
+                ))}
+              </div>
+
+              <div className="totalPrice">
+                <div className="totalPriceButton">Total price : {cartPrice}$</div>
+              </div>
 
           
-          <div className="foods">
-            {foods.map(x => (
-              <div className="newCard">
-                <img src={link} className="imageCard" />
-                <h2 className="cardTitle">{x.name}</h2>
-                <div className="foodDetails">
-                  <p className="cardDetails">{x.details}</p>
-                </div>
-                <p className="price">{x.price}$</p>
-                <div className="ButtonGroup">
-                  <button className="cardButton" onClick={() => {if (x.order > 0 ) {dec(x)}}} >-</button>
-                  <button className="cardButton">{x.order}</button>
-                  <button className="cardButton" onClick={() => inc(x)}>+</button>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
-      </div>
-
-      <div class="cart">
-        <div class="cartList">
-
-          <h2 className="orderHeader">Order list</h2>
-
-          <div className="List">
-            {console.log("salam")}
-              {cart.map (x => (
-                <p className="orderList">{x.order}x : {x.name} : {x.order*x.price}$</p>
-            ))}
-          </div>
-
-          <div className="totalPrice">
-            <button className="totalPriceButton">Total price : {cartPrice}$</button>
-          </div>
-
-        </div>
         
-        
-
-      </div>
-      
+        <div className="distance"></div>
     </div>
     </ThemeProvider>
     </>
