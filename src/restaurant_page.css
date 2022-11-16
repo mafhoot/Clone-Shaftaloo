@@ -82,12 +82,24 @@
 
 .categories {
     width: 100%;
-    height: 3.5rem;
+    max-height: 75px;
     margin-left: auto;
     margin-right: auto;
     background-color: #161616;
     border-radius: 1rem;
     overflow: auto;
+    /*overflow-x: auto;
+    overflow-y: hidden;*/
+    
+}
+
+.categories::-webkit-scrollbar {
+    width: 5px;
+  }
+
+.categories::-webkit-scrollbar-thumb {
+    background-color:#eeba2c;
+    border-radius: 10px;
 }
 
 .catButton{
@@ -186,7 +198,9 @@
     font-weight: bold;
 }
 
-
+.ButtonGroup {
+    margin-bottom: 5px;
+}
 
 .cardButton {
     margin: 10px;
@@ -266,8 +280,8 @@
 .pay {
     font-size: large;
     font-family: gilroy;
-    color:#000000;
-    background-color: #6fff00;
+    color:#ffffff;
+    background-color: #0044ff;
     border-radius: 0.5rem;
     padding-left: 20px;
     padding-right: 20px;
@@ -283,7 +297,7 @@
 }
 
 .pay:hover {
-    color: #6fff00 ;
+    color: #0044ff ;
     background-color: #161616;
     cursor: pointer;
     transition-duration: 0.4s;

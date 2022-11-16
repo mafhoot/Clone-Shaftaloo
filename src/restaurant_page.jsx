@@ -6,7 +6,7 @@ import { Button, CardActionArea, CardActions } from '@mui/material';
 
 export const Restaurant_page = () => {
   const [value, setValue] = useState(3.5);
-  const tags = ["fast food" , "fried" , "chicken" ]
+  const tags = ["fast food" , "fried" , "chicken"  ]
   const [headImageLink ,setHeadImageLink] = useState ("https://foodexiran.com/wp-content/uploads/2022/08/store-banner.jpg")
   const [logoImage ,setLogoImage] = useState ("https://wpcdn.us-east-1.vip.tn-cloud.net/www.klkntv.com/content/uploads/2020/08/KFC-LOGO-1024x881.jpg")
   //var food = ["Burger" , "Chicken" , "Hot Dog" ,"Pasta", "Fried Potato", "pizza"]
