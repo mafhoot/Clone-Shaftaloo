@@ -263,6 +263,32 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.pay {
+    font-size: large;
+    font-family: gilroy;
+    color:#000000;
+    background-color: #6fff00;
+    border-radius: 0.5rem;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    margin-top: 5px;
+    margin: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: none;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.pay:hover {
+    color: #6fff00 ;
+    background-color: #161616;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
 .distance {
     height: 70px;
 }
