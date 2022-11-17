@@ -24,10 +24,9 @@
   }
 
   .card-discription {
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin: 15px;
     display: flex;
-    padding: 8px;
+    align-items: center;
   }
   
   img.logo {
@@ -47,7 +46,7 @@
   }
 
   .location {
-    padding-left: 15px;
+    margin: 25px;
   }
   
   .simple-loc {
@@ -56,8 +55,7 @@
   }
   
   .tags {
-    margin: 15px;
-    padding-left: 15px;
+    margin: 25px;
   }
   
   .simple-tag {
@@ -74,7 +72,7 @@
   }  
 
 .container {
-    padding: 40px;
+    padding: 15px;
     min-width: auto;
     max-width: 1200px;
     margin-left: auto;
@@ -82,21 +80,29 @@
 }
 
 .filters {
-    background: #262626;
-    min-width: max-content;
-    border-radius: 12px;
-    padding: 10px;
-    align-items: left;
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #262626;
+  max-width: max-content;
+  border-radius: 8px;
+  padding: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
 }
 
+button.simple-filter {
+  padding: 4px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-left: 6px;
+  margin-right: 6px;
+}
 
 .cards-list {
     border-radius: 8px;
     background-color: #262626;
-    padding: 10px;
+    padding: 5px;
 }
 
 .cards-list::after {
@@ -124,12 +130,4 @@
     width: 100%;
     display: block;
   }
-}
-
-button.simple-filter {
-  padding: 8px 8px;
-  margin-top: 4px;
-  margin-bottom: 4px;
-  margin-left: 6px;
-  margin-right: 6px;
 }
