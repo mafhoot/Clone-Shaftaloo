@@ -2,22 +2,22 @@
     background: black;
     padding: 6px;
     border-radius: 30px;
-    width: auto;
-    max-width: 450px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 5px;
+    overflow: hidden;
+    margin: 5px;
   }
   
   .card:hover {
     cursor: pointer;
   }
   
+  .card-top {
+    border-radius: 30px 30px 0 0;
+    overflow: hidden;
+  }
+
   img.img-res {
     max-width: 100%;
-    height: auto;
     object-fit: cover;
-    border-radius: 30px 30px 0 0;
   }
 
   .card-discription {
@@ -28,8 +28,8 @@
   }
   
   img.logo {
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     object-fit: cover;
     border-radius: 50%;
   }
@@ -87,14 +87,41 @@
     align-items: left;
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 15px;
 }
 
 
 .cards-list {
     border-radius: 8px;
     background-color: #262626;
-    margin-top: 15px;
     padding: 10px;
+}
+
+.cards-list::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.simple-card-inlist {
+  float: left;
+  width: 33.33%;
+  background-color: inherit;
+}
+
+
+@media screen and (max-width: 1000px) {
+  .simple-card-inlist {
+    width: 50%;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .simple-card-inlist {
+    width: 100%;
+    display: block;
+  }
 }
 
 button.simple-filter {
@@ -103,12 +130,4 @@ button.simple-filter {
   margin-bottom: 4px;
   margin-left: 6px;
   margin-right: 6px;
-}
-
-.simple-card {
-  background: #262626;
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: auto;
-  margin-right: auto;
 }

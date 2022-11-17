@@ -39,10 +39,22 @@ export const ListCardRes = () => {
               </div>
             </div>
             <div className="cards-list">
-              <div className="simple-card">
+              <div className="simple-card-inlist">
                 <Card/>
+              </div>
+              <div className="simple-card-inlist">
                 <Card/>
+              </div>
+              <div className="simple-card-inlist">
                 <Card/>
+              </div>
+              <div className="simple-card-inlist">
+                <Card/>
+              </div>
+              <div className="simple-card-inlist">
+                <Card/>
+              </div>
+              <div className="simple-card-inlist">
                 <Card/>
               </div>
             </div>

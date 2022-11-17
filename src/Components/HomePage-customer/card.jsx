@@ -5,7 +5,7 @@ import './homePageCustomer.css'
 export const Card = (props) => {
   const [name, setName] = useState("Macdonald");
   const [location, setLoc] = useState('atabak');
-  const [image_res, setImage_res] = useState("https://www.eatthis.com/wp-content/uploads/sites/4/2021/08/mcdonalds-2.jpg?quality=82&strip=1")
+  const [image_res, setImage_res] = useState("https://images.wsj.net/im-581988/M")
   const [logo_res, setLogo_res] = useState("https://ascenciamalls.com/media/5xsdueaq/transparent-mcdonalds-logo.png?crop=0.051414758200391056,0.06154205885768007,0.051414758200390966,0.0625222618886456&cropmode=percentage&width=338&height=330&rnd=133076233019500000")
   const tags_list = [
     {
@@ -23,7 +23,7 @@ export const Card = (props) => {
 
     return (
       <div className="card">
-        <div className="">
+        <div className="card-top">
           <img className="img-res"
                src={image_res} 
                alt="restaurant-card" />
