@@ -71,10 +71,11 @@ export default function Profile() {
               <img
                   className="profileUserImg"
                   src="assets/person/download.jpg"
-                
                   alt=""
                   // src={src}
               ></img>
+              {/* <InputText type="file" accept="assets/person/download.jpg" className=""/> */}
+              <InputText type="file" accept="assets/person/download.jpg" className="profileUserImg2"/>
            
 
              

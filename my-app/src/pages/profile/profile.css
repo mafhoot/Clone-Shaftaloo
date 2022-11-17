@@ -30,6 +30,32 @@
     border: 3px solid white;
 }
 
+
+.profileUserImg2{
+    width: 150px;
+    height: 150px;
+    /* border-radius: 50%; */
+    /* object-fit: cover; */
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 100px 400px 3px;
+    top: 15px;
+    padding-top: 180px;
+    padding-left: 0px;
+    /* border: 3px solid white; */
+}
+
+
+
+
+
+
+
+
+
+
+
 .profileInfo{
     display: flex;
     flex-direction: column;
@@ -48,3 +74,16 @@
 .profileRightBottom{
     display: flex;
 }
+
+
+
+/* 
+.aaaa
+{
+
+
+
+} */
+
+
+
