@@ -5,7 +5,7 @@ import './homePageCustomer.css'
 export const Card = (props) => {
   const [name, setName] = useState("Macdonald");
   const [location, setLoc] = useState('atabak');
-  const [image_res, setImage_res] = useState("https://images.wsj.net/im-581988/M")
+  const [image_res, setImage_res] = useState("https://cdn.vox-cdn.com/thumbor/5d_RtADj8ncnVqh-afV3mU-XQv0=/0x0:1600x1067/1200x900/filters:focal(672x406:928x662)/cdn.vox-cdn.com/uploads/chorus_image/image/57698831/51951042270_78ea1e8590_h.7.jpg")
   const [logo_res, setLogo_res] = useState("https://ascenciamalls.com/media/5xsdueaq/transparent-mcdonalds-logo.png?crop=0.051414758200391056,0.06154205885768007,0.051414758200390966,0.0625222618886456&cropmode=percentage&width=338&height=330&rnd=133076233019500000")
   const tags_list = [
     {
