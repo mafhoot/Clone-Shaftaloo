@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './sidebar.css';
+import {getUser} from "../../Services/axios";
 
 const sidebarNavItems = [
     {
@@ -29,6 +30,19 @@ const Sidebar = () => {
     const indicatorRef = useRef();
     const location = useLocation();
 
+    
+
+    const [user,setUser] = useState({name : "Amir Deldar"});
+    const [username,setUsername] = useState("amirdldr@gmail.com");
+    useEffect(() => {
+        getUser(username).then (e => {
+        //console.log(e.data.username)
+        setUser({
+            name: e.data.username,
+        })
+        }).catch()
+    },[]);
+
     useEffect(() => {
         setTimeout(() => {
             const sidebarItem = sidebarRef.current.querySelector('.sidebar__menu__item');
@@ -47,7 +61,7 @@ const Sidebar = () => {
     return <div className='sidebar'>
         <div className="sidebar__logo">
         <img className="logo" src="https://www.thehindu.com/sci-tech/technology/internet/article17759222.ece/alternates/FREE_1200/02th-egg-person" alt=""></img>
-            <p className="name">Amir Deldar</p>
+            <p className="name">{user.name}</p>
         </div>
         <div ref={sidebarRef} className="sidebar__menu">
             <div

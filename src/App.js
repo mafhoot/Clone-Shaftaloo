@@ -6,6 +6,7 @@ import Blank from './pages/Blank';
 
 function App() {
   return (
+    
     <BrowserRouter>
             <Routes>
                 <Route path='/' element={<AppLayout />}>
