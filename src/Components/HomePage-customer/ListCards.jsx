@@ -9,7 +9,7 @@ import './homePageCustomer.css'
 
 export const ListCardRes = () => {
 
-    const filters = ['all', 'fast-food', 'irani', 'salad']
+    const filters = ['all', 'fast-food', 'chicken']
     const [cards, setCards] = useState();
     const [data, setData] = useState([])
     const [tag, setTag] = useState("all")
@@ -45,39 +45,37 @@ export const ListCardRes = () => {
         }
         console.log(error.config);
       })
-    }, [])
-function dataGen(){
-  const tmp=[]
-  data.forEach(item=>{
-    console.log(item);
-    tmp.push(
-      <Card
-      id={item.id}
-      name={item.name}
-      location={item.address}
-      tags={item.tag}
-    />
-    )
-  })
-  return tmp;
-}
+    }, [tag, ])
+
+    function dataGen(){
+      const tmp=[]
+      data.forEach(item=>{
+      console.log(item);
+      tmp.push(
+        <Card
+          id={item.id}
+          name={item.name}
+          location={item.address}
+        />)
+    })
+    return tmp;
+    }
+
     return (
         
         <div>
           <div className="container">
             <div>
               <div className="filters">
-                {
-dataGen()
-                }
+                {filters.map((filter) => (
+                    <button className="simple-filter">{filter}</button>
+                  ))}
               </div>
             </div>
             <div className="cards-list">
-              {cards?.map((card) => {
               <div className="simple-card-inlist">
-                <Card key={card.id}{...card}/>
+                {dataGen()}
               </div>
-              })}
             </div>
           </div>
         </div>
