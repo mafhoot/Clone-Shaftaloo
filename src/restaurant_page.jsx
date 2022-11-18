@@ -118,14 +118,15 @@ export const Restaurant_page = () => {
             <label className="name">{rest.name}</label>
             <p className="description" >{rest.description}</p>
             <p className="location">Address : {rest.address}</p>
-            <p className="Tags">Tags : <ButtonGroup color="neutral" variant="text" aria-label="text button group">
-              {rest.tags.map(u => (
-                <Button>{u.value}</Button>
-                //console.log(u)
-              ))}
+            <p className="RestTags">Tags : 
+              <ButtonGroup color="neutral" variant="text" aria-label="text button group">
+                {rest.tags?.map(u => (
+                  <Button>{u.value}</Button>
+                  //console.log(u)
+                ))}
               </ButtonGroup>
             </p>
-            <span className="Rate">Rating :</span> <Rating className="rating" name="half-rating-read" defaultValue={rest.rate} precision={0.5} readOnly  />
+            <span className="Rate">Rating :</span> <Rating className="rating" name="half-rating-read" defaultValue={value} precision={0.5} readOnly  />
           </div>
         </div>
         <div className="main">
