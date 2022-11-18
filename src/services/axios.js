@@ -10,5 +10,5 @@ export function getbearer (data){
 }
 
 export function getRestaurantCards (){
-    return axios.get(url+"api/Restaurant")
+    return axios.get(url+"api/Restaurant?tag=all&size=10&number=0")
 }
