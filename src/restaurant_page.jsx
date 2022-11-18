@@ -5,6 +5,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import {getRestaurant , getMenu} from "./Services/axios"
 import { Base64 } from 'js-base64';
+import ReactDOM from 'react-dom/client';
 
 export const Restaurant_page = () => {
   const [rest,setRest] = useState({id : null , name : null , date : null , address : "America"})
@@ -13,7 +14,7 @@ export const Restaurant_page = () => {
   const [headImageLink ,setHeadImageLink] = useState ("https://foodexiran.com/wp-content/uploads/2022/08/store-banner.jpg")
   const [logoImage ,setLogoImage] = useState ("https://wpcdn.us-east-1.vip.tn-cloud.net/www.klkntv.com/content/uploads/2020/08/KFC-LOGO-1024x881.jpg")
   //var food = ["Burger" , "Chicken" , "Hot Dog" ,"Pasta", "Fried Potato", "pizza"]
-  const [foods,setFoods] = useState( [{"name" : "Burger" , "order" : 0 , "price" : 183}, {"name" : "Chicken" , "order" : 0, "price" : 223 } , {"name" : "Hot Dog" , "order" : 0 , "price" : 375} , {"name" : "Pasta" , "order" : 0 , "price" : 343} , {"name" : "pizza" , "order" : 0, "price" : 432} , {"name" : "Fried Potato" , "order" : 0 , "price" : 99}])
+  const [foods,setFoods] = useState( [{"name" : "Burger" , "count" : 0 , "price" : 183}, {"name" : "Chicken" , "count" : 0, "price" : 223 } , {"name" : "Hot Dog" , "count" : 0 , "price" : 375} , {"name" : "Pasta" , "count" : 0 , "price" : 343} , {"name" : "pizza" , "count" : 0, "price" : 432} , {"name" : "Fried Potato" , "count" : 0 , "price" : 99}])
   const foodTags = ["All", "Burger" ,"Fried", "Dessert" , "Pizza" , "Sandwitch"] 
   const [cart,setCart] = useState([]);
   const [flag, setFlag] = useState(0);
@@ -28,10 +29,16 @@ export const Restaurant_page = () => {
     e["image"] = "https://realfood.tesco.com/media/images/Burger-31LGH-a296a356-020c-4969-86e8-d8c26139f83f-0-1400x919.jpg";
   })
   
-  
+  function loadMenu (i) {
+    setFoods(i.foods)
+    foods.forEach (e =>{
+      e["image"] = "https://realfood.tesco.com/media/images/Burger-31LGH-a296a356-020c-4969-86e8-d8c26139f83f-0-1400x919.jpg";
+    })
+  }
+
 
   function inc (t) {
-    t.order+=1
+    t.count+=1
 
     for (let i = 0 ; i < cart.length ; i++){
       if (t.name === cart[i].name) {
@@ -56,7 +63,7 @@ export const Restaurant_page = () => {
   }
 
   function dec (t) {
-    t.order-=1
+    t.count-=1
     for (let i = 0 ; i < cart.length ; i++){
       if (t.name === cart[i].name) {
         cart[i].order-=1;
@@ -75,11 +82,11 @@ export const Restaurant_page = () => {
 
   useEffect (() => {
 
-  }, [flag] ) ;
+  }, [flag , foods] ) ;
 
   useEffect(() => {
     getRestaurant(id).then (e => {
-      //console.log(e.data.address)
+      //console.log(e.data.address) 
       setRest({
         city: e.data.city,
         comments: "chetori",
@@ -97,11 +104,10 @@ export const Restaurant_page = () => {
     }).catch()
 
     getMenu(id).then (m => {
-      //console.log(m.data[0].categories[0].categoryName)
+      console.log(m.data[0].categories[0])
       setMenu(m.data[0].categories)
     }).catch()
     console.log(restMenu)
-    
   },[]);
 
   const theme = createTheme({
@@ -140,7 +146,7 @@ export const Restaurant_page = () => {
               <div className="categories">
                 {restMenu?.map (tag => (
                   //JSON.stringify(tag.categories)
-                  <button className="catButton">{tag.categoryName}</button>
+                  <button onClick={() => loadMenu(tag)} className="catButton">{tag.categoryName}</button>
                 ))}
               </div>
 
@@ -155,8 +161,8 @@ export const Restaurant_page = () => {
                     </div>
                     <p className="price">{x.price}$</p>
                     <div className="ButtonGroup">
-                      <button className="cardButton" onClick={() => {if (x.order > 0 ) {dec(x)}}} >-</button>
-                      <span className="cardButton">{x.order}</span>
+                      <button className="cardButton" onClick={() => {if (x.count > 0 ) {dec(x)}}} >-</button>
+                      <span className="cardButton">{x.count}</span>
                       <button className="cardButton" onClick={() => inc(x)}>+</button>
                     </div>
                   </div>
