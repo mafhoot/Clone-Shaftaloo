@@ -3,9 +3,12 @@ import "./rightbar.css";
 // import Online from "../online/Online";
 // import React, { useState ,useEffect} from "react";
 
-import React, {useCallback,useContext,useMemo , useState} from "react";
+// import React, {useCallback,useContext,useMemo , useState} from "react";
 
-import {useDropzone} from "react-dropzone";
+// import {useDropzone} from "react-dropzone";
+
+
+
 
 
 export default function Rightbar({ profile }) {
@@ -13,31 +16,33 @@ export default function Rightbar({ profile }) {
   // const [pass, setPass] = useState('')
   // const [loginFlag,setLogin] = useState ("")
 
-  const HomeRightbar = () => {
-    return (
-      <>
-        <div className="birthdayContainer">
-          <img className="birthdayImg" src="assets/gift.png" alt="" />
-          <span className="birthdayText">
-            <b>Pola Foster</b> and <b>3 other friends</b> have a birhday today.
-          </span>
-        </div>
-        <img className="rightbarAd" src="assets/ad.png" alt="" />
-        <h4 className="rightbarTitle">Online Friends</h4>
-        <ul className="rightbarFriendList">
-          {/* {Users.map((u) => (
-            // <Online key={u.id} user={u} />
-          ))} */}
-        </ul>
-      </>
-    );
-  };
+  // const HomeRightbar = () => {
+  //   return (
+  //     <>
+  //       <div className="birthdayContainer">
+  //         <img className="birthdayImg" src="assets/gift.png" alt="" />
+  //         <span className="birthdayText">
+  //           <b>Pola Foster</b> and <b>3 other friends</b> have a birhday today.
+  //         </span>
+  //       </div>
+  //       <img className="rightbarAd" src="assets/ad.png" alt="" />
+  //       <h4 className="rightbarTitle">Online Friends</h4>
+  //       <ul className="rightbarFriendList">
+  //         {/* {Users.map((u) => (
+  //           // <Online key={u.id} user={u} />
+  //         ))} */}
+  //       </ul>
+  //     </>
+  //   );
+  // };
+
 
   const ProfileRightbar = () => {
 
-    const [fileUrl, setfileUrl] = useState(null);
+    // const [fileUrl, setfileUrl] = useState(null);
     return (
       <>
+        {/* ///// تگ span بصورت این لاین است */}
         <h4 className="rightbarTitle">User information</h4>
         <div className="rightbarInfo">
           <div className="rightbarInfoItem">
@@ -49,7 +54,7 @@ export default function Rightbar({ profile }) {
 
             <span className="rightbarInfoValue2_3">Country:</span>
             <span className="rightbarInfoValue" style={{paddingRight:0}}>
-              <input name="firstname" placeholder="American" />
+              <input name="firstname" placeholder="Iran" />
             </span>
 
             {/* <br></br> */}
@@ -210,7 +215,7 @@ export default function Rightbar({ profile }) {
   return (
     <div className="rightbar">
       <div className="rightbarWrapper">
-        {profile ? <ProfileRightbar /> : <HomeRightbar />}
+        { <ProfileRightbar /> }
       </div>
     </div>
   );

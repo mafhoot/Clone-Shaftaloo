@@ -1,4 +1,9 @@
 import "./sidebar.css";
+//// برای استایل دهی استفاده میشود
+
+
+
+
 import {
   RssFeed,
   Chat,
@@ -10,8 +15,17 @@ import {
   Event,
   School,
 } from "@material-ui/icons";
+///// متریال باید نصب شود
 
 
+
+
+//// از تگ li برای لیستی از آیتم ها استفاده میشود 
+//// لیست مرتب از li ها
+
+
+
+/////از تگ  li داخل ul استفاده میشود
 export default function Sidebar() {
   return (
     <div className="sidebar">

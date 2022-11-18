@@ -10,7 +10,7 @@ import Sidebar from "../../components/sidebar/Sidebar"
 
 // import Rightbar from "../../components/rightbar/Rightbar"
 
-import Feed from "../../components/feed/Feed"
+// import Feed from "../../components/feed/Feed"
 import { AddBoxOutlined } from "@material-ui/icons";
 
 // import Topbar from "/components/topbar/Topbar"
