@@ -20,6 +20,7 @@
   border-top-right-radius: 10px;
   overflow: hidden;
   text-align: center;
+  background-color: #161616;
 }
 
 img.img-res {
@@ -33,13 +34,14 @@ img.img-res {
   margin-left: 15px;
   display: flex;
   align-items: center;
+  background-color: #161616;
 }
 
 img.logo {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: 50%;
 }
 
 .card-discription h1 {
@@ -47,10 +49,12 @@ img.logo {
   text-overflow: ellipsis;
   font-size: 40px;
   color: #eeba2c;
-  margin-left: 8px;
+  margin-left: 16px;
+  background-color: #161616;
 }
 
 .location {
+  background-color: #161616;
   margin-left: 25px;
 }
 
@@ -59,6 +63,7 @@ img.logo {
 }
 
 .tags {
+  background-color: #161616;
   margin: 25px;
 }
 
@@ -123,7 +128,6 @@ background-color: #eeba2c;
   border-radius: 20px;
   background-color: #262626;
   padding: 5px;
-
 }
 
 .cards-list::after {
