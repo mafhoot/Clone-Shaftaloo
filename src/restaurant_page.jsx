@@ -4,6 +4,7 @@ import ButtonGroup from '@mui/material/ButtonGroup';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import {getRestaurant} from "./Services/axios"
+import { Base64 } from 'js-base64';
 
 export const Restaurant_page = () => {
   const [rest,setRest] = useState({id : null , name : null , date : null , address : "America"})
