@@ -22,7 +22,7 @@ export function  Card  ({name, location, tags}) {
         </div>
         <p className="location">Location : <span className="simple-loc">{location}</span></p>
         <p className="tags">tags : 
-          {tags.map((tag) => (
+          {tags?.map((tag) => (
             <span className="simple-tag" id={tags.indexOf(tag)}>{tag}</span>
            ))}
         </p>      

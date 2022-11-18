@@ -9,24 +9,26 @@ import './homePageCustomer.css'
 
 export const ListCardRes = () => {
 
-    const filters = ['All', 'fast-food', 'irani', 'salad']
+    const filters = ['all', 'fast-food', 'irani', 'salad']
     const [cards, setCards] = useState();
-    const [data, setData] = useState()
-    const [tag, setTag] = useState("All")
+    const [data, setData] = useState([])
+    const [tag, setTag] = useState("all")
 
     useEffect(() => {
       getRestaurantCards()
       .then((response)=>{
         console.log("response : ", response.data)
         setData(response.data)
-        const newCard = data?.map((item) => 
+      
+        const newCard =[];
+        response.data.forEach((item) => 
         {
-          return {
+          newCard.push( {
             id : item.id,
             name : item.name,
             location : item.address,
             tags : item.tag
-          }
+          })
         })
         setCards(newCard)
       })
@@ -43,18 +45,31 @@ export const ListCardRes = () => {
         }
         console.log(error.config);
       })
-    }, [tag])
-
+    }, [])
+function dataGen(){
+  const tmp=[]
+  data.forEach(item=>{
+    console.log(item);
+    tmp.push(
+      <Card
+      id={item.id}
+      name={item.name}
+      location={item.address}
+      tags={item.tag}
+    />
+    )
+  })
+  return tmp;
+}
     return (
         
         <div>
           <div className="container">
             <div>
               <div className="filters">
-                {filters.map((filter) => (
-                    <button key={filter} className="simple-filter" 
-                    onClick={() => {setTag(filter); console.log(filter)}}>{filter}</button>
-                  ))}
+                {
+dataGen()
+                }
               </div>
             </div>
             <div className="cards-list">
