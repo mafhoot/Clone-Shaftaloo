@@ -3,8 +3,10 @@ import Rating from '@mui/material/Rating';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Button, CardActionArea, CardActions } from '@mui/material';
+import {getRestaurant} from "./Services/axios"
 
 export const Restaurant_page = () => {
+  const [rest,setRest] = useState({id : null , name : null , date : null , address : "America"})
   const [value, setValue] = useState(3.5);
   const tags = ["fast food" , "fried" , "chicken"  ]
   const [headImageLink ,setHeadImageLink] = useState ("https://foodexiran.com/wp-content/uploads/2022/08/store-banner.jpg")
@@ -12,11 +14,11 @@ export const Restaurant_page = () => {
   //var food = ["Burger" , "Chicken" , "Hot Dog" ,"Pasta", "Fried Potato", "pizza"]
   const [foods,setFoods] = useState( [{"name" : "Burger" , "order" : 0 , "price" : 183}, {"name" : "Chicken" , "order" : 0, "price" : 223 } , {"name" : "Hot Dog" , "order" : 0 , "price" : 375} , {"name" : "Pasta" , "order" : 0 , "price" : 343} , {"name" : "pizza" , "order" : 0, "price" : 432} , {"name" : "Fried Potato" , "order" : 0 , "price" : 99}])
   const foodTags = ["All", "Burger" ,"Fried", "Dessert" , "Pizza" , "Sandwitch"]
-  const [count,setCount] = useState (0);
   const [cart,setCart] = useState([]);
   const [flag, setFlag] = useState(0);
   const [cartPrice,setCartPrice] = useState(0)
   var forFlag = 0;
+  const [id,setId] = useState (1)
   //const prevCount = useRef ()
 
   foods.forEach (e =>{
@@ -24,6 +26,8 @@ export const Restaurant_page = () => {
     e["image"] = "https://realfood.tesco.com/media/images/Burger-31LGH-a296a356-020c-4969-86e8-d8c26139f83f-0-1400x919.jpg";
   })
   
+  
+
   function inc (t) {
     t.order+=1
 
@@ -68,7 +72,28 @@ export const Restaurant_page = () => {
   }
 
   useEffect (() => {
+
   }, [flag] ) ;
+
+  useEffect(() => {
+    getRestaurant(id).then (e => {
+      console.log(e.data.address)
+      setRest({
+        city: e.data.city,
+        comments: "chetori",
+        name: e.data.name,
+        address: e.data.address,
+        description: e.data.description,
+        logoImg: e.data.logoImage,
+        backgroundImg: e.data.backgroundImg,
+        id: e.data.id,
+        dateCreated: e.data.dateCreated,
+        tags : e.data.tags,
+        rate : e.data.avg,
+      })
+      console.log(rest.tags)
+    }).catch()
+  },[]);
 
   const theme = createTheme({
     palette: {
@@ -80,22 +105,25 @@ export const Restaurant_page = () => {
 
   return (
     <>
+    {console.log(rest.address)}
+    {console.log("hi")}
     <ThemeProvider theme={theme}>
     <div className="All">
         <img className="HeadImage" src={headImageLink}></img>
         <img className="logo" src={logoImage}></img>
         <div className="details">
           <div className="info" >
-            <label className="name">KFC</label>
-            <p className="description" >The first and best brand of fried foods in the world</p>
-            <p className="location">Location : North california</p>
+            <label className="name">{rest.name}</label>
+            <p className="description" >{rest.description}</p>
+            <p className="location">Address : {rest.address}</p>
             <p className="Tags">Tags : <ButtonGroup color="neutral" variant="text" aria-label="text button group">
-              {tags.map(tags => (
-                <Button>{tags}</Button>
+              {rest.tags.map(u => (
+                <Button>{u.value}</Button>
+                //console.log(u)
               ))}
               </ButtonGroup>
             </p>
-            <span className="Rate">Rating :</span> <Rating className="rating" name="half-rating-read" defaultValue={value} precision={0.5} readOnly  />
+            <span className="Rate">Rating :</span> <Rating className="rating" name="half-rating-read" defaultValue={rest.rate} precision={0.5} readOnly  />
           </div>
         </div>
         <div className="main">
@@ -129,7 +157,7 @@ export const Restaurant_page = () => {
             </div>  
           </div>
 
-          <div class="cart">
+          <div className="cart">
           
 
               <h2 className="orderHeader">Order list</h2>
