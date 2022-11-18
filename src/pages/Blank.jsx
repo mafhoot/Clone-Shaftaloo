@@ -1,5 +1,5 @@
 const Blank = () => {
-    return <div className="blank">This is Blank page</div>;
+    return <div className="blank"></div>;
 };
 
 export default Blank;

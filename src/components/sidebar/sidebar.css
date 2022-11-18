@@ -1,10 +1,11 @@
-.sidebar {
+ .sidebar {
     position: fixed;
+
     top: 0;
     left: 0;
     height: 100vh;
     width: 320px;
-    background-color: #262626;
+    /* background-color: #262626; */
 }
 .sidebar__logo {
     display: grid;
@@ -60,3 +61,38 @@
 .name {
     font-size: 18px;
 }
+.menuNav.showMenu {
+    width: 100%;
+  }
+
+
+.navBar {
+    position: relative;
+  }
+  
+  .sidebar button {
+    position: fixed;
+    background-color:#262626;
+    z-index: 10;
+    cursor: pointer;
+  }
+  
+  .menuNav {
+    overflow-y: scroll;
+    list-style: none;
+    position: fixed;
+    top: 0;
+    background: #262626;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 0;
+    overflow: hidden;
+    max-width: 290px;
+    z-index: 9;
+  }
+  
+  
+  
+  
+ 

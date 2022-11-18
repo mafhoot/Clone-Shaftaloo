@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './sidebar.css';
 import {getUser} from "../../Services/axios";
+import { MdClose } from "react-icons/md"
+import { FiMenu } from "react-icons/fi"
 
 const sidebarNavItems = [
     {
@@ -30,7 +32,7 @@ const Sidebar = () => {
     const indicatorRef = useRef();
     const location = useLocation();
 
-    
+    const [navbarOpen, setNavbarOpen] = useState(false);
 
     const [user,setUser] = useState({name : "Amir Deldar"});
     const [username,setUsername] = useState("amirdldr@gmail.com");
@@ -58,7 +60,21 @@ const Sidebar = () => {
         setActiveIndex(curPath.length === 0 ? 0 : activeItem);
     }, [location]);
 
-    return <div className='sidebar'>
+    const handleToggle = () => {
+        setNavbarOpen(!navbarOpen)
+      }
+
+    return  <nav className='sidebar'>
+        <button onClick={handleToggle}>
+        {navbarOpen ? (
+            <MdClose style={{ color: "#fff", width: "40px", height: "40px"}} />
+        ) : (
+            <FiMenu style={{ color: "#fff", width: "40px", height: "40px"}} />
+        )}
+        </button>
+        
+        <ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
+        
         <div className="sidebar__logo">
         <img className="logo" src="https://www.thehindu.com/sci-tech/technology/internet/article17759222.ece/alternates/FREE_1200/02th-egg-person" alt=""></img>
             <p className="name">{user.name}</p>
@@ -86,7 +102,12 @@ const Sidebar = () => {
                 ))
             }
         </div>
-    </div>;
+
+        </ul>
+
+        
+    </nav>
+    
 };
 
 export default Sidebar;
