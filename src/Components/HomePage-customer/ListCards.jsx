@@ -51,7 +51,7 @@ export const ListCardRes = () => {
         })
       })
       console.log(cards)
-    }, [data])
+    }, [tag])
 
     return (
         
@@ -65,7 +65,6 @@ export const ListCardRes = () => {
                   ))}
               </div>
             </div>
-            {console.log(cards)}
             <div className="cards-list">
               {cards.map((card) => {
               <div className="simple-card-inlist">
