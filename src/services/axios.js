@@ -8,3 +8,7 @@ export function postUser(data) {
 export function getbearer (data){
     return axios.post(url+"api/User/BearerToken",data)
 }
+
+export function getRestaurantCards (){
+    return axios.get(url+"api/Restaurant")
+}
