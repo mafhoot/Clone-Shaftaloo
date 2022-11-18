@@ -91,7 +91,9 @@ export const Restaurant_page = () => {
         tags : e.data.tags,
         rate : e.data.avg,
       })
-      console.log(rest.tags)
+
+      setValue(e.data.avg)
+      console.log(rest.rate)
     }).catch()
   },[]);
 
