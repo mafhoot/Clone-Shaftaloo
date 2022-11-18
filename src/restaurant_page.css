@@ -70,6 +70,18 @@
     /*background-color: aliceblue;*/
 }
 
+.RestTags {
+    overflow: auto;
+}
+
+.RestTags::-webkit-scrollbar {
+    height: 5px;
+  }
+
+.RestTags::-webkit-scrollbar-thumb {
+    background-color:#eeba2c;
+    border-radius: 10px;
+}
 
 .menu{
     width: 80%;

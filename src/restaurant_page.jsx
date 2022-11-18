@@ -3,7 +3,7 @@ import Rating from '@mui/material/Rating';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Button, CardActionArea, CardActions } from '@mui/material';
-import {getRestaurant} from "./Services/axios"
+import {getRestaurant , getMenu} from "./Services/axios"
 import { Base64 } from 'js-base64';
 
 export const Restaurant_page = () => {
@@ -14,12 +14,13 @@ export const Restaurant_page = () => {
   const [logoImage ,setLogoImage] = useState ("https://wpcdn.us-east-1.vip.tn-cloud.net/www.klkntv.com/content/uploads/2020/08/KFC-LOGO-1024x881.jpg")
   //var food = ["Burger" , "Chicken" , "Hot Dog" ,"Pasta", "Fried Potato", "pizza"]
   const [foods,setFoods] = useState( [{"name" : "Burger" , "order" : 0 , "price" : 183}, {"name" : "Chicken" , "order" : 0, "price" : 223 } , {"name" : "Hot Dog" , "order" : 0 , "price" : 375} , {"name" : "Pasta" , "order" : 0 , "price" : 343} , {"name" : "pizza" , "order" : 0, "price" : 432} , {"name" : "Fried Potato" , "order" : 0 , "price" : 99}])
-  const foodTags = ["All", "Burger" ,"Fried", "Dessert" , "Pizza" , "Sandwitch"]
+  const foodTags = ["All", "Burger" ,"Fried", "Dessert" , "Pizza" , "Sandwitch"] 
   const [cart,setCart] = useState([]);
   const [flag, setFlag] = useState(0);
   const [cartPrice,setCartPrice] = useState(0)
   var forFlag = 0;
   const [id,setId] = useState (1)
+  const [restMenu,setMenu] = useState([[]])
   //const prevCount = useRef ()
 
   foods.forEach (e =>{
@@ -78,7 +79,7 @@ export const Restaurant_page = () => {
 
   useEffect(() => {
     getRestaurant(id).then (e => {
-      console.log(e.data.address)
+      //console.log(e.data.address)
       setRest({
         city: e.data.city,
         comments: "chetori",
@@ -92,10 +93,15 @@ export const Restaurant_page = () => {
         tags : e.data.tags,
         rate : e.data.avg,
       })
-
       setValue(e.data.avg)
-      console.log(rest.rate)
     }).catch()
+
+    getMenu(id).then (m => {
+      //console.log(m.data[0].categories[0].categoryName)
+      setMenu(m.data[0])
+      console.log(restMenu.categories[0].categoryName)
+    }).catch()
+    
   },[]);
 
   const theme = createTheme({
@@ -108,8 +114,6 @@ export const Restaurant_page = () => {
 
   return (
     <>
-    {console.log(rest.address)}
-    {console.log("hi")}
     <ThemeProvider theme={theme}>
     <div className="All">
         <img className="HeadImage" src={headImageLink}></img>
@@ -135,8 +139,9 @@ export const Restaurant_page = () => {
 
             <div> 
               <div className="categories">
-                {foodTags.map (tag => (
-                  <button className="catButton">{tag}</button>
+                {restMenu?.map (tag => (
+                  JSON.stringify(tag.categories)
+                  //<button className="catButton">{tag.categories}</button>
                 ))}
               </div>
 
