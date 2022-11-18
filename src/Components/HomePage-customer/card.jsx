@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import './homePageCustomer.css'
 
-export const Card = (name, location, tags) => {
+export function  Card  ({name, location, tags}) {
 
   const image_res = "";
   const logo_res = "";
