@@ -98,9 +98,9 @@ export const Restaurant_page = () => {
 
     getMenu(id).then (m => {
       //console.log(m.data[0].categories[0].categoryName)
-      setMenu(m.data[0])
-      console.log(restMenu.categories[0].categoryName)
+      setMenu(m.data[0].categories)
     }).catch()
+    console.log(restMenu)
     
   },[]);
 
@@ -136,12 +136,11 @@ export const Restaurant_page = () => {
         </div>
         <div className="main">
           <div className="menu">
-
             <div> 
               <div className="categories">
                 {restMenu?.map (tag => (
-                  JSON.stringify(tag.categories)
-                  //<button className="catButton">{tag.categories}</button>
+                  //JSON.stringify(tag.categories)
+                  <button className="catButton">{tag.categoryName}</button>
                 ))}
               </div>
 
