@@ -128,7 +128,7 @@ export const Restaurant_page = () => {
           <div className="info" >
             <label className="name">{rest.name}</label>
             <p className="description" >{rest.description}</p>
-            <p className="location">Address : {rest.address}</p>
+            <p className="location">Location : {rest.address}</p>
             <p className="RestTags">Tags : 
               <ButtonGroup color="neutral" variant="text" aria-label="text button group">
                 {rest.tags?.map(u => (
@@ -144,9 +144,9 @@ export const Restaurant_page = () => {
           <div className="menu">
             <div> 
               <div className="categories">
-                {restMenu?.map (tag => (
+                {foodTags?.map (tag => (
                   //JSON.stringify(tag.categories)
-                  <button onClick={() => loadMenu(tag)} className="catButton">{tag.categoryName}</button>
+                  <button /*onClick={() => loadMenu(tag)}*/ className="catButton">{tag}</button>
                 ))}
               </div>
 
