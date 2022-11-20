@@ -1,6 +1,7 @@
 
 *{
     box-sizing: border-box;
+    font-family: gilroy;
 }
 
 .HeadImage {
@@ -83,10 +84,97 @@
     border-radius: 10px;
 }
 
+.Tab {
+    display: flex;
+    flex-wrap: nowrap;
+    color: white;
+    width: 80%;
+    height: 60px;
+    background-color:#eeba2c;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 30px;
+    border-radius: 20px;
+    overflow: auto;
+    border: 3px solid #eeba2c;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.TabButton {
+    
+    height:100%;
+    background-color: #161616;
+    color: white;
+    font-size: larger;
+    font-family: gilroy;
+    font-weight: bold;
+    border: none;
+    flex-grow: 1;
+    margin-left: 1.5px;
+    margin-right: 1.5px;
+}
+
+
+.TabButton:hover {
+    background-color: #eeba2c;
+    color: black;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    
+}
+
+.TabButton1 {
+    height:100%;
+    width: 19.5%;
+    background-color: #161616;
+    color: white;
+    font-size: larger;
+    font-family: gilroy;
+    font-weight: bold;
+    border: none;
+    float: left;
+    margin-right: 0.5%;;
+}
+
+
+.TabButton1:hover {
+    background-color: #eeba2c;
+    color: black;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    
+}
+
+
+
+.RightTabButton {
+    height:100%;
+    width: 10%;
+    background-color: #161616;
+    color: white;
+    font-size: larger;
+    font-family: gilroy;
+    font-weight: bold;
+    border: none;
+    float: right    ;
+}
+
+.RightTabButton:hover {
+    background-color: #eeba2c;
+    color: black;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    
+}
+
 .menu{
     width: 80%;
     background-color: #262626;
-    margin-top: 40px;
+    margin-top: 30px;
     padding: 2.5%;
     border-radius: 20px;
     float: left;
@@ -181,6 +269,8 @@
     margin-top: 20px;
     border-radius: 10px;
 }
+
+
 
 .cardTitle {
     overflow: auto;

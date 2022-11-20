@@ -23,6 +23,7 @@ export const Restaurant_page = () => {
   const [id,setId] = useState (1)
   const [restMenu,setMenu] = useState([[]])
   //const prevCount = useRef ()
+  const tabs = ["Menu 1" ,"Menu 2","Table","Cart"]
 
   foods.forEach (e =>{
     e["details"] = "Meat, Bread, Pickle, Tomato";
@@ -140,6 +141,17 @@ export const Restaurant_page = () => {
             <span className="Rate">Rating :</span> <Rating className="rating" name="half-rating-read" defaultValue={value} precision={0.5} readOnly  />
           </div>
         </div>
+
+        <div className="Tab">
+          
+        <button className="TabButton">MENU</button>
+        <button className="TabButton">TABLE</button>
+        <button className="TabButton">OEDER</button>
+        <button className="TabButton">COMMENTS</button>
+        <button className="TabButton">CONTACT US</button>
+        
+        </div>
+
         <div className="main">
           <div className="menu">
             <div> 
