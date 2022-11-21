@@ -205,7 +205,7 @@ img {
 	margin-right: 0px;
 	float: left;
 	left: 0;
-	bottom: 15px;
+	bottom: 20px;
 
 
 
@@ -385,5 +385,55 @@ img {
 	
 
 }
+
+
+
+.link-btn {
+	color: #eeba2c;
+	text-decoration: underline;
+	cursor: pointer;
+	margin-top: 00.5rem;
+	text-decoration: none;
+	transition-duration: 0.4s;
+  
+  }
+
+
+
+
+  button {
+	border: none;
+	background-color: #eeba2c;
+	/*padding: 20px;*/
+	border-radius: 10px;
+	cursor: pointer;
+	color: #3d3f41;
+	height: 40px;
+	font-size: 15px;
+	font-family: gilroy ;
+	font-weight: bold;
+	transition-duration: 0.4s;
+	margin-top: 1rem;
+	position: absolute;
+	left: 300px;
+	top: 530px;
+  }
+  
+
+  
+  button:hover{
+	color: #eeba2c;
+	background-color: #1e2328ce;
+  }
+
+
+
+
+
+
+
+
+
+
 
 

@@ -1,10 +1,18 @@
 
-import React from "react";
+import React , {useState} from "react";
 import ProfileCard from "./components/ProfileCard";
 import "./App.css";
-import Aa from "./aa";
+import Aa from "./components/aa";
 import { Link } from "react-router-dom";
 import Routes from './Routes';
+
+import {BrowserRouter  , Route , Switch} from "react-router-dom";
+
+
+import FormEdit from "./components/formEdit";
+// import { useState } from "react";
+
+
 
 
 
@@ -395,7 +403,11 @@ import Routes from './Routes';
 
 
 
-
+// function formEdit() {
+// 	return (
+// 	  <div><h1>formEdit</h1></div>
+// 	)
+//   }
 
 
 
@@ -409,13 +421,104 @@ import Routes from './Routes';
 
 
 function App() {
-	return (
 
-    <>
-      <Aa/>
-    
-    
-    </>
+	// const [currentForm, setCurrentForm] = useState('login');
+
+	// const toggleForm = (formName) => {
+	//   setCurrentForm(formName);
+	// }
+
+
+	return (
+		    
+			<>
+			
+			{/* <div>
+
+				
+				<ul>
+					<li> <a href="/formEdit">Form</a></li>
+					<li> <a href="/ProfileCard">Profile</a></li>
+				</ul>
+			</div>	 */}
+			<Aa/>
+			<div>   
+				<switch>
+					<Route exact path="/formEdit">
+						<FormEdit/>
+					</Route>
+
+					<Route  path="/ProfileCard">
+						<ProfileCard/>
+					</Route>
+				</switch>
+			</div>	
+		    </>
+        	
+	    )	
+           {/* 
+			<div className="App">
+			{
+			currentForm === "ProfileCard" ? <ProfileCard onFormSwitch={toggleForm} /> : <FormEdit onFormSwitch={toggleForm} />
+			}
+			</div> */}
+
+
+		
+	
+		
+		
+		// <BrowserRouter>
+		// <div style={{ */}
+		// 	display: "flex",
+		// 	background: 'black',
+		// 	padding: '5px 0 5px 5px',
+		// 	fontSize: '20px'
+		// }}>
+		// 	<div style={{ margin: '10px' }}>
+		// 		<NavLink to="/" style={({ isActive }) => ({ 
+		// 			color: isActive ? 'greenyellow' : 'white' })}>
+		// 			Home
+		// 		</NavLink>
+		// 	</div>
+		// 	<div style={{ margin: '10px' }}>
+		// 		<NavLink to="/about" style={({ isActive }) => ({ 
+		// 			color: isActive ? 'greenyellow' : 'white' })}>
+		// 			About
+		// 		</NavLink>
+		// 	</div>
+		// 	<div style={{ margin: '10px' }}>
+		// 		<NavLink to="/contact" style={({ isActive }) => ({ 
+		// 			color: isActive ? 'greenyellow' : 'white' })}>
+		// 			Contact
+		// 		</NavLink>
+		// 	</div>
+		// </div>
+		// <Routes>
+		// 	<Route exact path="/" element={<Home />} />
+		// 	<Route exact path="/about" element={<About />} />
+		// 	<Route exact path="/contact" element={<Contact />} />
+		// </Routes>
+	// </BrowserRouter>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		// <div className="background">
 		// 	<div className="bg-pattern-top"></div>
 		// 	{/* <div className="bg-pattern-bottom"></div> */}
@@ -438,7 +541,7 @@ function App() {
     //             <button type="submit" >Log In</button>
     //         </form> */}
 		// </div>
-	);
+	
 }
 
 

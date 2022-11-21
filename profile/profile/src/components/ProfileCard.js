@@ -1,4 +1,4 @@
-import { Routes, Route, Router } from 'react-router-dom';
+import { Routes, Route, Router, Switch} from 'react-router-dom';
 import React from "react";
 // import aab from "./SignUp/Register"
 import "../components/sidebar.css";
@@ -26,10 +26,96 @@ import { Grid } from '@material-ui/core';
 import FormEdit from './formEdit';
 // import InstagramIcon from '@mui/icons-material/Instagram';
 
+import LinkButton from './LinkButton';
+
+
+
+
+
+
+// function bb() {
+// 	return (
+// 	  <div className="background">
+// 			  <div className="bg-pattern-top"></div>
+// 			  {/* <div className="bg-pattern-bottom"></div> */}
+  
+  
+			  
+  
+  
+// 			  {/* <ul>
+// 				  <li> <a href="/formEdit">Form</a></li>
+// 				  <li> <a href="/ProfileCard">Profile</a></li>
+// 			  </ul> */}
+//   {/* 
+// 			  <ul>
+// 				  <li> <a href="/formEdit">Form</a></li>
+// 				  <li> <a href="/ProfileCard">Profile</a></li>
+// 			  </ul>
+  
+  
+// 			  <switch>
+// 				  <Route exact path="/formEdit">
+// 					  <FormEdit/>
+// 				  </Route>
+  
+// 				  <Route  path="/ProfileCard">
+// 					  <ProfileCard/>
+// 				  </Route>
+// 			  </switch>  */}
+  
+  
+// 			  <ProfileCard
+// 				  name="Mahdi Fathian"
+// 				  // age="20"
+// 				  city="Iran"
+// 				  followers="80K"
+// 				  likes="803K"
+// 				  photos="1.4K"
+// 				  abc="Email :"
+// 				  phonee="Phone :"
+// 				  username="Username :"
+// 				  password="Password :"
+  
+				  
+// 			  ></ProfileCard>
+// 			   {/* <button type="submit" >Log In</button> */}
+// 			  {/* <form className="login-form">
+//   //                 <button type="submit" >Log In</button>
+//   //             </form> */}
+// 	   </div>
+// 	)
+//   }
+   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function ProfileCard(props) {
 
-
+     
 
 	// const navigate = useNavigate();
 
@@ -203,18 +289,23 @@ function ProfileCard(props) {
 
 
 
-				{/* <Router>
-					{/* <div className="aaaa">  */}
-					{/* <Grid>
-						<Link to="/formEdit">
-							   <button>Edit Information</button> */}
+				
+				 <div className="aaaa">  
+					 <Grid>
+						<Link href='/formEdit' to='/formEdit'>
+							   <button>Edit Information</button> 
 							{/* <formEdit /> */}
 							{/* {/* ورود */}
-						{/* </Link>  */}
-					  {/* </div> */}
-					{/* </Grid>   */}
-					{/* </div> */}
-				{/* </Router>  */}
+						</Link>  
+					     {/* </div>  */}
+					  </Grid>   
+					</div>
+
+
+					{/* <div>
+					    <p>Don't have an account? <a className="link-btn" onClick={() => props.onFormSwitch('register')}>Register Now</a></p>
+					</div>
+			  */}
 
 
 
@@ -282,6 +373,45 @@ function ProfileCard(props) {
 					{/* <button className="btn btn-success"
                         onClick={FormEdit}>Edit-form
                     </button> */}
+
+
+
+					{/* <Link to="/dashboard">
+						<Button style={myStyle}>
+							<p>Click Me!</p>
+						</Button>
+					</Link> */}
+
+                    {/* <Router>
+					    <LinkButton to='/formEdit'>Push My Buttons!</LinkButton>
+					</Router> */}
+
+
+					{/* <Router>
+						<Routes>
+							{/* <Route path='/' component={ App }/>
+							<Route path='/about' component={ AboutPage }/> */}
+							{/* <LinkButton to='/formEdit'>Push My Buttons!</LinkButton>
+						</Routes>
+					</Router> */}
+                    {/* <Router>
+				     	
+					</Router> */}
+
+
+
+					{/* <Router>
+						<Switch>
+							{/* <Route path='/' component={ App }/>
+							<Route path='/about' component={ AboutPage }/> */}
+							{/* <LinkButton to='./formEdit'>Push My Buttons!</LinkButton>
+						</Switch>
+					</Router> */} 
+										
+
+
+
+                   
 
 
 
