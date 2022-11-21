@@ -1,7 +1,9 @@
-
+import { Routes, Route, Router } from 'react-router-dom';
 import React from "react";
-
+// import aab from "./SignUp/Register"
 import "../components/sidebar.css";
+
+import { Outlet, Link } from "react-router-dom";
 
 import "./ProfileCard.css";
 import avatar from "../images/download.jpg";
@@ -19,56 +21,69 @@ import {
 	Instagram,
 	Twitter,
 	Facebook
-  } from "@material-ui/icons";
-
+} from "@material-ui/icons";
+import { Grid } from '@material-ui/core';
+import FormEdit from './formEdit';
 // import InstagramIcon from '@mui/icons-material/Instagram';
 
 
 function ProfileCard(props) {
 
 
+
+	// const navigate = useNavigate();
+
+	// const navigateToContacts = () => {
+	// 	// 👇️ navigate to /contacts
+	// 	navigate('/contacts');
+	// };
+
+	// const navigateHome = () => {
+	// 	// 👇️ navigate to /
+	// 	navigate('/');
+	// };
 	// const handleSubmit = (e) => {
-    //     e.preventDefault();
-        // console.log(email);
-        // console.log(pass)
+	//     e.preventDefault();
+	// console.log(email);
+	// console.log(pass)
 
-        // getbearer({
-        
-        //         "phoneNumber": "",
-        //         "password": pass,
-        //         "fullName": "",
-        //         "email": email
-            
-        // })
+	// getbearer({
 
-        // .then((x)=>{
-        //     console.log(x)
-        //     console.log(10)
-        //     setLogin("Logged in")
-        //   })
+	//         "phoneNumber": "",
+	//         "password": pass,
+	//         "fullName": "",
+	//         "email": email
 
-          
-        // .catch(function (error) {
-        //     if (error.response) {
-        //       // The request was made and the server responded with a status code
-        //       // that falls out of the range of 2xx
-        //       console.log(error.response.data);
-        //       console.log(error.response.status);
-        //       console.log(error.response.headers);
-        //       setLogin("Account not found!")
-        //     } else if (error.request) {
-        //       // The request was made but no response was received
-        //       // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
-        //       // http.ClientRequest in node.js
-        //       console.log(error.request);
-              
-        //     } else {
-        //       // Something happened in setting up the request that triggered an Error
-        //       console.log('Error', error.message);
-        //     }
-        //     console.log(error.config);
-        //   })
-	    // }  
+	// })
+
+	// .then((x)=>{
+	//     console.log(x)
+	//     console.log(10)
+	//     setLogin("Logged in")
+	//   })
+
+
+	// .catch(function (error) {
+	//     if (error.response) {
+	//       // The request was made and the server responded with a status code
+	//       // that falls out of the range of 2xx
+	//       console.log(error.response.data);
+	//       console.log(error.response.status);
+	//       console.log(error.response.headers);
+	//       setLogin("Account not found!")
+	//     } else if (error.request) {
+	//       // The request was made but no response was received
+	//       // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+	//       // http.ClientRequest in node.js
+	//       console.log(error.request);
+
+	//     } else {
+	//       // Something happened in setting up the request that triggered an Error
+	//       console.log('Error', error.message);
+	//     }
+	//     console.log(error.config);
+	//   })
+	// }  
 
 	// }
 
@@ -110,13 +125,13 @@ function ProfileCard(props) {
 					</div>
 				</div>
 
-	{/* 
+				{/* 
 				<div className="social">
 
 				</div> */}
 
 
-		
+
 				{/* <MDBCardBody className="p-4">
 				<MDBTypography tag="h6"  className="abc">Information:</MDBTypography>
 				<MDBRow className="pt-1">
@@ -156,7 +171,7 @@ function ProfileCard(props) {
 						<h1 className="bold-text4">{props.password}</h1>
 						<h2 className="smaller-text4">*********</h2>
 					</div>
-{/* 
+					{/* 
 					<div className="followers">
 						<h1 className="bold-text3">{props.Username}</h1>
 						<h2 className="smaller-text4">m_f</h2>
@@ -167,29 +182,40 @@ function ProfileCard(props) {
 					</div> */}
 				</div>
 
-{/* 
+				{/* 
 				<form className="login-form" >
 					<button type="submit" >Log In</button>
 				</form> */}
 
 
-						{/* <h1>LOGIN</h1> */}
-						
-							 {/* <label htmlFor="email">E-Mail</label>
+				{/* <h1>LOGIN</h1> */}
+
+				{/* <label htmlFor="email">E-Mail</label>
 							<input value={email} required onChange={(e) => setEmail(e.target.value)}type="email" placeholder="Example@gmail.com" id="email" name="email" />
 							<label htmlFor="password">Password</label>
 							<input value={pass} required onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password" /> */}
-						
-						{/* <p>Don't have an account? <a className="link-btn" onClick={() => props.onFormSwitch('register')}>Register Now</a></p>
+
+				{/* <p>Don't have an account? <a className="link-btn" onClick={() => props.onFormSwitch('register')}>Register Now</a></p>
 						<span className="loginError">{loginFlag}</span> */}
-		
 
 
 
 
-                {/* <div className="aaaa">
-			  	    <button type="submit" className="acc" >Log In</button>
-				</div> */}
+
+
+				{/* <Router>
+					{/* <div className="aaaa">  */}
+					{/* <Grid>
+						<Link to="/formEdit">
+							   <button>Edit Information</button> */}
+							{/* <formEdit /> */}
+							{/* {/* ورود */}
+						{/* </Link>  */}
+					  {/* </div> */}
+					{/* </Grid>   */}
+					{/* </div> */}
+				{/* </Router>  */}
+
 
 
 
@@ -222,9 +248,9 @@ function ProfileCard(props) {
 					</div> */}
 
 
-					
+
 					{/* <div className="ab"> */}
-						{/* <div className="searchbar"   style={{color: "white" , fontSize:15 , paddingRight:0 , float:"left"}}>
+					{/* <div className="searchbar"   style={{color: "white" , fontSize:15 , paddingRight:0 , float:"left"}}>
 						<Instagram className="instagram" />
 						
 						</div>
@@ -232,7 +258,7 @@ function ProfileCard(props) {
 						<Twitter className="twitter" />
 						</div> */}
 
-						{/* <div class="parent clearfix">
+					{/* <div class="parent clearfix">
 							<div class="child">فرزند اول</div>
 							<div class="child">فرزند دوم</div>
 							<div class="child">فرزند سوم</div> */}
@@ -244,6 +270,47 @@ function ProfileCard(props) {
 						<div class="child">	<Facebook className="sidebarIcon" /></div>
 						{/* <div class="child">فرزند سوم</div> */}
 					</div>
+
+
+
+
+
+
+
+
+
+					{/* <button className="btn btn-success"
+                        onClick={FormEdit}>Edit-form
+                    </button> */}
+
+
+
+
+
+
+
+
+
+					{/* <div>
+					<div>
+						<button onClick={navigateHome}>Home</button>
+						<hr />
+						<button onClick={navigateToContacts}>Contacts</button>
+
+						<Routes>
+						<Route path="/contacts" element={<Contacts />} />
+						<Route path="/" element={<Home />} />
+						</Routes>
+					</div>
+					</div>
+
+
+ */}
+
+
+
+
+
 
 
 
@@ -287,12 +354,38 @@ function ProfileCard(props) {
 						<a href="#!"><MDBIcon fab icon="twitter me-3" size="lg" /></a>
 						<a href="#!"><MDBIcon fab icon="instagram me-3" size="lg" /></a>
 				</div> */}
-			</div>	
+			</div>
 		</div>
+
+
+
+
+
+
+
+
+
+
+
 	);
+
+	// function Home() {
+	// 	return <aab/>
+	// }
+	//   function Contacts() {
+	// 	return <aab/>;
+	//   }
 }
 
 export default ProfileCard;
+
+
+
+
+
+
+
+
 
 
 
