@@ -1,7 +1,7 @@
 
 import React from 'react';
 import ProfileCard from "./ProfileCard";
-import FormEdit from "./formEdit";
+// import FormEdit from "./formEdit";
 import {BrowserRouter  , Link, Route , Switch} from "react-router-dom";
 
 

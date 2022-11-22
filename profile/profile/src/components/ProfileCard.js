@@ -194,118 +194,123 @@ function ProfileCard(props) {
 				<h1 className="bold-text">
 					{props.name} <span className="normal-text">{props.age}</span>
 				</h1>
-				<h2 className="normal-text">{props.city}</h2>
-
-				<div className="social-container">
-					<div className="followers">
-						<h1 className="bold-text">{props.followers}</h1>
-						<h2 className="smaller-text">Followers</h2>
-					</div>
-					<div className="likes">
-						<h1 className="bold-text">{props.likes}</h1>
-						<h2 className="smaller-text">Likes</h2>
-					</div>
-					<div className="photos">
-						<h1 className="bold-text">{props.photos}</h1>
-						<h2 className="smaller-text">Photos</h2>
-					</div>
-				</div>
-
-				{/* 
-				<div className="social">
-
-				</div> */}
-
-
-
-				{/* <MDBCardBody className="p-4">
-				<MDBTypography tag="h6"  className="abc">Information:</MDBTypography>
-				<MDBRow className="pt-1">
-					<MDBCol size="6" className="mb-3">
-					<MDBTypography tag="h6">Email</MDBTypography>
-					<MDBCardText className="text-muted">info@example.com</MDBCardText>
-					</MDBCol>
-					<MDBCol size="6" className="mb-3">
-					<MDBTypography tag="h6">Phone</MDBTypography>
-					<MDBCardText className="text-muted">123 456 789</MDBCardText>
-					</MDBCol>
-				</MDBRow> */}
-
-
-
-				<div className="social-container">
-					<div className="followers">
-						<h1 className="bold-text2">{props.abc}</h1>
-						<h2 className="smaller-text3">info@example.com</h2>
-					</div>
-					<div className="likes">
-						<h1 className="bold-text2">{props.phonee}</h1>
-						<h2 className="smaller-text2">123 456 789</h2>
-					</div>
-				</div>
-
-
-
-
-
-				<div className="df">
-					<div className="followers">
-						<h1 className="bold-text3">{props.username}</h1>
-						<h2 className="smaller-text5">M_F</h2>
-					</div>
-					<div className="likes">
-						<h1 className="bold-text4">{props.password}</h1>
-						<h2 className="smaller-text4">*********</h2>
-					</div>
-					{/* 
-					<div className="followers">
-						<h1 className="bold-text3">{props.Username}</h1>
-						<h2 className="smaller-text4">m_f</h2>
-					</div>
-					<div className="likes">
-						<h1 className="bold-text3">{props.Password}</h1>
-						<h2 className="smaller-text5">987654321</h2>
-					</div> */}
-				</div>
-
-				{/* 
-				<form className="login-form" >
-					<button type="submit" >Log In</button>
-				</form> */}
-
-
-				{/* <h1>LOGIN</h1> */}
-
-				{/* <label htmlFor="email">E-Mail</label>
-							<input value={email} required onChange={(e) => setEmail(e.target.value)}type="email" placeholder="Example@gmail.com" id="email" name="email" />
-							<label htmlFor="password">Password</label>
-							<input value={pass} required onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password" /> */}
-
-				{/* <p>Don't have an account? <a className="link-btn" onClick={() => props.onFormSwitch('register')}>Register Now</a></p>
-						<span className="loginError">{loginFlag}</span> */}
-
-
 
 
 
 
 				
-				 <div className="aaaa">  
-					 <Grid>
-						<Link href='/formEdit' to='/formEdit'>
-							   <button>Edit Information</button> 
-							{/* <formEdit /> */}
-							{/* {/* ورود */}
-						</Link>  
-					     {/* </div>  */}
-					  </Grid>   
+					<h2 className="normal-text">{props.city}</h2>
+
+					<div className="social-container">
+						<div className="followers">
+							<h1 className="bold-text">{props.followers}</h1>
+							<h2 className="smaller-text">Followers</h2>
+						</div>
+						<div className="likes">
+							<h1 className="bold-text">{props.likes}</h1>
+							<h2 className="smaller-text">Likes</h2>
+						</div>
+						<div className="photos">
+							<h1 className="bold-text">{props.photos}</h1>
+							<h2 className="smaller-text">Photos</h2>
+						</div>
+					</div>
+
+					{/* 
+					<div className="social">
+					</div> */}
+
+
+
+					{/* <MDBCardBody className="p-4">
+					<MDBTypography tag="h6"  className="abc">Information:</MDBTypography>
+					<MDBRow className="pt-1">
+						<MDBCol size="6" className="mb-3">
+						<MDBTypography tag="h6">Email</MDBTypography>
+						<MDBCardText className="text-muted">info@example.com</MDBCardText>
+						</MDBCol>
+						<MDBCol size="6" className="mb-3">
+						<MDBTypography tag="h6">Phone</MDBTypography>
+						<MDBCardText className="text-muted">123 456 789</MDBCardText>
+						</MDBCol>
+					</MDBRow> */}
+
+
+
+					<div className="social-container">
+						<div className="followers">
+							<h1 className="bold-text2">{props.abc}</h1>
+							<h2 className="smaller-text3">info@example.com</h2>
+						</div>
+						<div className="likes">
+							<h1 className="bold-text2">{props.phonee}</h1>
+							<h2 className="smaller-text2">123 456 789</h2>
+						</div>
 					</div>
 
 
-					{/* <div>
-					    <p>Don't have an account? <a className="link-btn" onClick={() => props.onFormSwitch('register')}>Register Now</a></p>
+
+
+
+					<div className="df">
+						<div className="followers">
+							<h1 className="bold-text3">{props.username}</h1>
+							<h2 className="smaller-text5">M_F</h2>
+						</div>
+						<div className="likes">
+							<h1 className="bold-text5">{props.password}</h1>
+							<h2 className="smaller-text4">*********</h2>
+						</div>
+						{/* 
+						<div className="followers">
+							<h1 className="bold-text3">{props.Username}</h1>
+							<h2 className="smaller-text4">m_f</h2>
+						</div>
+						<div className="likes">
+							<h1 className="bold-text3">{props.Password}</h1>
+							<h2 className="smaller-text5">987654321</h2>
+						</div> */}
 					</div>
-			  */}
+
+					{/* 
+					<form className="login-form" >
+						<button type="submit" >Log In</button>
+					</form> */}
+
+
+					{/* <h1>LOGIN</h1> */}
+
+					{/* <label htmlFor="email">E-Mail</label>
+								<input value={email} required onChange={(e) => setEmail(e.target.value)}type="email" placeholder="Example@gmail.com" id="email" name="email" />
+								<label htmlFor="password">Password</label>
+								<input value={pass} required onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password" /> */}
+
+					{/* <p>Don't have an account? <a className="link-btn" onClick={() => props.onFormSwitch('register')}>Register Now</a></p>
+							<span className="loginError">{loginFlag}</span> */}
+
+
+
+
+
+
+					
+					<div className="aaaa">  
+						<Grid>
+							<Link href='/formEdit' to='/formEdit'>
+								<button className='abcd'>Edit Information</button> 
+								{/* <formEdit /> */}
+								{/* {/* ورود */}
+							</Link>  
+							{/* </div>  */}
+						</Grid>   
+						</div>
+
+
+						{/* <div>
+							<p>Don't have an account? <a className="link-btn" onClick={() => props.onFormSwitch('register')}>Register Now</a></p>
+						</div>
+				*/}
+		
 
 
 
@@ -426,15 +431,12 @@ function ProfileCard(props) {
 						<button onClick={navigateHome}>Home</button>
 						<hr />
 						<button onClick={navigateToContacts}>Contacts</button>
-
 						<Routes>
 						<Route path="/contacts" element={<Contacts />} />
 						<Route path="/" element={<Home />} />
 						</Routes>
 					</div>
 					</div>
-
-
  */}
 
 
@@ -508,10 +510,6 @@ function ProfileCard(props) {
 }
 
 export default ProfileCard;
-
-
-
-
 
 
 
