@@ -1,6 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { useEffect } from "react";
+import InfiniteScroll from "react-infinite-scroll-component";
 import { useState } from "react";
 import { Card } from "./card";
 import { getRestaurantCards } from "../../services/axios";
@@ -12,7 +13,7 @@ export const ListCardRes = () => {
     const filters = ['all', 'fast-food', 'chicken']
     const [cards, setCards] = useState();
     const [data, setData] = useState([])
-    const [tag, setTag] = useState("all")
+    const [currentFilter, setCurrentFilter] = useState("all")
 
     useEffect(() => {
       getRestaurantCards()
@@ -45,36 +46,51 @@ export const ListCardRes = () => {
         }
         console.log(error.config);
       })
-    }, [tag, ])
+    }, [,currentFilter])
 
-    function dataGen(){
+    const dataGen = () => {
       const tmp=[]
       data.forEach(item=>{
-      console.log(item);
-      tmp.push(
-        <Card
-          id={item.id}
-          name={item.name}
-          location={item.address}
-        />)
-    })
-    return tmp;
+        console.log(item);
+        tmp.push(
+          <Card
+            key={item.id}
+            id={item.id}
+            name={item.name}
+            location={item.address}
+          />
+        )
+      })
+      return tmp;
     }
+
+    /*const changeFilter = (p) => {
+      setCurrentFilter(p)
+      console.log(currentFilter)
+    }
+    */
 
     return (
         
-        <div>
+        <div className="homePage-customer">
           <div className="container">
             <div>
               <div className="filters">
                 {filters.map((filter) => (
-                    <button className="simple-filter">{filter}</button>
+                    <button /*onClick={changeFilter(filter)}*/ className="simple-filter">{filter}</button>
                   ))}
               </div>
             </div>
             <div className="cards-list">
               <div className="simple-card-inlist">
-                {dataGen()}
+                <InfiniteScroll
+                  dataLength={data.length}
+                  next={getRestaurantCards}
+                  hasMore={true}
+                  loader={<p>loading...</p>}
+                  >
+                  {dataGen()}
+                </InfiniteScroll>
               </div>
             </div>
           </div>

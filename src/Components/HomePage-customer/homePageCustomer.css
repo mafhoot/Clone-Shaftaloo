@@ -1,5 +1,5 @@
-* {
-  background: black;
+.homePage-customer {
+  background-color: black;
   font-family: gilroy;
 }
 
@@ -20,7 +20,6 @@
   border-top-right-radius: 10px;
   overflow: hidden;
   text-align: center;
-  background-color: #161616;
 }
 
 img.img-res {
@@ -34,7 +33,6 @@ img.img-res {
   margin-left: 15px;
   display: flex;
   align-items: center;
-  background-color: #161616;
 }
 
 img.logo {
@@ -50,11 +48,9 @@ img.logo {
   font-size: 40px;
   color: #eeba2c;
   margin-left: 16px;
-  background-color: #161616;
 }
 
 .location {
-  background-color: #161616;
   margin-left: 25px;
 }
 
@@ -63,7 +59,6 @@ img.logo {
 }
 
 .tags {
-  background-color: #161616;
   margin: 25px;
 }
 
@@ -118,7 +113,7 @@ margin-right: 10px;
 }
 
 button.simple-filter:hover {
-background-color: #eeba2c;
+  background-color: #eeba2c;
   color: black;
   cursor: pointer;
   transition-duration: 0.4s;
@@ -142,6 +137,8 @@ width: 33.33%;
 background-color: inherit;
 }
 
+.loading {
+}
 
 @media screen and (max-width: 1000px) {
 .simple-card-inlist {
