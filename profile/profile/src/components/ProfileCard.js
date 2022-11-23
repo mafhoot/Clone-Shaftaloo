@@ -1,5 +1,5 @@
 import { Routes, Route, Router, Switch} from 'react-router-dom';
-import React from "react";
+import React, { useState } from "react";
 // import aab from "./SignUp/Register"
 import "../components/sidebar.css";
 
@@ -30,8 +30,9 @@ import LinkButton from './LinkButton';
 
 
 
-
-
+import Avatar  from 'react-avatar-edit'
+import { InputText } from 'primereact/inputtext';
+import { Dialog } from 'primereact/dialog';
 
 // function bb() {
 // 	return (
@@ -183,17 +184,133 @@ function ProfileCard(props) {
 
 
 
+    const[image,setimage]=useState("");
+    const[src , setSrc] = useState(false);
+	const[preview , setPreview] = useState(false);
+	const[displayBasic , setDisplayBasic] = useState(false);
+    const[imagecrop, setimagecrop] = useState(false);
+	const[profile , setprofile] = useState([]);
+
+	const profileFinal = profile.map((item) => item.preview );
+
+
+
+
+
+	const onClose=()=>
+	{
+	setPreview(null);
+	}
+
+	const onCrop=(view) =>
+	{
+	setPreview(view);
+	}
+
+	const saveCropImage = () =>
+	{
+		setprofile([...profile,{preview}]);
+		setimagecrop(false);
+
+	}
+
+
 
 
 	return (
 		<div className="card-container">
 			<div className="ddd">
-				<header>
-					<img src={avatar} alt={props.name} />
-				</header>
+			    {/* <div className="profileCover"> */}
+				                    
+					                <header className='ee'>
+						{/* <div className='profile_img text-center p-4'>
+							<div className='flex flex-column '> */}
+							           {/* <div className="profileCover"> */}
+											<img src={avatar} alt={props.name} />
+											{/* <InputText type="file" accept="/image/*" className="profileUserImg2"  onChange={(event)=>{const file=event.target.files[0];}}/> */}
+
+
+										{/* </div> */}
+										{/* <Avatar
+											width={100}
+											height={100}
+											src={src}
+
+										
+										
+										
+										
+										/> */}
+								
+										{/* <Dialog  >
+											
+									    </Dialog> */}
+										
+									<header/>		
+
+								
+								
+
+									{/* <InputText type="file"
+									accept="/image/*" 
+									className="profileUserImg2"  
+									onChange={(event)=>{const file=event.target.files[0] 
+									if(file && file.type.substring(0,5)=="image")	
+									{
+										setimage(file);
+									}
+									else
+									{
+										setimage(null);
+									}
+
+
+								
+								
+
+							}}
+								 */}
+								
+								{/* /> */}
+
+
+
+							{/* </div>
+
+						</div> */}
+
+
+						{/* <Avatar
+						   width={200}
+						   height={200}
+						   onCrop={onCrop}
+						   onClose={onClose}
+						   src={src}
+						   className={avatar}
+						/> */}
+
+
+
+
+						{/* <InputText type="file" accept="/image/*" className="profileUserImg2"  onChange={(event)=>{const file=event.target.files[0] }}/> */}
+					</header> 
+					{/* <div className='uu'> */}
+						{/* <Avatar
+						   width={200}
+						   height={200}
+						   onCrop={onCrop}
+						   onClose={onClose}
+						   src={src}
+						   className={avatar}
+						/> */}
+					{/* </div> */}
+				{/* <div/>	 */}
+				{/* </div> */}
+				
 				<h1 className="bold-text">
 					{props.name} <span className="normal-text">{props.age}</span>
 				</h1>
+				
 
 
 
@@ -237,7 +354,7 @@ function ProfileCard(props) {
 
 
 
-					<div className="social-container">
+					<div className="social-container2">
 						<div className="followers">
 							<h1 className="bold-text2">{props.abc}</h1>
 							<h2 className="smaller-text3">info@example.com</h2>

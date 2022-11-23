@@ -511,6 +511,80 @@
 } */
 
 
+.social-container2 {
+	/* position:absolute; */
+	display: flex;
+	border-top: solid white;
+	/* border-top: white; */
+	text-align: center;
+	top: 300px;
+}
 
 
 
+
+
+
+
+
+
+
+.profileCover{
+    height: 320px;
+    position: relative;
+}
+
+.profileCoverImg{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    /* تصویر نسبت ابعاد خود را حفظ می کند و بعد داده شده را پر می کند. تصویر به تناسب بریده خواهد شد */
+    /* تصویر نسبت ابعاد خود را حفظ می کند و بعد داده شده را پر می کند. تصویر به تناسب بریده می شود: */
+
+}
+
+
+
+.uu
+{
+	/* position: absolute; */
+
+
+
+}
+
+
+
+/* .avatar {
+	/* vertical-align: middle; */
+	/* width: 50px;
+	height: 50px;
+	border-radius: 100%;
+  } */ 
+
+
+/* 
+.ee
+{
+	/* position: absolute; */
+	/* left: 40px;
+	padding-left:0px;
+	padding-right: 30px;
+
+
+
+	margin: auto;
+	width: 150px;
+	height: 150px;
+	border: solid white 4px;
+	border-radius: 50%;
+	margin-top: 75px; */
+/* } */ 
+
+
+
+
+.profileCover{
+    height: 320px;
+    position: relative;
+}

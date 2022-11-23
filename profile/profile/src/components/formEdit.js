@@ -47,6 +47,7 @@ export default function FormEdit(props) {
 	const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     const [name, setName] = useState('');
+	const [name2, setName2] = useState('');
     const [pass2, setPass2] = useState('');
     const [emailcheck ,setEmailcheck] = useState("")
     const [passcheck,setPasscheck] = useState ("")
@@ -153,7 +154,7 @@ export default function FormEdit(props) {
 					<label htmlFor="name">Username</label>
 					<input value={name} required onChange={(e) => setName(e.target.value)} name="name" id="name" placeholder="Your Username" />
 					<label htmlFor="name">Phone</label>
-					<input value={name} required onChange={(e) => setName(e.target.value)} name="name" id="name" placeholder="Your PhoneNumber" />
+					<input value={name2} required onChange={(e) => setName2(e.target.value)} name="name" id="name" placeholder="Your PhoneNumber" />
 					<label htmlFor="email">E-Mail</label>
 					<input value={email} required onChange={(e) => setEmail(e.target.value)}type="email" placeholder="Example@gmail.com" id="email" name="email" />
 					<span className="registerError">{emailcheck}</span>
