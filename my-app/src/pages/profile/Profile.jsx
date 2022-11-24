@@ -93,7 +93,7 @@ export default function Profile() {
           <div className="profileRightTop">
             {/* /////جایگاه اون عکس وسط */}
             <div className="profileCover">
-
+{/* 
             {/* <AvatarEditor
              
              width={400}
@@ -102,7 +102,7 @@ export default function Profile() {
              onClose={onClose}
          
          
-         /> */}
+         /> 
               {/* <AvatarEditor/> */}
               <img
                 className="profileCoverImg"

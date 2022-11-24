@@ -232,21 +232,27 @@ function ProfileCard(props) {
 
 										{/* </div> */}
 										{/* <Avatar
-											width={100}
-											height={100}
+											width={10}
+											height={10}
 											src={src}
 
 										
 										
 										
 										
-										/> */}
+										/>  */}
+									
 								
 										{/* <Dialog  >
 											
 									    </Dialog> */}
 										
-									<header/>		
+									<header/>	
+
+
+									
+
+										
 
 								
 								
@@ -604,6 +610,18 @@ function ProfileCard(props) {
 						<a href="#!"><MDBIcon fab icon="instagram me-3" size="lg" /></a>
 				</div> */}
 			</div>
+			<div className="ui">
+				<Avatar 
+					width={155}
+					height={155}
+					src={src}	
+					alt=""	
+					value=" "
+					title=" "
+					name=" "
+					
+					/> 
+			</div>	
 		</div>
 
 
