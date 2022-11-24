@@ -1,12 +1,18 @@
 import Comments from "./comments/Comments";
+import "./App.css";
+
 
 const App = () => {
   return (
     <div>
-      <Comments
-   
-        currentUserId="2"
-      />
+      <div className="background">
+		  	<div className="bg-pattern-top"></div>
+        
+            <Comments
+        
+              currentUserId="2"
+            />
+        </div>   
     </div>
   );
 };
