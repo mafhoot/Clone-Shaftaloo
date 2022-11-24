@@ -1,11 +1,16 @@
-import React,{useState , useEffect , useRef} from "react";
+import React,{useState , useEffect , useRef , createContext, useContext } from "react";
 import Rating from '@mui/material/Rating';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Button, CardActionArea, CardActions } from '@mui/material';
-import {getRestaurant , getMenu} from "./Services/axios"
+import {getRestaurant , getMenu} from "../Services/axios"
 import { Base64 } from 'js-base64';
 import ReactDOM from 'react-dom/client';
+import { RstMenu } from "./rest_menu";
+import { Contact_us } from "./contact_us";
+import { OrderPage } from "./order"
+
+export const foodContext = createContext();
 
 export const Restaurant_page = () => {
   const [rest,setRest] = useState({id : null , name : null , date : null , address : "America"})
@@ -18,6 +23,7 @@ export const Restaurant_page = () => {
   const foodTags = ["All", "Burger" ,"Fried", "Dessert" , "Pizza" , "Sandwitch"] 
   const [cart,setCart] = useState([]);
   const [flag, setFlag] = useState(0);
+  const [nav,setNav] = useState(null)
   const [cartPrice,setCartPrice] = useState(0)
   var forFlag = 0;
   const [id,setId] = useState (1)
@@ -37,48 +43,8 @@ export const Restaurant_page = () => {
     })
   }
 
-
-  function inc (t) {
-    t.count+=1
-
-    for (let i = 0 ; i < cart.length ; i++){
-      if (t.name === cart[i].name) {
-        forFlag=1;
-        cart[i].order+=1
-        break ;
-      }
-    }
-    if (forFlag===0) {
-      cart.push({
-        name : t.name,
-        price : t.price ,
-        order : 1 ,
-      });
-    }
-
-    setCartPrice(cartPrice+t.price)
-
-    forFlag = 0
-    if (flag ===1 ) setFlag(0)
-    else setFlag(1)
-  }
-
-  function dec (t) {
-    t.count-=1
-    for (let i = 0 ; i < cart.length ; i++){
-      if (t.name === cart[i].name) {
-        cart[i].order-=1;
-        setCartPrice(cartPrice-t.price)
-        if (cart[i].order===0){
-          setCart( cart.filter( a=>
-            a.name !== t.name
-          ))
-          break;
-        }
-      }
-    }
-    if (flag ===1 ) setFlag(0)
-    else setFlag(1)
+  function menuLoader () {
+    
   }
 
   useEffect (() => {
@@ -119,8 +85,24 @@ export const Restaurant_page = () => {
     },
   });
 
+
+  function onHandle()
+  {
+    setNav(<RstMenu foodTags={foodTags} foods={foods} />);
+  }
+
+
+  function contactHandle () {
+    setNav (<Contact_us/>)
+  }
+
+  function orderHandle () {
+    setNav (<OrderPage/>)
+  }
+
   return (
     <>
+    <foodContext.Provider value={cartPrice}>
     <ThemeProvider theme={theme}>
     <div className="All">
         <img className="HeadImage" src={headImageLink}></img>
@@ -144,70 +126,23 @@ export const Restaurant_page = () => {
 
         <div className="Tab">
           
-        <button className="TabButton">MENU</button>
-        <button className="TabButton">TABLE</button>
-        <button className="TabButton">OEDER</button>
+        <button className="TabButton" onClick={onHandle} >MENU</button>
+        <button className="TabButton" onClick={() => console.log("cart :" + cart)} >TABLE</button>
+        <button className="TabButton" onClick={orderHandle} >OEDER</button>
         <button className="TabButton">COMMENTS</button>
-        <button className="TabButton">CONTACT US</button>
+        <button className="TabButton" onClick={contactHandle}>CONTACT US</button>
         
         </div>
 
         <div className="main">
-          <div className="menu">
-            <div> 
-              <div className="categories">
-                {foodTags?.map (tag => (
-                  //JSON.stringify(tag.categories)
-                  <button /*onClick={() => loadMenu(tag)}*/ className="catButton">{tag}</button>
-                ))}
-              </div>
-
-              
-              <div className="foods">
-                {foods.map(x => (
-                  <div className="newCard">
-                    <img src={x.image} className="imageCard" />
-                    <h2 className="cardTitle">{x.name}</h2>
-                    <div className="foodDetails">
-                      <p className="cardDetails">{x.details}</p>
-                    </div>
-                    <p className="price">{x.price}$</p>
-                    <div className="ButtonGroup">
-                      <button className="cardButton" onClick={() => {if (x.count > 0 ) {dec(x)}}} >-</button>
-                      <span className="cardButton">{x.count}</span>
-                      <button className="cardButton" onClick={() => inc(x)}>+</button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>  
-          </div>
-
-          <div className="cart">
-          
-
-              <h2 className="orderHeader">Order list</h2>
-
-              <div className="List">
-                {console.log("salam")}
-                  {cart.map (x => (
-                    <p className="orderList">{x.order}x : {x.name} : {x.order*x.price}$</p>
-                ))}
-              </div>
-
-              <div className="totalPrice">
-                <div className="totalPriceButton">Total price : {cartPrice}$</div>
-              </div>
-              
-              {cartPrice > 0 ? <button className="pay">Pay</button> : null}
-          
-          </div>
-          
+          {nav}
         </div>
+        
         
         <div className="distance"></div>
     </div>
     </ThemeProvider>
+    </foodContext.Provider>
     </>
   )
 }
