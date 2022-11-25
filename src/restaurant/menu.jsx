@@ -1,23 +1,18 @@
-import React, { useContext , createContext } from "react";
-import { useState , useEffect} from "react";
-import {foodContext} from './restaurant_page'
+import { useState ,useContext} from "react";
+import { CartContext } from "./cart";
+import { OrderPage } from "./order";
 
 
 export function  RstMenu  ({foodTags,foods }) {
-  const [cart,setCart] = useState([]);
-  const [cartPrice,setCartPrice] = useState(0)
+  const {cart,setCart} = useContext (CartContext);
   
   //const cartPrice = useContext (foodContext) ;
 
   const [flag, setFlag] = useState(0);
   var forFlag = 0;
-  var temp=0
 
   console.log("khar")
 
-  function onAdd (){
-    
-  }
 
   function inc (t) {
     t.count+=1
@@ -36,8 +31,6 @@ export function  RstMenu  ({foodTags,foods }) {
         order : 1 ,
       });
     }
-    console.log(t.price)
-    setCartPrice(cartPrice+t.price)
     
 
     forFlag = 0
@@ -50,7 +43,6 @@ export function  RstMenu  ({foodTags,foods }) {
     for (let i = 0 ; i < cart.length ; i++){
       if (t.name === cart[i].name) {
         cart[i].order-=1;
-        setCartPrice(cartPrice-t.price)
         if (cart[i].order===0){
           setCart( cart.filter( a=>
             a.name !== t.name
@@ -62,11 +54,10 @@ export function  RstMenu  ({foodTags,foods }) {
     if (flag ===1 ) setFlag(0)
     else setFlag(1)
   }
-  
 
     return (
     
-          <>
+        <>
           <div className="menu">
             <div> 
               <div className="categories">
@@ -76,7 +67,6 @@ export function  RstMenu  ({foodTags,foods }) {
                 ))}
               </div>
 
-              
               <div className="foods">
                 {foods?.map(x => (
                   <div className="newCard">
@@ -96,29 +86,13 @@ export function  RstMenu  ({foodTags,foods }) {
               </div>
             </div>  
           </div>
-
-          <div className="cart">
           
-
-              <h2 className="orderHeader">Order list</h2>
-
-              <div className="List">
-                {console.log("salam")}
-                  {cart?.map (x => (
-                    <p className="orderList">{x.order}x : {x.name} : {x.order*x.price}$</p>
-                ))}
-              </div>
-
-              <div className="totalPrice">
-                <div className="totalPriceButton">Total price : {cartPrice}$</div>
-              </div>
-              
-              {cartPrice > 0 ? <button className="pay">Pay</button> : null}
-              {console.log(cartPrice)}
+          <div className="receipt">
+            <OrderPage />
+          </div>
           
-         </div>
-       </>
+                  
           
-        
+        </>
     )
 }

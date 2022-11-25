@@ -7,5 +7,7 @@ export function Contact_us () {
         <div className="contact">
             <p>Phone number : 09305160254</p>
         </div>
+
+        
     )
 }

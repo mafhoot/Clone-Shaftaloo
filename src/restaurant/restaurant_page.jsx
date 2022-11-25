@@ -1,16 +1,13 @@
-import React,{useState , useEffect , useRef , createContext, useContext } from "react";
+import React,{useState , useEffect , useRef } from "react";
 import Rating from '@mui/material/Rating';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import {getRestaurant , getMenu} from "../Services/axios"
-import { Base64 } from 'js-base64';
-import ReactDOM from 'react-dom/client';
-import { RstMenu } from "./rest_menu";
+import { RstMenu } from "./menu";
 import { Contact_us } from "./contact_us";
 import { OrderPage } from "./order"
-
-export const foodContext = createContext();
+import { CartContext } from "./cart";
 
 export const Restaurant_page = () => {
   const [rest,setRest] = useState({id : null , name : null , date : null , address : "America"})
@@ -28,6 +25,7 @@ export const Restaurant_page = () => {
   var forFlag = 0;
   const [id,setId] = useState (1)
   const [restMenu,setMenu] = useState([[]])
+  const [msg, setMsg] = useState( "hello")
   //const prevCount = useRef ()
   const tabs = ["Menu 1" ,"Menu 2","Table","Cart"]
 
@@ -102,7 +100,7 @@ export const Restaurant_page = () => {
 
   return (
     <>
-    <foodContext.Provider value={cartPrice}>
+    
     <ThemeProvider theme={theme}>
     <div className="All">
         <img className="HeadImage" src={headImageLink}></img>
@@ -123,26 +121,28 @@ export const Restaurant_page = () => {
             <span className="Rate">Rating :</span> <Rating className="rating" name="half-rating-read" defaultValue={value} precision={0.5} readOnly  />
           </div>
         </div>
-
+        <CartContext.Provider value={{cart,setCart}}>
         <div className="Tab">
           
-        <button className="TabButton" onClick={onHandle} >MENU</button>
+        <button className="TabButton" onClick={()=> setNav(<RstMenu foodTags={foodTags} foods={foods} />)} >MENU</button>
         <button className="TabButton" onClick={() => console.log("cart :" + cart)} >TABLE</button>
-        <button className="TabButton" onClick={orderHandle} >OEDER</button>
+        <button className="TabButton" onClick={() => setNav (<OrderPage/>)} >OEDER</button>
         <button className="TabButton">COMMENTS</button>
-        <button className="TabButton" onClick={contactHandle}>CONTACT US</button>
+        <button className="TabButton" onClick={()=> setNav (<Contact_us/>)}>CONTACT US</button>
         
         </div>
 
         <div className="main">
           {nav}
         </div>
+
+        </CartContext.Provider>
         
         
         <div className="distance"></div>
     </div>
     </ThemeProvider>
-    </foodContext.Provider>
+    
     </>
   )
 }

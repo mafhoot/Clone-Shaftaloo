@@ -345,14 +345,18 @@
     transition-duration: 0.4s;
 }
 
-.cart {
+.receipt {
     position: -webkit-sticky;
     position: sticky;
     top: 80px;
     float: right ;
     width: 17.5%;
-    background-color: #eeba2c ;
+    
+}
+
+.cart {
     margin-top: 30px;
+    background-color: #eeba2c ;
     padding: 30px;
     border-radius: 20px;
     overflow: auto;
@@ -429,7 +433,7 @@
 }
 
 @media screen and (max-width: 1000px) {
-    .menu, .cart {   
+    .menu, .receipt {   
       width: 100%;
     }
     .logo {
