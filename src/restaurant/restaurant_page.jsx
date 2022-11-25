@@ -8,6 +8,7 @@ import { RstMenu } from "./menu";
 import { Contact_us } from "./contact_us";
 import { OrderPage } from "./order"
 import { CartContext } from "./cart";
+import { Tables } from "./table";
 
 export const Restaurant_page = () => {
   const [rest,setRest] = useState({id : null , name : null , date : null , address : "America"})
@@ -18,10 +19,12 @@ export const Restaurant_page = () => {
   const [foods,setFoods] = useState( [{"name" : "Burger" , "count" : 0 , "price" : 183}, {"name" : "Chicken" , "count" : 0, "price" : 223 } , {"name" : "Hot Dog" , "count" : 0 , "price" : 375} , {"name" : "Pasta" , "count" : 0 , "price" : 343} , {"name" : "pizza" , "count" : 0, "price" : 432} , {"name" : "Fried Potato" , "count" : 0 , "price" : 99}])
   const foodTags = ["All", "Burger" ,"Fried", "Dessert" , "Pizza" , "Sandwitch"] 
   const [cart,setCart] = useState([]);
-  const [nav,setNav] = useState(null)
+  const [nav,setNav] = useState(<RstMenu foodTags={foodTags} foods={foods} />)
   const [id,setId] = useState (1)
   const [restMenu,setMenu] = useState([[]])
   const tabs = ["Menu 1" ,"Menu 2","Table","Cart"]
+  const [active, setActive] = useState(1);
+  const [table, setTable] = useState([{ "name" : "2 sit" , "total" : 20 , "full" : 5 } ,{ "name" : "4 sit" , "total" : 20 , "full" : 5 } , { "name" : "6 sit" , "total" : 20 , "full" : 5 }])
 
   foods.forEach (e =>{
     e["details"] = "Meat, Bread, Pickle, Tomato";
@@ -34,6 +37,10 @@ export const Restaurant_page = () => {
       e["image"] = "https://realfood.tesco.com/media/images/Burger-31LGH-a296a356-020c-4969-86e8-d8c26139f83f-0-1400x919.jpg";
     })
   }
+
+  useEffect (() => {
+
+  },[active])
 
   useEffect(() => {
     getRestaurant(id).then (e => {
@@ -95,11 +102,10 @@ export const Restaurant_page = () => {
         <CartContext.Provider value={{cart,setCart}}>
 
           <div className="Tab">
-            <button className="TabButton" onClick={()=> setNav(<RstMenu foodTags={foodTags} foods={foods} />)} >MENU</button>
-            <button className="TabButton" onClick={() => console.log("cart :" + cart)} >TABLE</button>
-            <button className="TabButton" onClick={() => setNav (<OrderPage/>)} >OEDER</button>
-            <button className="TabButton">COMMENTS</button>
-            <button className="TabButton" onClick={()=> setNav (<Contact_us/>)}>CONTACT US</button>
+            <button className={(active==1) ? "TabButton active" : "TabButton"} onClick={() => {setNav(<RstMenu foodTags={foodTags} foods={foods} />); setActive(1); }} >MENU</button>
+            <button className={(active==2) ? "TabButton active" : "TabButton"} onClick={() => {setNav (<Tables/>); setActive(2)}} >TABLE</button>
+            <button className={(active==3) ? "TabButton active" : "TabButton"} onClick={()=>  {setActive(3)}}>COMMENTS</button>
+            <button className={(active==4) ? "TabButton active" : "TabButton"} onClick={()=>  {setNav (<Contact_us/>); setActive(4)}}>INFORMATION</button>
           </div>
 
           <div className="main">
