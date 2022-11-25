@@ -5,13 +5,8 @@ import { useContext } from "react";
 
 
 export function OrderPage () {
-    //const [cart,setCart] = useContext(CartContext);
     const {cart,setCart} = useContext (CartContext);
     var cartSum=0
-
-    
-    
-
     function sum (cart) {
         cartSum=0
         for (let i = 0 ; i < cart.length ; i++){

@@ -5,8 +5,6 @@ import { OrderPage } from "./order";
 
 export function  RstMenu  ({foodTags,foods }) {
   const {cart,setCart} = useContext (CartContext);
-  
-  //const cartPrice = useContext (foodContext) ;
 
   const [flag, setFlag] = useState(0);
   var forFlag = 0;
@@ -90,9 +88,6 @@ export function  RstMenu  ({foodTags,foods }) {
           <div className="receipt">
             <OrderPage />
           </div>
-          
-                  
-          
         </>
     )
 }
