@@ -12,7 +12,9 @@ const App = () => {
         
               currentUserId="2"
             />
-        </div>   
+        </div>
+        {/* <div  className="bg-pattern-bottom">
+        </div>    */}
     </div>
   );
 };
