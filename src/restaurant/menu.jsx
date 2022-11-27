@@ -88,6 +88,9 @@ export function  RstMenu  ({foodTags,foods }) {
           <div className="receipt">
             <OrderPage />
           </div>
+
+
+          
         </>
     )
 }

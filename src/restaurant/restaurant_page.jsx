@@ -114,7 +114,6 @@ export const Restaurant_page = () => {
 
         </CartContext.Provider>
         
-        
         <div className="distance"></div>
     </div>
     </ThemeProvider>
