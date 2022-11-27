@@ -32,10 +32,32 @@
   border-radius: 5%;
   padding-left: 0px;
   margin-left: 50px;
+  position:relative;
  
 }
 
 
+.comment-form-button-comment-form-cancel-button
+{
+  font-size: 16px;
+  padding: 8px 16px;
+  background: #eeba2c;
+  border-radius: 8px;
+  color: rgb(23, 23, 22);
+  margin-left: 0px;
+  /* margin-right: 80px; */
+  right: 150px;
+  margin-top: 1px;
+  margin-bottom: 40px;
+  position: absolute;
+  bottom: 343px;
+
+}
+
+/* .comment-form-button comment-form-cancel-button
+{
+
+} */
 
 
 .comment-form-button {
@@ -45,6 +67,8 @@
   border-radius: 8px;
   color: rgb(23, 23, 22);
   margin-left: 200px;
+  
+  /* margin-top: 1px; */
   /* margin-right: 1000px; */
   /* padding-right: 40px; */
 
@@ -104,6 +128,7 @@
   color: rgb(141, 130, 130);
   cursor: pointer;
   margin-top: 8px;
+  
 }
 
 .comment-action {
@@ -132,7 +157,7 @@
 button {
   border: none;
   background-color: #eeba2c;
-  /*padding: 20px;*/
+  padding: 20px;
   border-radius: 10px;
   cursor: pointer;
   color: #2a2e34;
@@ -142,7 +167,7 @@ button {
   font-weight: bold;
   transition-duration: 0.4s;
   margin-top: 1rem;
-}
+ }  
 
 button:hover{
   color: #eeba2c;

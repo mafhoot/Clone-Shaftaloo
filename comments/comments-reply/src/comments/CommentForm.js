@@ -27,7 +27,7 @@ const CommentForm = ({
       {hasCancelButton && (
         <button
           type="button"
-          className="comment-form-button comment-form-cancel-button"
+          className="comment-form-button-comment-form-cancel-button"
           onClick={handleCancel}
         >
           Cancel
