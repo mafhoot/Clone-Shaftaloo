@@ -1,7 +1,4 @@
-.homePage-customer {
-  background-color: black;
-  font-family: gilroy;
-}
+/***    card    ***/
 
 .card {
   background: #161616;
@@ -75,6 +72,13 @@ img.logo {
   font-size: 15px;
 }
 
+/****   list cards ****/
+
+.homePage-customer {
+  background-color: black;
+  font-family: gilroy;
+}
+
 .container {
   padding: 30px;
   min-width: auto;
@@ -84,18 +88,18 @@ img.logo {
 }
 
 .filters {
-margin-left: auto;
-margin-right: auto;
-background: #262626;
-width: 100%;
-border-radius: 15px;
-display: flex;
-flex-wrap: wrap;
-margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #262626;
+  width: 100%;
+  border-radius: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
 button.simple-filter {
-margin-right: 10px;
+  margin-right: 10px;
   margin-left: 10px;
   height: 35px;
   font-size: large;
@@ -126,30 +130,30 @@ button.simple-filter:hover {
 }
 
 .cards-list::after {
-content: "";
-display: table;
-clear: both;
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .simple-card-inlist {
-float: left;
-width: 33.33%;
-background-color: inherit;
+  float: left;
+  width: 33.33%;
+  background-color: inherit;
 }
 
 .loading {
 }
 
 @media screen and (max-width: 1000px) {
-.simple-card-inlist {
-  width: 50%;
-  display: block;
-}
+  .simple-card-inlist {
+    width: 50%;
+    display: block;
+  }
 }
 
 @media screen and (max-width: 700px) {
-.simple-card-inlist {
-  width: 100%;
-  display: block;
-}
+  .simple-card-inlist {
+    width: 100%;
+    display: block;
+  }
 }
