@@ -7,7 +7,7 @@ import {getRestaurant , getMenu} from "../Services/axios"
 import { RstMenu } from "./menu";
 import { Contact_us } from "./contact_us";
 import { OrderPage } from "./order"
-import { CartContext } from "./cart";
+import { CartContext , TableContext } from "./cart";
 import { Tables } from "./table";
 
 export const Restaurant_page = () => {
@@ -25,6 +25,7 @@ export const Restaurant_page = () => {
   const tabs = ["Menu 1" ,"Menu 2","Table","Cart"]
   const [active, setActive] = useState(1);
   const [table, setTable] = useState([{ "name" : "2 sit" , "total" : 20 , "full" : 5 } ,{ "name" : "4 sit" , "total" : 20 , "full" : 5 } , { "name" : "6 sit" , "total" : 20 , "full" : 5 }])
+  const [tbList,setTbList] = useState( [{"name" : "2 Sit table" , "count" : 0 , "price" : 20}, {"name" : "4 Sit table" , "count" : 0, "price" : 40 } , {"name" : "6 Sit table" , "count" : 0 , "price" : 60}])
 
   foods.forEach (e =>{
     e["details"] = "Meat, Bread, Pickle, Tomato";
@@ -59,7 +60,6 @@ export const Restaurant_page = () => {
       })
       setValue(e.data.avg)
     }).catch()
-
     getMenu(id).then (m => {
       console.log(m.data[0].categories[0])
       setMenu(m.data[0].categories)
@@ -72,6 +72,14 @@ export const Restaurant_page = () => {
       neutral: {
         main: '#eeba2c',
       },
+
+      black: {
+        main: '#161616',
+      },
+
+      white: {
+        main : '#ffffff'
+      }
     },
   });
 
@@ -100,6 +108,7 @@ export const Restaurant_page = () => {
 
 
         <CartContext.Provider value={{cart,setCart}}>
+          <TableContext.Provider value={{tbList, setTbList}}>
 
           <div className="Tab">
             <button className={(active==1) ? "TabButton active" : "TabButton"} onClick={() => {setNav(<RstMenu foodTags={foodTags} foods={foods} />); setActive(1); }} >MENU</button>
@@ -111,7 +120,8 @@ export const Restaurant_page = () => {
           <div className="main">
             {nav}
           </div>
-
+          
+          </TableContext.Provider>
         </CartContext.Provider>
         
         <div className="distance"></div>

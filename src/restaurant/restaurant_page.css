@@ -277,7 +277,8 @@
     background-color: #161616;
     margin-left: 0.5%;
     margin-right: 0.5%;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     border-radius: 10px;
 }
 
@@ -412,7 +413,7 @@
     font-size: large;
     font-family: gilroy;
     color:#ffffff;
-    background-color: #0044ff;
+    background-color: #01579b;
     border-radius: 0.5rem;
     padding-left: 20px;
     padding-right: 20px;
@@ -428,7 +429,7 @@
 }
 
 .pay:hover {
-    color: #0044ff ;
+    color: white ;
     background-color: #161616;
     cursor: pointer;
     transition-duration: 0.4s;

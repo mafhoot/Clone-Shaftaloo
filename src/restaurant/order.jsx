@@ -2,13 +2,73 @@ import React from "react";
 import './order.css'
 import { CartContext } from "./cart";
 import { useContext , useState } from "react";
+//import { Recepite } from "./recepite dialog";
+import PropTypes from 'prop-types';
+import Button from '@mui/material/Button';
+import { styled } from '@mui/material/styles';
+import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent';
+import DialogActions from '@mui/material/DialogActions';
+import IconButton from '@mui/material/IconButton';
+//import CloseIcon from '@mui/icons-material/Close';
+import Typography from '@mui/material/Typography';
+import { ButtonGroup} from '@mui/material';
+import { useEffect } from "react";
+
+const BootstrapDialog = styled(Dialog)(({ theme }) => ({
+  '& .MuiDialogContent-root': {
+    padding: theme.spacing(2),
+  },
+  '& .MuiDialogActions-root': {
+    padding: theme.spacing(1),
+  },
+}));
+
+
+function BootstrapDialogTitle(props) {
+  const { children, onClose, ...other } = props;
+
+  return (
+    <DialogTitle sx={{ m: 0, p: 2 }} {...other}>
+      {children}
+      {onClose ? (
+        <IconButton
+          aria-label="close"
+          onClick={onClose}
+          sx={{
+            position: 'absolute',
+            right: 8,
+            top: 8,
+            color: (theme) => theme.palette.grey[500],
+          }}
+        >
+          {/*<CloseIcon />*/}
+        </IconButton>
+      ) : null}
+    </DialogTitle>
+  );
+}
+
+BootstrapDialogTitle.propTypes = {
+  children: PropTypes.node,
+  onClose: PropTypes.func.isRequired,
+};
+
+
 
 
 export function OrderPage () {
     const {cart,setCart} = useContext (CartContext);
     const [modal, setModal] = useState(false);
+    const [prov,setProv] = useState();
 
     var cartSum=0
+
+    useEffect (()=> {
+
+    },[cart])
+
     function sum (cart) {
         cartSum=0
         for (let i = 0 ; i < cart.length ; i++){
@@ -20,15 +80,16 @@ export function OrderPage () {
           )
       }
 
-      const toggleModal = () => {
-        setModal(!modal);
+
+      const [open, setOpen] = React.useState(false);
+
+      const handleClickOpen = () => {
+        setOpen(true);
       };
-    
-      if(modal) {
-        document.body.classList.add('active-modal')
-      } else {
-        document.body.classList.remove('active-modal')
-      }
+      const handleClose = () => {
+        setOpen(false);
+      };
+
  
     return (
       <>
@@ -48,30 +109,47 @@ export function OrderPage () {
                 <div className="totalPriceButton">Total price : {sum(cart)}$</div>
               </div>
               
-              {cartSum > 0 ? <button className="pay" onClick={toggleModal} >Pay</button> : null}
+              {cartSum > 0 ? <button className="pay" onClick={handleClickOpen} >Pay</button> : null}
           
-        
+        </div>
 
-        
-        {modal && (
-          <div className="modal">
-            <div onClick={toggleModal} className="overlay"></div>
-            <div className="modal-content">
-              <h2>Hello Modal</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
-                perferendis suscipit officia recusandae, eveniet quaerat assumenda
-                id fugit, dignissimos maxime non natus placeat illo iusto!
-                Sapiente dolorum id maiores dolores? Illum pariatur possimus
-                quaerat ipsum quos molestiae rem aspernatur dicta tenetur. Sunt
-                placeat tempora vitae enim incidunt porro fuga ea.
-              </p>
-              <button className="close-modal" onClick={toggleModal}>
-                CLOSE
-              </button>
+        <div className="payDialog">
+          <BootstrapDialog
+            onClose={handleClose}
+            aria-labelledby="customized-dialog-title"
+            open={open}
+            className="payDialog"
+          >
+            <DialogContent dividers className="dialog">
+            <div className="dialogList">
+          
+
+              <h2 className="orderHeader">Your order</h2>
+
+              <div className="ListDialog">
+                {console.log("salam")}
+                  {cart?.map (x => (
+                    <p className="orderList">{x.order}x : {x.name} : {x.order*x.price}$</p>
+                ))}
+              </div>
+
+              <div className="totalPrice">
+                <div className="totalPriceButton">Total price : {sum(cart)}$</div>
+              </div>
+
+              <h3 className="methods">Payment methods:</h3>
+              <div className="tabG">
+                <button className="buttG">In Place</button>
+                <button className="buttG middle">Credit Card</button>
+                <button className="buttG">Account</button>
+              </div>
+          
             </div>
-          </div>
-        )}
+
+            </DialogContent>
+                
+
+          </BootstrapDialog>
         </div>
         
         </>
