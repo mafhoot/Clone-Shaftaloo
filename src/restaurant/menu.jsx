@@ -1,16 +1,32 @@
-import { useState ,useContext} from "react";
-import { CartContext } from "./cart";
+import { useState ,useContext ,useEffect} from "react";
+import { CartContext} from "./cart";
 import { OrderPage } from "./order";
+import { getMenu } from "../Services/axios";
 
 
-export function  RstMenu  ({foodTags,foods }) {
+export function  RstMenu  ({id}) {
   const {cart,setCart} = useContext (CartContext);
-
+  const [foodTags,setFoodTags] = useState ();
+  const [foods,setFoods] = useState();
   const [flag, setFlag] = useState(0);
+  const [restMenu,setMenu] = useState()
   var forFlag = 0;
 
   console.log("khar")
 
+  useEffect(() => {
+    getMenu(id).then (m => {
+      //console.log(m.data[0].categories[0])
+      setMenu(m.data)
+    }).catch()
+  },[])
+
+  function loadMenu (i) {
+    setFoods(i.foods)
+    foods.forEach (e =>{
+      e["image"] = "https://realfood.tesco.com/media/images/Burger-31LGH-a296a356-020c-4969-86e8-d8c26139f83f-0-1400x919.jpg";
+    })
+  }
 
   function inc (t) {
     t.count+=1

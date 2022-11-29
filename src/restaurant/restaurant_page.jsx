@@ -21,7 +21,7 @@ export const Restaurant_page = () => {
   const [cart,setCart] = useState([]);
   const [nav,setNav] = useState(<RstMenu foodTags={foodTags} foods={foods} />)
   const [id,setId] = useState (1)
-  const [restMenu,setMenu] = useState()
+  
   const tabs = ["Menu 1" ,"Menu 2","Table","Cart"]
   const [active, setActive] = useState(1);
   const [table, setTable] = useState([{ "name" : "2 sit" , "total" : 20 , "full" : 5 } ,{ "name" : "4 sit" , "total" : 20 , "full" : 5 } , { "name" : "6 sit" , "total" : 20 , "full" : 5 }])
@@ -32,12 +32,7 @@ export const Restaurant_page = () => {
     e["image"] = "https://realfood.tesco.com/media/images/Burger-31LGH-a296a356-020c-4969-86e8-d8c26139f83f-0-1400x919.jpg";
   })
   
-  function loadMenu (i) {
-    setFoods(i.foods)
-    foods.forEach (e =>{
-      e["image"] = "https://realfood.tesco.com/media/images/Burger-31LGH-a296a356-020c-4969-86e8-d8c26139f83f-0-1400x919.jpg";
-    })
-  }
+  
 
   useEffect (() => {
 
@@ -60,12 +55,6 @@ export const Restaurant_page = () => {
       })
       setValue(e.data.avg)
     }).catch()
-
-    getMenu(id).then (m => {
-      console.log(m.data[0].categories[0])
-      setMenu(m.data)
-    }).catch()
-    console.log(restMenu)
   },[]);
 
   const theme = createTheme({
@@ -112,7 +101,7 @@ export const Restaurant_page = () => {
           <TableContext.Provider value={{tbList, setTbList}}>
 
           <div className="Tab">
-            <button className={(active==1) ? "TabButton active" : "TabButton"} onClick={() => {setNav(<RstMenu foodTags={foodTags} foods={foods} />); setActive(1); }} >MENU</button>
+            <button className={(active==1) ? "TabButton active" : "TabButton"} onClick={() => {setNav(<RstMenu id={id} />); setActive(1); }} >MENU</button>
             <button className={(active==2) ? "TabButton active" : "TabButton"} onClick={() => {setNav (<Tables/>); setActive(2)}} >TABLE</button>
             <button className={(active==3) ? "TabButton active" : "TabButton"} onClick={()=>  {setActive(3)}}>COMMENTS</button>
             <button className={(active==4) ? "TabButton active" : "TabButton"} onClick={()=>  {setNav (<Contact_us/>); setActive(4)}}>INFORMATION</button>
