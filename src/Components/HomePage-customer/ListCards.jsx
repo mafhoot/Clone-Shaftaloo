@@ -70,8 +70,13 @@ export const ListCardRes = () => {
     }
     */
 
+    const loader = () => {
+      if (data.length !== 0) {
+        return <p className="loader">loading...</p>
+      }
+    }
+
     return (
-        
         <div className="homePage-customer">
           <div className="container">
             <div>
@@ -85,9 +90,9 @@ export const ListCardRes = () => {
               <div className="simple-card-inlist">
                 <InfiniteScroll
                   dataLength={data.length}
-                  next={getRestaurantCards}
+                  next={getRestaurantCards()}
                   hasMore={true}
-                  loader={<p>loading...</p>}
+                  loader={loader()}
                   >
                   {dataGen()}
                 </InfiniteScroll>

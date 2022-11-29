@@ -42,7 +42,7 @@ img.logo {
 .card-discription h1 {
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 40px;
+  font-size: 30px;
   color: #eeba2c;
   margin-left: 16px;
 }
@@ -137,11 +137,13 @@ button.simple-filter:hover {
 
 .simple-card-inlist {
   float: left;
-  width: 33.33%;
+  width: 25%;
   background-color: inherit;
 }
 
-.loading {
+.loader {
+  text-align: center;
+  justify-content: center;
 }
 
 @media screen and (max-width: 1000px) {
