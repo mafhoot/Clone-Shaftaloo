@@ -77,7 +77,7 @@ export function  RstMenu  ({id}) {
               <div className="categories">
                 {foodTags?.map (tag => (
                   //JSON.stringify(tag.categories)
-                  <button /*onClick={() => loadMenu(tag)}*/ className="catButton">{tag}</button>
+                  <button onClick={() => loadMenu(tag)} className="catButton">{tag.categoryName}</button>
                 ))}
               </div>
 
@@ -87,7 +87,7 @@ export function  RstMenu  ({id}) {
                     <img src={x.image} className="imageCard" />
                     <h2 className="cardTitle">{x.name}</h2>
                     <div className="foodDetails">
-                      <p className="cardDetails">{x.details}</p>
+                      <p className="cardDetails">{/*x.details*/}{x.foodDescription}</p>
                     </div>
                     <p className="price">{x.price}$</p>
                     <div className="ButtonGroup">
