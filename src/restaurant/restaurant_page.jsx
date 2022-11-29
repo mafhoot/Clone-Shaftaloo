@@ -21,7 +21,7 @@ export const Restaurant_page = () => {
   const [cart,setCart] = useState([]);
   const [nav,setNav] = useState(<RstMenu foodTags={foodTags} foods={foods} />)
   const [id,setId] = useState (1)
-  const [restMenu,setMenu] = useState([[]])
+  const [restMenu,setMenu] = useState()
   const tabs = ["Menu 1" ,"Menu 2","Table","Cart"]
   const [active, setActive] = useState(1);
   const [table, setTable] = useState([{ "name" : "2 sit" , "total" : 20 , "full" : 5 } ,{ "name" : "4 sit" , "total" : 20 , "full" : 5 } , { "name" : "6 sit" , "total" : 20 , "full" : 5 }])
@@ -60,9 +60,10 @@ export const Restaurant_page = () => {
       })
       setValue(e.data.avg)
     }).catch()
+
     getMenu(id).then (m => {
       console.log(m.data[0].categories[0])
-      setMenu(m.data[0].categories)
+      setMenu(m.data)
     }).catch()
     console.log(restMenu)
   },[]);

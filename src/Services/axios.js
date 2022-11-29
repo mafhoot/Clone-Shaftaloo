@@ -8,3 +8,4 @@ export function getRestaurant (data){
 export function getMenu (data){
     return axios.get(url+"api/Restaurant/GetRestaurantMenu/"+data)
 }
+
