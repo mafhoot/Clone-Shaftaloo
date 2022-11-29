@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  font-family: 'Inter' !important;
+  /* background-color: #211e1e; */
+}
+
+.aaa
+{
+  /* left: 40px; */
+	/* padding-left:10px;
+	padding-right: 30px; */
+    height: 100%;
+    position: absolute;
+	background-image: url("../img/food.jpg");
+	background-position: bottom right;
+	background-repeat: no-repeat;
+	background-size: cover;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 2500px;
+	transform: translateY(-50%);
+	z-index: -1;
+
+}
+
+.background {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+}
+/* 
+.bg-pattern-top {
+	position: absolute;
+	background-image: url("./images/food.jpg");
+	background-position: bottom right;
+	background-repeat: no-repeat;
+	background-size: cover;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 1500px;
+	transform: translateY(-50%);
+	z-index: -1;
+}
+ */
+
+
