@@ -11,7 +11,7 @@ import { CartContext , TableContext } from "./cart";
 import { Tables } from "./table";
 
 export const Restaurant_page = () => {
-  const [rest,setRest] = useState({id : null , name : null , date : null , address : "America"})
+  const [rest,setRest] = useState({id : null , name : null , date : null , address : "America" })
   const [value, setValue] = useState(3.5);
   //const tags = ["fast food" , "fried" , "chicken"  ]
   const [headImageLink ,setHeadImageLink] = useState ("https://foodexiran.com/wp-content/uploads/2022/08/store-banner.jpg")
@@ -46,7 +46,7 @@ export const Restaurant_page = () => {
   useEffect(() => {
     getRestaurant(id).then (e => {
       setRest({
-        city: e.data.city,
+        city: e.data.city.cityName,
         comments: "chetori",
         name: e.data.name,
         address: e.data.address,
@@ -93,7 +93,7 @@ export const Restaurant_page = () => {
           <div className="info" >
             <label className="name">{rest.name}</label>
             <p className="description" >{rest.description}</p>
-            <p className="location">Location : {rest.address}</p>
+            <p className="location">City : {rest.city}</p>
             <p className="RestTags">Tags : 
               <ButtonGroup color="neutral" variant="text" aria-label="text button group">
                 {rest.tags?.map(u => (

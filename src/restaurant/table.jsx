@@ -34,6 +34,7 @@ export function Tables () {
 
     tbList.forEach (e =>{
         e["image"] = "https://static.rigg.uk/Files/casestudies/bistrotpierretables/sz/w960/bistrolargeroundrestauranttablewoodtopmetalbase.jpg";
+        e["capacity"] = 10;
     })
 
 
@@ -83,6 +84,9 @@ export function Tables () {
                   <div className="newCard">
                     <img src={x.image} className="imageCard" />
                     <h2 className="cardTitle">{x.name}</h2>
+                    <div className="foodDetails">
+                      <p className="cardDetails">Capacity: {x.capacity}</p>
+                    </div>
                     <p className="price">{x.price}$</p>
                     <div className="ButtonGroup">
                     <button className="cardButton" onClick={() => {if (x.count > 0 ) {dec(x)}}} >-</button>
