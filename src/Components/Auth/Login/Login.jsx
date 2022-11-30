@@ -1,5 +1,6 @@
 import React, { useState ,useEffect} from "react";
 import { getbearer } from "../../../services/axios";
+import "../Login_SignUp.css"
 
 export const Login = (props) => {
     const [email, setEmail] = useState('')
@@ -68,7 +69,9 @@ export const Login = (props) => {
     useEffect (()=>{}, [loginFlag])
 
     return (
+      <div className="App">
 
+      
         <div className="auth-form-container">
             <h1>LOGIN</h1>
             <form className="login-form" onSubmit={handleSubmit}>
@@ -78,8 +81,9 @@ export const Login = (props) => {
                 <input value={pass} required onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password" />
                 <button type="submit" >Log In</button>
             </form>
-            <p>Don't have an account? <a className="link-btn" onClick={() => props.onFormSwitch('register')}>Register Now</a></p>
+            <p>Don't have an account? <a className="link-btn" href="/sign-up">Register Now</a></p>
             <span className="loginError">{loginFlag}</span>
         </div>
+      </div>
     )
 }

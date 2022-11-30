@@ -1,5 +1,6 @@
 import React, { useState,useEffect,useRef } from "react";
 import { postUser } from "../../../services/axios";
+import "../Login_SignUp.css"
 
 export const Register = (props) => {
     const [email, setEmail] = useState('');
@@ -85,6 +86,7 @@ export const Register = (props) => {
 
 
     return (
+      <div className="App">
         <div className="auth-form-container">
             <h1>REGISTER</h1>
         <form className="register-form" onSubmit={handleSubmit}>
@@ -102,7 +104,8 @@ export const Register = (props) => {
             
             <button type="submit">Register</button>
         </form>
-        <p>Already A Member? <a className="link-btn" onClick={() => props.onFormSwitch('login')}>Log In</a> </p>
+        <p>Already A Member? <a className="link-btn" href="/login">Log In</a> </p>
+    </div>
     </div>
     )
 }
