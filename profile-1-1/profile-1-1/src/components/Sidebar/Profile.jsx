@@ -89,9 +89,11 @@ function Profile() {
         </ModalContent>
       </Modal>
       <VStack spacing={1}>
-        <Heading as="h3" fontSize="xl" color="brand.dark">
+        <div  className='eeee'>
+        <Heading as="h3" fontSize="xl" color="brand.dark" className='eeee'>
           Mahdi Fathian
         </Heading>
+        </div>
         <Text color="brand.gray" fontSize="sm">
           Iran
         </Text>

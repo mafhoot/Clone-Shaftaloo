@@ -10,7 +10,7 @@ const Content = () => {
 
   
   return (
-    <Box
+    <Box 
       as="main"
       flex={3}
       d="flex"
