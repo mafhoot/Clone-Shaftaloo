@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-/* 
-* {
+
+/* * {
   font-family: 'Inter' !important;
   color: #c0bfbb;
-   /* background-color: #211e1e;  */
- /* }  */
+    background-color: #211e1e;  
+ }  */
 
 .aaa
 {
@@ -262,7 +262,7 @@
 
 .chakra-text css-1pgl7rm
 {
-	color:#c0bfbb
+	color:#c0bfbb;
 
 }
 .css-w22kgs
@@ -284,3 +284,32 @@
 	background-color:#212223 ;
 
 }
+
+
+
+.chakra-text.css-j98n1x
+{
+	color:#f1ea23;
+
+}
+
+
+.chakra-heading.eeee.css-12dkwgc
+{
+	color:#f1ea23;
+
+}
+
+
+
+
+.chakra-select.ee.css-1sc0kty
+{
+	color:#c0bfbb;
+}
+
+.chakra-button.ww.css-h65ofq
+{
+	background-color: #f1ea23;
+}
+
