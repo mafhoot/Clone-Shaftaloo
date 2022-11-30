@@ -2,7 +2,7 @@ import React, { useState ,useEffect} from "react";
 import { getbearer } from "../../../services/axios";
 import "../Login_SignUp.css"
 
-export const Login = (props) => {
+export const Login = () => {
     const [email, setEmail] = useState('')
     const [pass, setPass] = useState('')
     const [loginFlag,setLogin] = useState ("")
@@ -13,12 +13,10 @@ export const Login = (props) => {
         console.log(pass)
 
         getbearer({
-        
                 "phoneNumber": "",
                 "password": pass,
                 "fullName": "",
                 "email": email
-            
         })
 
         .then((x)=>{

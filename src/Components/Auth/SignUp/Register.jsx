@@ -2,7 +2,7 @@ import React, { useState,useEffect,useRef } from "react";
 import { postUser } from "../../../services/axios";
 import "../Login_SignUp.css"
 
-export const Register = (props) => {
+export const Register = () => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     const [name, setName] = useState('');
