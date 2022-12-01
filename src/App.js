@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Login } from "./Components/Auth/Login/Login";
 import { Register } from "./Components/Auth/SignUp/Register";
 import { BrowserRouter , Routes , Route} from "react-router-dom";
+import {Restaurant_page} from './restaurant/restaurant_page'
+import './restaurant/restaurant_page.css'
 
 import 'boxicons/css/boxicons.min.css';
 import AppLayout from './Components/layout/AppLayout';
@@ -19,10 +21,12 @@ function App() {
     <Routes>
       <Route path="/login" element={<Login />} />
       <Route path="/sign-up" element={<Register />} />
+
       <Route path='/' element={<AppLayout />}>
         <Route index element={<Blank />} />
         <Route path='/user' element={<Blank />} />
         <Route path='/order' element={<Blank />} />
+        <Route path='/restaurant' element={<Restaurant_page />} />
       </Route>
     </Routes>
     </BrowserRouter>
