@@ -1,0 +1,98 @@
+ .sidebar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 320px;
+    /* background-color: #262626; */
+}
+.sidebar__logo {
+    display: grid;
+    place-items: center;
+    height: 120px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: Gilroy;
+    color: white;
+}
+.sidebar__menu {
+    position: relative;
+}
+.sidebar__menu__item {
+    display: flex;
+    align-items: center;
+    place-content: flex-start;
+    padding: 1rem 3rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: white;
+    transition: color 0.3s ease-in-out;
+}
+.sidebar__menu__item.active {
+    color: black;
+}
+.sidebar__menu__item__icon {
+    margin-right: 1rem;
+}
+.sidebar__menu__item__icon i {
+    font-size: 1.75rem;
+}
+.sidebar__menu__indicator {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: calc(100% - 40px);
+    border-radius: 10px;
+    background-color: #eeba2c;
+    z-index: -1;
+    transform: translateX(-50%);
+    transition: 0.3s ease-in-out;
+}
+.logo {
+    height: 75px;
+    width: 75px;
+    border-radius: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: solid 5px;
+    border-color: white;
+    object-fit: cover;
+}
+.name {
+    font-size: 18px;
+}
+.menuNav.showMenu {
+    width: 100%;
+  }
+
+
+.navBar {
+    position: relative;
+  }
+  
+  .sidebar button {
+    position: fixed;
+    background-color:#262626;
+    z-index: 10;
+    cursor: pointer;
+  }
+  
+  .menuNav {
+    overflow-y: scroll;
+    list-style: none;
+    position: fixed;
+    top: 0;
+    background: #262626;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 0;
+    overflow: hidden;
+    max-width: 290px;
+    z-index: 9;
+  }
+  
+  
+  
+  
+ 
