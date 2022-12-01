@@ -1,27 +1,36 @@
-
- 
- .sidebar {
-    position: fixed;
-    box-sizing: border-box;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 320px;
-    /* background-color: #262626; */
-}
 .sidebar__logo {
-    display: grid;
-    place-items: center;
-    height: 120px;
-    font-size: 1.5rem;
-    font-weight: 700;
-    font-family: Gilroy;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 3%;
     color: white;
-}
-.sidebar__menu {
+    font-family: Gilroy;
+    border-bottom: 1px solid white;
+    aspect-ratio: 4/1;
+  }
+  
+  .sideLogo {
+    float: left;
+    height: 100%;
+    aspect-ratio: 1/1;
+  }
+  
+  .profName {
+    float: left;
+    width: 30%;
+    margin-left: 20px;
+    display: flex;
+    height: 100%;
+    align-items: center
+  }
+  
+  
+  .sidebar__menu {
     position: relative;
-}
-.sidebar__menu__item {
+    margin-top: 30px;
+  }
+  
+  .sidebar__menu__item {
+    /* margin-top: 25px; */
     display: flex;
     align-items: center;
     place-content: flex-start;
@@ -30,17 +39,21 @@
     font-weight: 500;
     color: white;
     transition: color 0.3s ease-in-out;
-}
-.sidebar__menu__item.active {
+  }
+  
+  .sidebar__menu__item.active {
     color: black;
-}
-.sidebar__menu__item__icon {
+  }
+  
+  .sidebar__menu__item__icon {
     margin-right: 1rem;
-}
-.sidebar__menu__item__icon i {
+  }
+  
+  .sidebar__menu__item__icon i {
     font-size: 1.75rem;
-}
-.sidebar__menu__indicator {
+  }
+  
+  .sidebar__menu__indicator {
     position: absolute;
     top: 0;
     left: 50%;
@@ -50,34 +63,30 @@
     z-index: -1;
     transform: translateX(-50%);
     transition: 0.3s ease-in-out;
-}
-.logo {
-    height: 75px;
-    width: 75px;
-    border-radius: 100%;
+  }
+  
+  .logo {
+    aspect-ratio: 1/1;
+    width: 100%;
+    border-radius: 5%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border: solid 5px;
-    border-color: white;
     object-fit: cover;
-}
-.name {
-    font-size: 18px;
-}
-.menuNav.showMenu {
+  }
+  
+  .menuNav.showMenu {
     width: 100%;
   }
-
-
-.navBar {
+  
+  .navBar {
     position: relative;
   }
   
-  .sidebar button {
-    position: fixed;
-    background-color:#262626;
-    z-index: 10;
-    cursor: pointer;
-  }
+  /*.sidebar button {
+      position: fixed;
+      background-color: #262626;
+      z-index: 10;
+      cursor: pointer;
+    }*/
   
   .menuNav {
     overflow-y: scroll;
@@ -90,11 +99,28 @@
     height: 100vh;
     width: 0;
     overflow: hidden;
-    max-width: 290px;
+    max-width: 320px;
     z-index: 9;
+    /* opacity: 0.93; */
   }
   
+  .btn-close {
+    margin-right: 0px;
+    float: right;
+    border-radius: 3px;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 2px;
+  }
   
+  .btn-open{
+    z-index: 10;
+    position: fixed;
+    cursor: pointer;
+    top: 3px;
+    left: 3px;
+  }
   
-  
- 
+  .hide-btn{
+    z-index: -2;
+  }
