@@ -102,7 +102,7 @@ export const Register = () => {
             <input value={pass2} required onChange={(e) => setPass2(e.target.value)} type="password" placeholder="********" id="password2" name="password2" />
             <span className="registerError">{pass2check}</span>
             
-            <button type="submit">Register</button>
+            <button className="logButton" type="submit">Register</button>
         </form>
         <p className="login-regiser-q">Already A Member? <a className="link-btn" href="/login">Log In</a> </p>
     </div>

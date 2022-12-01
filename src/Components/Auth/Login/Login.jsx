@@ -77,7 +77,7 @@ export const Login = () => {
                 <input value={email} required onChange={(e) => setEmail(e.target.value)}type="email" placeholder="Example@gmail.com" id="email" name="email" />
                 <label htmlFor="password">Password</label>
                 <input value={pass} required onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password" />
-                <button type="submit" >Log In</button>
+                <button className="logButton" type="submit" >Log In</button>
             </form>
             <p className="login-regiser-q">Don't have an account? <a className="link-btn" href="/sign-up">Register Now</a></p>
             <span className="loginError">{loginFlag}</span>

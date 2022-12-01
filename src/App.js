@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { Login } from "./Components/Auth/Login/Login";
 import { Register } from "./Components/Auth/SignUp/Register";
 import { BrowserRouter , Routes , Route} from "react-router-dom";
-import {Restaurant_page} from './restaurant/restaurant_page'
-import './restaurant/restaurant_page.css'
+import {Restaurant_page} from './Components/restaurant/restaurant_page'
 
 import 'boxicons/css/boxicons.min.css';
 import AppLayout from './Components/layout/AppLayout';
@@ -11,12 +10,6 @@ import Blank from './pages/Blank';
 
 function App() {
   return (
-    // <div className="App">
-    //   {
-    //     currentForm === "login" ? <Login onFormSwitch={toggleForm} /> : <Register onFormSwitch={toggleForm} />
-    //   }
-    // </div>
-
     <BrowserRouter>
     <Routes>
       <Route path="/login" element={<Login />} />
@@ -24,8 +17,8 @@ function App() {
 
       <Route path='/' element={<AppLayout />}>
         <Route index element={<Blank />} />
-        <Route path='/user' element={<Blank />} />
-        <Route path='/order' element={<Blank />} />
+        <Route path='/user' element={<Login />} />
+        <Route path='/order' element={<Restaurant_page />} />
         <Route path='/restaurant' element={<Restaurant_page />} />
       </Route>
     </Routes>

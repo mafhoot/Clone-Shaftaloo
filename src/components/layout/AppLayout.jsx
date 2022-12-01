@@ -3,12 +3,16 @@ import Sidebar from "../sidebar/Sidebar";
 import '../../App.css';
 
 const AppLayout = () => {
-    return <div  style={{
-        padding: '50px 0px 0px 370px'
-    }}>
-        <Sidebar />
-        <Outlet />
-    </div>;
+    return (
+    <div className="AppLayoutAll">
+        <div className="SideAll">
+            <Sidebar />
+        </div>
+        <div className="ContentAll">
+            <Outlet />
+        </div>
+    </div>
+    )
 };
 
 export default AppLayout;

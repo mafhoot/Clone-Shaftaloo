@@ -113,7 +113,7 @@ h1{
 }
 
 
-button {
+.logButton {
   border: none;
   background-color: #eeba2c;
   /*padding: 20px;*/
@@ -128,7 +128,7 @@ button {
   margin-top: 1rem;
 }
 
-button:hover{
+.logButton:hover{
   color: #eeba2c;
   background-color: #1e2328ce;
 }

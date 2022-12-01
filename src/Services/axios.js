@@ -1,4 +1,4 @@
-import { url } from "./consts";
+import { url , deployURL } from "./consts";
 import axios from "axios";
 
 export function postUser(data) {

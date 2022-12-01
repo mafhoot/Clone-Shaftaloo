@@ -70,7 +70,7 @@ const Sidebar = () => {
   };
 
   return (
-    <>
+    <div className="AllSidebar">
       <span className={`btn-open ${navbarOpen ? " hide-btn" : ""}`} onClick={handleToggle}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -133,7 +133,7 @@ const Sidebar = () => {
           ))}
         </div>
       </nav>
-    </>
+    </div>
   );
 };
 

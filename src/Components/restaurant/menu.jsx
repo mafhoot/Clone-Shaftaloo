@@ -1,7 +1,7 @@
 import { useState ,useContext ,useEffect} from "react";
 import { CartContext} from "./cart";
 import { OrderPage } from "./order";
-import { getMenu } from "../services/axios";
+import { getMenu ,getRestaurant} from "../../services/axios";
 
 
 export function  RstMenu  ({id}) {
@@ -15,9 +15,9 @@ export function  RstMenu  ({id}) {
   console.log("khar")
 
   useEffect(() => {
-    getMenu(id).then (m => {
+    getRestaurant(id).then (m => {
       //console.log(m.data[0].categories[0])
-      setMenu(m.data)
+      setMenu(m.data.menu)
     }).catch()
   },[])
 
@@ -75,7 +75,7 @@ export function  RstMenu  ({id}) {
           <div className="menu">
             <div> 
               <div className="categories">
-                {foodTags?.map (tag => (
+                {restMenu?.map (tag => (
                   //JSON.stringify(tag.categories)
                   <button onClick={() => loadMenu(tag)} className="catButton">{tag.categoryName}</button>
                 ))}

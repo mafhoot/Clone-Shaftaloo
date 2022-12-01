@@ -19,3 +19,18 @@ a {
     color: black;
     font-family: Gilroy;
 } 
+
+.AppLayoutAll{
+    box-sizing: border-box;
+}
+
+.SideAll {
+    float: left;
+    width: 20%;
+}
+
+
+.ContentAll {
+    float: right;
+    width: 80%;
+}
