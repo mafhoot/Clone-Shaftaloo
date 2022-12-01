@@ -18,13 +18,26 @@
   
   .profName {
     float: left;
-    width: 30%;
+    width: 40%;
     margin-left: 20px;
     display: flex;
     height: 100%;
     align-items: center
   }
+
+  .text_name {
+    margin-top: 5px;
+  }
+
+  .khar1 {
+    margin-bottom:-3px;
+  }
+
+  .khar2 {
+    margin-top: -3px;
+  }
   
+
   
   .sidebar__menu {
     position: relative;

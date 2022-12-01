@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./sidebar.css";
-import { getUser } from "../../services/axios";
+import { getUser } from "../../Services/axios";
 
 const sidebarNavItems = [
   {
@@ -93,8 +93,9 @@ const Sidebar = () => {
           </div>
           <div className="profName">
             <div className="text_name">
-              <p>{user.name}</p>
-              <p>manager</p>
+              {/* <p>{user.name}</p> */}
+              <p className="khar1">Amir deldar</p>
+              <p className="khar2">manager</p>
             </div>
           </div>
           <button className="btn-close" onClick={handleToggle}>

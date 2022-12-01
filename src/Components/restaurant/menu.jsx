@@ -1,7 +1,7 @@
 import { useState ,useContext ,useEffect} from "react";
 import { CartContext} from "./cart";
 import { OrderPage } from "./order";
-import { getMenu ,getRestaurant} from "../../services/axios";
+import { getMenu ,getRestaurant} from "../../Services/axios";
 
 
 export function  RstMenu  ({id}) {
@@ -20,11 +20,26 @@ export function  RstMenu  ({id}) {
     getRestaurant(id).then (m => {
       //console.log(m.data[0].categories[0])
       setMenu(m.data.menu)
+      loadAll(restMenu)
     }).catch()
   },[])
 
   function loadMenu (i) {
     setFoods(i.foods)
+    //console.log(i.foods[0])
+  }
+
+  function loadAll (x) {
+    setFoods([]);
+    for (let i=0 ; i<x.length ; i++) {
+      for (let j=0 ; j < x[i].foods.length ; j++) {
+        console.log(x[i].foods[j])
+        //x.push(x[i].foods[j])
+        setFoods(current => [...current, x[i].foods[j]])
+      }
+      //console.log(restMenu[i].foods)
+      //foods.push(restMenu[i].foods)
+    }
   }
 
   function inc (t) {
@@ -74,6 +89,7 @@ export function  RstMenu  ({id}) {
           <div className="menu">
             <div> 
               <div className="categories">
+                <button onClick={() => loadAll(restMenu)} className="catButton">All</button>
                 {restMenu?.map (tag => (
                   //JSON.stringify(tag.categories)
                   <button onClick={() => loadMenu(tag)} className="catButton">{tag.categoryName}</button>

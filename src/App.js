@@ -10,19 +10,21 @@ import Blank from './pages/Blank';
 
 function App() {
   return (
-    <BrowserRouter>
-    <Routes>
-      <Route path="/login" element={<Login />} />
-      <Route path="/sign-up" element={<Register />} />
-
-      <Route path='/' element={<AppLayout />}>
-        <Route index element={<Blank />} />
-        <Route path='/user' element={<Login />} />
-        <Route path='/order' element={<Restaurant_page />} />
-        <Route path='/restaurant' element={<Restaurant_page />} />
-      </Route>
-    </Routes>
-    </BrowserRouter>
+    <div className="AllAll">
+      <BrowserRouter>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/sign-up" element={<Register />} />
+        <Route path='/' element={<AppLayout />}>
+          <Route index element={<Blank />} />
+          <Route path='/user' element={<Login />} />
+          <Route path='/order' element={<Restaurant_page />} />
+          <Route path='/restaurant' element={<Restaurant_page />} />
+        </Route>
+      </Routes>
+      </BrowserRouter>
+    </div>
+    
 
     );
 }
