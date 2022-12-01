@@ -22,3 +22,11 @@ export function S(value,key){
 export function getBearerToken(email="w@w.w",password="1234567"){
 return axios.post(url+"api/User/BearerToken",{email:email,password:password})
 }
+export function getRestaurant (data){
+    return axios.get(url+"api/Restaurant/"+data)
+}
+
+export function getMenu (data){
+    return axios.get(url+"api/Restaurant/GetRestaurantMenu/"+data)
+}
+
