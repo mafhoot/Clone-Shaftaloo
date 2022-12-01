@@ -3,7 +3,7 @@ import Rating from '@mui/material/Rating';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Button} from '@mui/material';
-import {getRestaurant , getMenu} from "../Services/axios"
+import {getRestaurant , getMenu} from "../services/axios"
 import { RstMenu } from "./menu";
 import { Contact_us } from "./contact_us";
 import { OrderPage } from "./order"

@@ -1,7 +1,7 @@
 import { useState ,useContext ,useEffect} from "react";
 import { CartContext} from "./cart";
 import { OrderPage } from "./order";
-import { getMenu } from "../Services/axios";
+import { getMenu } from "../services/axios";
 
 
 export function  RstMenu  ({id}) {
