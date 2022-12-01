@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './sidebar.css';
-import {getUser} from "../../Services/axios";
 import { MdClose } from "react-icons/md"
 import { FiMenu } from "react-icons/fi"
+import '../../App.css';
 
 const sidebarNavItems = [
     {
@@ -37,12 +37,6 @@ const Sidebar = () => {
     const [user,setUser] = useState({name : "Amir Deldar"});
     const [username,setUsername] = useState("amirdldr@gmail.com");
     useEffect(() => {
-        getUser(username).then (e => {
-        //console.log(e.data.username)
-        setUser({
-            name: e.data.username,
-        })
-        }).catch()
     },[]);
 
     useEffect(() => {

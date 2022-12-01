@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Login } from "./Components/Auth/Login/Login";
 import { Register } from "./Components/Auth/SignUp/Register";
 import { BrowserRouter , Routes , Route} from "react-router-dom";
-import './App.css';
+
 import 'boxicons/css/boxicons.min.css';
-import AppLayout from './components/layout/AppLayout';
+import AppLayout from './Components/layout/AppLayout';
 import Blank from './pages/Blank';
 
 function App() {
