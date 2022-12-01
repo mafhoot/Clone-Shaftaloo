@@ -7,7 +7,7 @@
   color: white;
   background-color: #262626;
   background-image: url("food.jpg");
-  
+  margin: -8px;
 }
 
 .auth-form-container{
@@ -82,10 +82,8 @@ input {
   font-family: gilroy;
   width: 16rem;
 }
-p{
-  color: white;
-  font-family: gilroy;
-}
+
+
 input:focus{
   outline: none;
   /*box-shadow: 2px 2px 2px 1px #1e2328;*/
@@ -147,6 +145,8 @@ h1{
 }
 
 
-.login-regiser-q {
+.login-regiser-p {
   margin-top: 20px;
+  color: white;
+  font-family: gilroy;
 }

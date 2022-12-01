@@ -20,7 +20,8 @@ export const Restaurant_page = () => {
   const foodTags = ["All", "Burger" ,"Fried", "Dessert" , "Pizza" , "Sandwitch"] 
   const [cart,setCart] = useState([]);
   const [nav,setNav] = useState()
-  const [id,setId] = useState (1)
+  const [id,setId] = useState (2)
+  var imgURL= "data:image/png;base64,";
   
   const tabs = ["Menu 1" ,"Menu 2","Table","Cart"]
   const [active, setActive] = useState(1);
@@ -29,7 +30,7 @@ export const Restaurant_page = () => {
 
   foods.forEach (e =>{
     e["details"] = "Meat, Bread, Pickle, Tomato";
-    e["image"] = "https://realfood.tesco.com/media/images/Burger-31LGH-a296a356-020c-4969-86e8-d8c26139f83f-0-1400x919.jpg";
+    // e["image"] = "https://realfood.tesco.com/media/images/Burger-31LGH-a296a356-020c-4969-86e8-d8c26139f83f-0-1400x919.jpg";
   })
   
   
@@ -46,12 +47,13 @@ export const Restaurant_page = () => {
         name: e.data.name,
         address: e.data.address,
         description: e.data.description,
-        logoImg: e.data.logoImage,
+        logoImg: e.data.logoImg,
         backgroundImg: e.data.backgroundImg,
         id: e.data.id,
         dateCreated: e.data.dateCreated,
         tags : e.data.tags,
         rate : e.data.avg,
+        headImage : e.data.backgroundImg,
       })
       setValue(e.data.avg)
     }).catch()
@@ -80,8 +82,8 @@ export const Restaurant_page = () => {
     <>
     <ThemeProvider theme={theme}>
     <div className="All">
-        <img className="HeadImage" src={headImageLink}></img>
-        <img className="restLogo" src={logoImage}></img>
+        <img className="HeadImage" src={imgURL+rest.headImage}></img>
+        <img className="restLogo" src={imgURL+rest.logoImg}></img>
         <div className="details">
           <div className="info" >
             <label className="name">{rest.name}</label>

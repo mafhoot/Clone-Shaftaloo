@@ -79,7 +79,7 @@ export const Login = () => {
                 <input value={pass} required onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password" />
                 <button className="logButton" type="submit" >Log In</button>
             </form>
-            <p className="login-regiser-q">Don't have an account? <a className="link-btn" href="/sign-up">Register Now</a></p>
+            <p className="login-regiser-p">Don't have an account? <a className="link-btn" href="/sign-up">Register Now</a></p>
             <span className="loginError">{loginFlag}</span>
         </div>
       </div>

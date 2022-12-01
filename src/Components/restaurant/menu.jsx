@@ -10,6 +10,8 @@ export function  RstMenu  ({id}) {
   const [foods,setFoods] = useState();
   const [flag, setFlag] = useState(0);
   const [restMenu,setMenu] = useState()
+
+  var imgURL= "data:image/png;base64,";
   var forFlag = 0;
 
   console.log("khar")
@@ -23,13 +25,10 @@ export function  RstMenu  ({id}) {
 
   function loadMenu (i) {
     setFoods(i.foods)
-    foods.forEach (e =>{
-      e["image"] = "https://realfood.tesco.com/media/images/Burger-31LGH-a296a356-020c-4969-86e8-d8c26139f83f-0-1400x919.jpg";
-    })
   }
 
   function inc (t) {
-    t.count+=1
+    t.foodCnt+=1
     console.log("ezafe")
     for (let i = 0 ; i < cart.length ; i++){
       if (t.name === cart[i].name) {
@@ -53,7 +52,7 @@ export function  RstMenu  ({id}) {
   }
 
   function dec (t) {
-    t.count-=1
+    t.foodCnt-=1
     for (let i = 0 ; i < cart.length ; i++){
       if (t.name === cart[i].name) {
         cart[i].order-=1;
@@ -84,15 +83,15 @@ export function  RstMenu  ({id}) {
               <div className="foods">
                 {foods?.map(x => (
                   <div className="newCard">
-                    <img src={x.image} className="imageCard" />
+                    <img src={imgURL+x.image} className="imageCard" />
                     <h2 className="cardTitle">{x.name}</h2>
                     <div className="foodDetails">
                       <p className="cardDetails">{/*x.details*/}{x.foodDescription}</p>
                     </div>
                     <p className="price">{x.price}$</p>
                     <div className="ButtonGroup">
-                    <button className="cardButton" onClick={() => {if (x.count > 0 ) {dec(x)}}} >-</button>
-                      <span className="cardButton">{x.count}</span>
+                    <button className="cardButton" onClick={() => {if (x.foodCnt > 0 && x.foodCnt <= x.count ) {dec(x)}}} >-</button>
+                      <span className="cardButton">{x.foodCnt}</span>
                       <button className="cardButton" onClick={() => inc(x)}>+</button>
                     </div>
                   </div>

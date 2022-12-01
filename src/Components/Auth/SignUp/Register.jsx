@@ -104,7 +104,7 @@ export const Register = () => {
             
             <button className="logButton" type="submit">Register</button>
         </form>
-        <p className="login-regiser-q">Already A Member? <a className="link-btn" href="/login">Log In</a> </p>
+        <p className="login-regiser-p">Already A Member? <a className="link-btn" href="/login">Log In</a> </p>
     </div>
     </div>
     )
