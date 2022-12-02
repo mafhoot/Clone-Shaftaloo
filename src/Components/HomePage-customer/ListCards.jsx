@@ -10,13 +10,14 @@ import './homePageCustomer.css'
 
 export const ListCardRes = () => {
 
-    const filters = ['all', 'fast-food', 'chicken']
+    const filters = ['all', 'Fast Food', 'Chicken', 'Irani', 'Pizza']
     const [cards, setCards] = useState();
     const [data, setData] = useState([])
     const [currentFilter, setCurrentFilter] = useState("all")
+    const [number, setNember] = useState(0)
 
     useEffect(() => {
-      getRestaurantCards()
+      getRestaurantCards(currentFilter, number)
       .then((response)=>{
         console.log("response : ", response.data)
         setData(response.data)
@@ -55,8 +56,8 @@ export const ListCardRes = () => {
       const tmp=[]
       data.forEach(item=>{
         console.log(item);
-        tmp.push(
-          <Card
+        tmp.push(<div onClick={() => {handlClick(item.id)}}>
+           <Card 
             key={item.id}
             id={item.id}
             name={item.name}
@@ -65,16 +66,26 @@ export const ListCardRes = () => {
             logo_res={item.logoImg}
             tags={item.tags}
           />
+        </div>
+         
         )
       })
       return tmp;
     }
 
-    /*const changeFilter = (p) => {
+    const handlClick = (id) => {
+      console.log("this card id is : ", id)
+    }
+
+    const changeFilter = (p) => {
       setCurrentFilter(p)
       console.log(currentFilter)
     }
-    */
+
+    const add_the_number = () => {
+      console.log();
+      setNember(number +1);
+    }
 
     const loader = () => {
       if (data.length !== 0) {
@@ -88,7 +99,7 @@ export const ListCardRes = () => {
             <div>
               <div className="filters">
                 {filters.map((filter) => (
-                    <button /*onClick={changeFilter(filter)}*/ className="simple-filter">{filter}</button>
+                    <button onClick={()=>{changeFilter(filter)}} className="simple-filter">{filter}</button>
                   ))}
               </div>
             </div>
@@ -96,11 +107,11 @@ export const ListCardRes = () => {
               <div className="simple-card-inlist">
                 <InfiniteScroll
                   dataLength={data.length}
-                  next={getRestaurantCards()}
-                  hasMore={true}
-                  loader={loader()}
+                  next={() => add_the_number()}
+                  hasMore={() => getRestaurantCards(currentFilter, number+1)}
+                  loader={() => loader()}
                   >
-                  {dataGen()}
+                    {dataGen()}
                 </InfiniteScroll>
               </div>
             </div>

@@ -11,7 +11,7 @@ export function  Card  ({name, location, image_res, logo_res, tags}) {
   const tagGen = () => {
     const tmp=[]
     tags.forEach(item=>{
-      console.log(item);
+      //console.log(item);
       tmp.push(
         <span className="simple-tag" id={item.id}>{item.value}</span>
       )
