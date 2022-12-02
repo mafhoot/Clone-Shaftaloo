@@ -28,6 +28,8 @@ export const ListCardRes = () => {
             id : item.id,
             name : item.name,
             location : item.address,
+            logo_res : item.logoImg,
+            image_res : item.backgroundImg,
             tags : item.tag
           })
         })
@@ -58,6 +60,8 @@ export const ListCardRes = () => {
             id={item.id}
             name={item.name}
             location={item.address}
+            image_res={item.backgroundImg}
+            logo_res={item.logoImg}
           />
         )
       })

@@ -2,10 +2,10 @@ import React from "react";
 import { useState } from "react";
 import './homePageCustomer.css'
 
-export function  Card  ({name, location}) {
+export function  Card  ({name, location, image_res, logo_res}) {
 
-  const image_res = "https://foodexiran.com/wp-content/uploads/2022/08/store-banner.jpg";
-  const logo_res = "https://wpcdn.us-east-1.vip.tn-cloud.net/www.klkntv.com/content/uploads/2020/08/KFC-LOGO-1024x881.jpg";
+  //const image_res = "https://foodexiran.com/wp-content/uploads/2022/08/store-banner.jpg";
+  //const logo_res = "https://wpcdn.us-east-1.vip.tn-cloud.net/www.klkntv.com/content/uploads/2020/08/KFC-LOGO-1024x881.jpg";
   const tags = ["chicken", "fast-food"]
 
     return (
