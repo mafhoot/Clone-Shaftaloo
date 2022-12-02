@@ -76,9 +76,10 @@ img.logo {
 /****   list cards ****/
 
 .homePage-customer {
-  background-color: black;
+  background-color: #161616;
   font-family: gilroy;
   min-height: 100vh;
+  margin: -8px;
 }
 
 .container {
