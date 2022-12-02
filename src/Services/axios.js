@@ -34,3 +34,6 @@ export function getTable (restID , start , end) {
     console.log(restID , start , end)
     return axios.get(url+ "api/ReserveTable/GetActiveReserveTablesByRestaurant?restauranId="+restID+"&from="+start+"&to="+end)
 }
+export function getRestaurantCards (tag, number){
+    return axios.get(url+"api/Restaurant?tag="+tag+"&size=10&number="+number)
+}
