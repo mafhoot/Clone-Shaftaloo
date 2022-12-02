@@ -7,6 +7,8 @@ import {Restaurant_page} from './Components/restaurant/restaurant_page'
 import 'boxicons/css/boxicons.min.css';
 import AppLayout from './Components/layout/AppLayout';
 import Blank from './pages/Blank';
+import { Card } from "./Components/HomePage-customer/card";
+import { ListCardRes } from "./Components/HomePage-customer/ListCards"
 
 function App() {
   return (
@@ -16,7 +18,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/sign-up" element={<Register />} />
         <Route path='/' element={<AppLayout />}>
-          <Route index element={<Blank />} />
+          <Route path="/Home" element={<ListCardRes/>} />
           <Route path='/user' element={<Login />} />
           <Route path='/order' element={<Restaurant_page />} />
           <Route path='/restaurant' element={<Restaurant_page />} />
