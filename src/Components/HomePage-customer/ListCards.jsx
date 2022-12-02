@@ -30,7 +30,8 @@ export const ListCardRes = () => {
             location : item.address,
             logo_res : item.logoImg,
             image_res : item.backgroundImg,
-            tags : item.tag
+            tags : item.tag,
+            tags : item.tags
           })
         })
         setCards(newCard)
@@ -62,6 +63,7 @@ export const ListCardRes = () => {
             location={item.address}
             image_res={item.backgroundImg}
             logo_res={item.logoImg}
+            tags={item.tags}
           />
         )
       })
