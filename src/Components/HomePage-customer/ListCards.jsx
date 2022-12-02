@@ -1,10 +1,12 @@
 import axios from "axios";
 import React from "react";
-import { useEffect } from "react";
+import { useEffect} from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useState } from "react";
 import { Card } from "./card";
 import { getRestaurantCards } from "../../Services/axios";
+import { Restaurant_page } from "../restaurant/restaurant_page";
+import { BrowserRouter , Routes , Route , Navigate , useNavigate} from "react-router-dom";
 
 import './homePageCustomer.css'
 
@@ -15,6 +17,7 @@ export const ListCardRes = () => {
     const [data, setData] = useState([])
     const [currentFilter, setCurrentFilter] = useState("all")
     const [number, setNember] = useState(0)
+     const navigate = useNavigate()
 
     useEffect(() => {
       getRestaurantCards(currentFilter, number)
@@ -56,7 +59,9 @@ export const ListCardRes = () => {
       const tmp=[]
       data.forEach(item=>{
         console.log(item);
-        tmp.push(<div onClick={() => {handlClick(item.id)}}>
+        
+        tmp.push(
+        <div onClick={()=> navigate('/restaurant?id='+item.id)}>
            <Card 
             key={item.id}
             id={item.id}
@@ -110,6 +115,7 @@ export const ListCardRes = () => {
                   next={() => add_the_number()}
                   hasMore={() => getRestaurantCards(currentFilter, number+1)}
                   loader={() => loader()}
+                  className="infinite"
                   >
                     {dataGen()}
                 </InfiniteScroll>

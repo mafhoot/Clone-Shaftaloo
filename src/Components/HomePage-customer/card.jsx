@@ -21,16 +21,16 @@ export function  Card  ({name, location, image_res, logo_res, tags}) {
 
     return (
       <div className="card">
-        <div className="card-top">
+        
           <img className="img-res"
                src={image_res} 
                alt="restaurant-card" />
-        </div>
+        
         <div className="card-discription">
-          <img className="logo" 
+          <img className="cardlogo" 
                src={logo_res}
                alt="logo" />
-          <h1>{name}</h1>
+          <h1 className="restCardName">{name}</h1>
         </div>
         <p className="location">Location : <span className="simple-loc">{location}</span></p>
         <p className="tags">tags : 

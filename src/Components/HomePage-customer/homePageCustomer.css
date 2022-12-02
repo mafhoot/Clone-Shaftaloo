@@ -1,47 +1,56 @@
 /***    card    ***/
-
 .card {
-  background: #161616;
-  border-radius: 20px;
-  overflow: hidden;
-  margin: 10px;
-  color: white;
+  display: flex;
+    flex-direction: column;
+    width: 24%;
+    background-color: #161616;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
 }
 
 .card:hover {
   cursor: pointer;
 }
 
-.card-top {
+/* .card-top {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  overflow: hidden;
-  text-align: center;
-}
-
-img.img-res {
   width: 100%;
-  aspect-ratio: 3/2;
-  object-fit: cover;
+} */
+
+.img-res {
+  border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+    aspect-ratio: 3/2;
+    object-fit: cover;
   
 }
 
 .card-discription {
-  margin-left: 15px;
+  width: 100%;
   display: flex;
   align-items: center;
 }
 
-img.logo {
+.infinite {
+  display: flex;
+  width: 100%;
+}
+
+.cardlogo {
   width: 60px;
   height: 60px;
   object-fit: cover;
   border-radius: 50%;
 }
 
-.card-discription h1 {
-  overflow: hidden;
-  text-overflow: ellipsis;
+.restCardName {
+  overflow: auto;
+  /* text-overflow: ellipsis; */
   font-size: 30px;
   color: #eeba2c;
   margin-left: 16px;
@@ -80,6 +89,7 @@ img.logo {
   font-family: gilroy;
   min-height: 100vh;
   margin: -8px;
+  
 }
 
 .container {
@@ -128,9 +138,10 @@ button.simple-filter:hover {
 }
 
 .cards-list {
+  display: flex;
+  flex-flow: row;
   border-radius: 20px;
   background-color: #262626;
-  padding: 5px;
 }
 
 .cards-list::after {
@@ -140,9 +151,11 @@ button.simple-filter:hover {
 }
 
 .simple-card-inlist {
-  float: left;
-  width: 25%;
-  background-color: inherit;
+  width: 100%;
+  display: flex;
+  /* flex-wrap: wrap; */
+  flex-flow: row;
+  /* background-color: inherit; */
 }
 
 .loader {

@@ -10,8 +10,11 @@ import { OrderPage } from "./order"
 import { CartContext , TableContext } from "./cart";
 import { Tables } from "./table";
 import './restaurant_page.css'
+import { useSearchParams } from 'react-router-dom'
 
 export const Restaurant_page = () => {
+  
+  const [searchParams, setSearchParams] = useSearchParams()
   const [rest,setRest] = useState({id : null , name : null , date : null , address : "America" })
   const [value, setValue] = useState(3.5);
   const [headImageLink ,setHeadImageLink] = useState ("https://foodexiran.com/wp-content/uploads/2022/08/store-banner.jpg")
@@ -20,7 +23,7 @@ export const Restaurant_page = () => {
   const foodTags = ["All", "Burger" ,"Fried", "Dessert" , "Pizza" , "Sandwitch"] 
   const [cart,setCart] = useState([]);
   const [nav,setNav] = useState()
-  const [id,setId] = useState (1)
+  const [id,setId] = useState (searchParams.get("id"))
   
   const tabs = ["Menu 1" ,"Menu 2","Table","Cart"]
   const [active, setActive] = useState(1);
@@ -39,6 +42,7 @@ export const Restaurant_page = () => {
   },[active])
 
   useEffect(() => {
+    console.log(searchParams.get("id"));
     getRestaurant(id).then (e => {
       setRest({
         city: e.data.
@@ -89,7 +93,7 @@ export const Restaurant_page = () => {
           <div className="info" >
             <label className="name">{rest.name}</label>
             <p className="description" >About : {rest.description}</p>
-            <p className="location">City : {rest.city}</p>
+            <p className="restLocation">City : {rest.city}</p>
             <p className="RestTags">Tags : 
               <ButtonGroup color="neutral" variant="text" aria-label="text button group">
                 {rest.tags?.map(u => (
