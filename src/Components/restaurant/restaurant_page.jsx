@@ -42,7 +42,7 @@ export const Restaurant_page = () => {
   useEffect(() => {
     getRestaurant(id).then (e => {
       setRest({
-        city: e.data.city.cityName,
+        city: e.data.address,
         comments: "chetori",
         name: e.data.name,
         address: e.data.address,
@@ -103,7 +103,6 @@ export const Restaurant_page = () => {
 
 
         <CartContext.Provider value={{cart,setCart}}>
-          <TableContext.Provider value={{tbList, setTbList}}>
 
           <div className="Tab">
             <button className={(active==1) ? "TabButton active" : "TabButton"} onClick={() => {setNav(<RstMenu id={id} />); setActive(1); }} >MENU</button>
@@ -116,7 +115,6 @@ export const Restaurant_page = () => {
             {nav}
           </div>
           
-          </TableContext.Provider>
         </CartContext.Provider>
         
         <div className="distance"></div>

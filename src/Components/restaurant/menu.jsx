@@ -13,16 +13,21 @@ export function  RstMenu  ({id}) {
 
   var imgURL= "data:image/png;base64,";
   var forFlag = 0;
-
+  const [startFlag,setStart] = useState (0)
   console.log("khar")
 
   useEffect(() => {
     getRestaurant(id).then (m => {
       //console.log(m.data[0].categories[0])
       setMenu(m.data.menu)
-      loadAll(restMenu)
+      setStart(() => !startFlag)
     }).catch()
   },[])
+
+  // useEffect(() => {
+  //   console.log ("ji")  
+  //   loadAll(restMenu)
+  // },[startFlag])
 
   function loadMenu (i) {
     setFoods(i.foods)

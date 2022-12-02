@@ -6,16 +6,14 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import "./table.css"
 import { OrderPage } from "./order";
-import { CartContext , TableContext } from "./cart";
-//import {RestTables} from "./restTables"
+import { CartContext} from "./cart";
 
 export function Tables () {
-
+    const [table, setTable] = useState([{"name" : "2 Sit table" , "count" : 0 , "price" : 20}, {"name" : "4 Sit table" , "count" : 0, "price" : 40 } , {"name" : "6 Sit table" , "count" : 0 , "price" : 60}])
     const [time, setTime] = React.useState('');
     const [date, setDate] = React.useState('');
-    const [nav,setNav] = useState ();
-    
-    
+    const [tbList,setTbList] = useState()
+
     const handleDate = (event) => {
         setDate(event.target.value);    
     };
@@ -24,7 +22,7 @@ export function Tables () {
     };
 ///////////////////////////////////////////////////////////////////////////////
 
-    const {tbList,setTbList} = useContext (TableContext);
+    // const {tbList,setTbList} = useContext (TableContext);
     const {cart,setCart} = useContext (CartContext);
 
     const [flag, setFlag] = useState(0);
@@ -32,7 +30,7 @@ export function Tables () {
 
     console.log("khar")
 
-    tbList.forEach (e =>{
+    table.forEach (e =>{
         e["image"] = "https://static.rigg.uk/Files/casestudies/bistrotpierretables/sz/w960/bistrolargeroundrestauranttablewoodtopmetalbase.jpg";
         e["capacity"] = 10;
     })
@@ -78,25 +76,7 @@ export function Tables () {
     }
 
     function handleSubmit () {
-        setNav(
-            <div className="tabList">
-                {tbList?.map(x => (
-                  <div className="newCard">
-                    <img src={x.image} className="imageCard" />
-                    <h2 className="cardTitle">{x.name}</h2>
-                    <div className="foodDetails">
-                      <p className="cardDetails">Capacity: {x.capacity}</p>
-                    </div>
-                    <p className="price">{x.price}$</p>
-                    <div className="ButtonGroup">
-                    <button className="cardButton" onClick={() => {if (x.count > 0 ) {dec(x)}}} >-</button>
-                      <span className="cardButton">{x.count}</span>
-                      <button className="cardButton" onClick={() => inc(x)}>+</button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-        )
+        setTbList(table)
     }
 
     useEffect (() => {  
@@ -104,7 +84,7 @@ export function Tables () {
     
       return (
         <>
-        <div className="tableAll">
+        <div className="menu">
             <div className="DateTime">
                 <div className="date">
                     <Box className="dateBox" color="black">
@@ -157,13 +137,28 @@ export function Tables () {
                 
             </div>
 
-            <div className="TablesShow">
-                {nav}
+            <div className="foods">
+                {tbList?.map(x => (
+                  <div className="newCard">
+                    <img src={x.image} className="imageCard" />
+                    <h2 className="cardTitle">{x.name}</h2>
+                    <div className="foodDetails">
+                      <p className="cardDetails">Capacity: {x.capacity}</p>
+                    </div>
+                    <p className="price">{x.price}$</p>
+                    <div className="ButtonGroup">
+                    <button className="cardButton" onClick={() => {if (x.count > 0 ) {dec(x)}}} >-</button>
+                      <span className="cardButton">{x.count}</span>
+                      <button className="cardButton" onClick={() => inc(x)}>+</button>
+                    </div>
+                  </div>
+                ))}
             </div>
+            
         
         </div>
 
-        <div className="cartShow">
+        <div className="receipt">
             <OrderPage/>
         </div>
         
