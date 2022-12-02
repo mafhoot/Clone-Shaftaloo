@@ -99,7 +99,7 @@ export function OrderPage () {
               <h2 className="orderHeader">Order list</h2>
 
               <div className="List">
-                {console.log("salam")}
+                
                   {cart?.map (x => (
                     <p className="orderList">{x.order}x : {x.name} : {x.order*x.price}$</p>
                 ))}
@@ -127,7 +127,7 @@ export function OrderPage () {
               <h2 className="orderHeader">Your order</h2>
 
               <div className="ListDialog">
-                {console.log("salam")}
+                
                   {cart?.map (x => (
                     <p className="orderList">{x.order}x : {x.name} : {x.order*x.price}$</p>
                 ))}

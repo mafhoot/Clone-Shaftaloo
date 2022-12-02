@@ -30,3 +30,7 @@ export function getMenu (data){
     return axios.get(url+"api/Restaurant/GetRestaurantMenu/"+data)
 }
 
+export function getTable (restID , start , end) {
+    console.log(restID , start , end)
+    return axios.get(url+ "api/ReserveTable/GetActiveReserveTablesByRestaurant?restauranId="+restID+"&from="+start+"&to="+end)
+}

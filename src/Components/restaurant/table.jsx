@@ -7,15 +7,16 @@ import TextField from '@mui/material/TextField';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
-import { MobileDateTimePicker } from '@mui/x-date-pickers/MobileDateTimePicker';
-import Stack from '@mui/material/Stack';
+import { getTable } from "../../Services/axios";
 
-export function Tables () {
+
+export function Tables (id) {
     const [table, setTable] = useState([{"name" : "2 Sit table" , "count" : 0 , "price" : 20}, {"name" : "4 Sit table" , "count" : 0, "price" : 40 } , {"name" : "6 Sit table" , "count" : 0 , "price" : 60}])
     const [time, setTime] = React.useState('');
     const [date, setDate] = React.useState('');
     const [tbList,setTbList] = useState()
-    const [value, setValue] = React.useState(dayjs(Date.now()));
+    const [timeValue, setTimeValue] = React.useState(dayjs(Date.now()));
+    const endDate = new Date ;
 
     const handleDate = (event) => {
         setDate(event.target.value);    
@@ -31,12 +32,13 @@ export function Tables () {
     const [flag, setFlag] = useState(0);
     var forFlag = 0;
 
-    console.log("khar")
-
     table.forEach (e =>{
         e["image"] = "https://static.rigg.uk/Files/casestudies/bistrotpierretables/sz/w960/bistrolargeroundrestauranttablewoodtopmetalbase.jpg";
         e["capacity"] = 10;
     })
+
+    const imgIMG = "https://static.rigg.uk/Files/casestudies/bistrotpierretables/sz/w960/bistrolargeroundrestauranttablewoodtopmetalbase.jpg"
+
     // function addHours(numOfHours, date = new Date()) {
     //     const dateCopy = new Date(date.getTime());
       
@@ -49,7 +51,7 @@ export function Tables () {
     t.count+=1
     console.log("ezafe")
     for (let i = 0 ; i < cart.length ; i++){
-        if (t.name === cart[i].name) {
+        if (t.number === cart[i].name) {
         forFlag=1;
         cart[i].order+=1
         break ;
@@ -57,7 +59,7 @@ export function Tables () {
     }
     if (forFlag===0) {
         cart.push({
-        name : t.name,
+        name : t.number,
         price : t.price ,
         order : 1 ,
         });
@@ -71,11 +73,11 @@ export function Tables () {
     function dec (t) {
     t.count-=1
     for (let i = 0 ; i < cart.length ; i++){
-        if (t.name === cart[i].name) {
+        if (t.number === cart[i].name) {
         cart[i].order-=1;
         if (cart[i].order===0){
             setCart( cart.filter( a=>
-            a.name !== t.name
+            a.name !== t.number
             ))
             break;
         }
@@ -84,8 +86,20 @@ export function Tables () {
     setFlag (() => !flag)
     }
 
-    function handleSubmit () {
-        setTbList(table)
+    function handleSubmit (date) {
+        const from=new Date(date)
+        const to=new Date(date + 2 * 60 * 60 * 1000)
+        // console.log("begin : " + from.toJSON())
+        // console.log("end : " + to.toJSON())
+        getTable (id['id'] , from.toJSON() , to.toJSON()).then (m => {
+            console.log (tbList)
+            m.data.forEach (e => {
+                e ["count" ] = 0;
+            })
+            setTbList(m.data)
+            console.log(m.data);
+        })
+
     }
 
     useEffect (() => {  
@@ -95,66 +109,23 @@ export function Tables () {
         <>
         <div className="menu">
             <div className="DateTime">
-                {/* <div className="date">
-                    <Box className="dateBox" color="black">
-                    <FormControl fullWidth color="black">
-                        <InputLabel id="demo-simple-select-label" color="black">Date</InputLabel>
-                        <Select
-                        labelId="demo-simple-select-label"
-                        id="demo-simple-select"
-                        value={date}
-                        label="Age"
-                        onChange={handleDate}
-                        >
-                        <MenuItem value={"Saturday"}>Saturday</MenuItem>
-                        <MenuItem value={"Sunday"}>Sunday</MenuItem>
-                        <MenuItem value={"Monday"}>Monday</MenuItem>
-                        <MenuItem value={"Teuseday"}>Teuseday</MenuItem>
-                        <MenuItem value={"Wedensday"}>Wedensday</MenuItem>
-                        <MenuItem value={"Thursday"}>Thursday</MenuItem>
-                        <MenuItem value={"Friday"}>Friday</MenuItem>
-                        </Select>
-                    </FormControl>
-                    </Box>
-                </div>
-                <div className="time">
-                    <Box className="timeBox">
-                    <FormControl fullWidth color="black">
-                        <InputLabel id="demo-simple-select-label" color="black">Time</InputLabel>
-                        <Select
-                        labelId="demo-simple-select-label"
-                        id="demo-simple-select"
-                        value={time}
-                        label="Age"
-                        onChange={handleTime}
-                        color="black"
-                        >
-                        <MenuItem value={10} color="black">12</MenuItem>
-                        <MenuItem value={20}>14</MenuItem>
-                        <MenuItem value={30}>16</MenuItem>
-                        <MenuItem value={30}>18</MenuItem>
-                        <MenuItem value={30}>20</MenuItem>
-                        <MenuItem value={30}>22</MenuItem>
-                        </Select>
-                    </FormControl>
-                    </Box>
-                </div> */}
+            
                 <div className="timePicker">
                     <div className="time">
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
                         <DateTimePicker
                             label="Select time"
                             renderInput={(params) => <TextField {...params} />}
-                            value={value}
+                            value={timeValue}
                             onChange={(newValue) => {
-                                setValue(newValue);
+                                setTimeValue(newValue);
                             }}
                             />
                         </LocalizationProvider>
                     </div>
                     
                     <div className="submit">
-                        <button className="submitTime" onClick={handleSubmit} >SUBMIT</button>
+                        <button className="submitTime" onClick={() => handleSubmit(timeValue)} >SUBMIT</button>
                     </div>
                 </div>
                  
@@ -164,12 +135,12 @@ export function Tables () {
             <div className="foods">
                 {tbList?.map(x => (
                   <div className="newCard">
-                    <img src={x.image} className="imageCard" />
-                    <h2 className="cardTitle">{x.name}</h2>
+                    <img src={imgIMG} className="imageCard" />
+                    <h2 className="cardTitle">{x.number}</h2>
                     <div className="foodDetails">
                       <p className="cardDetails">Capacity: {x.capacity}</p>
                     </div>
-                    <p className="price">{x.price}$</p>
+                    {/* <p className="price">{x.price}$</p> */}
                     <div className="ButtonGroup">
                     <button className="cardButton" onClick={() => {if (x.count > 0 ) {dec(x)}}} >-</button>
                       <span className="cardButton">{x.count}</span>
