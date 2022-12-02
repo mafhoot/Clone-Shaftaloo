@@ -20,8 +20,7 @@ export const Restaurant_page = () => {
   const foodTags = ["All", "Burger" ,"Fried", "Dessert" , "Pizza" , "Sandwitch"] 
   const [cart,setCart] = useState([]);
   const [nav,setNav] = useState()
-  const [id,setId] = useState (2)
-  var imgURL= "data:image/png;base64,";
+  const [id,setId] = useState (1)
   
   const tabs = ["Menu 1" ,"Menu 2","Table","Cart"]
   const [active, setActive] = useState(1);
@@ -42,7 +41,8 @@ export const Restaurant_page = () => {
   useEffect(() => {
     getRestaurant(id).then (e => {
       setRest({
-        city: e.data.address,
+        city: e.data.
+        address,
         comments: "chetori",
         name: e.data.name,
         address: e.data.address,
@@ -56,6 +56,7 @@ export const Restaurant_page = () => {
         headImage : e.data.backgroundImg,
       })
       setValue(e.data.avg)
+      console.log(e.data.avg)
     }).catch()
     setNav(<RstMenu id={id} />)
   },[]);
@@ -82,12 +83,12 @@ export const Restaurant_page = () => {
     <>
     <ThemeProvider theme={theme}>
     <div className="All">
-        <img className="HeadImage" src={imgURL+rest.headImage}></img>
-        <img className="restLogo" src={imgURL+rest.logoImg}></img>
+        <img className="HeadImage" src={rest.headImage}></img>
+        <img className="restLogo" src={rest.logoImg}></img>
         <div className="details">
           <div className="info" >
             <label className="name">{rest.name}</label>
-            <p className="description" >{rest.description}</p>
+            <p className="description" >About : {rest.description}</p>
             <p className="location">City : {rest.city}</p>
             <p className="RestTags">Tags : 
               <ButtonGroup color="neutral" variant="text" aria-label="text button group">
@@ -97,7 +98,7 @@ export const Restaurant_page = () => {
                 ))}
               </ButtonGroup>
             </p>
-            <span className="Rate">Rating :</span> <Rating className="rating" name="half-rating-read" defaultValue={value} precision={0.5} readOnly  />
+            <span className="Rate">Rating :</span> <Rating className="rating" name="half-rating-read" defaultValue={rest.rate} precision={0.5} readOnly  />
           </div>
         </div>
 

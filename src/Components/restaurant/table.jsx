@@ -1,18 +1,21 @@
 import React, { useState , useEffect , useContext} from "react";
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
 import "./table.css"
 import { OrderPage } from "./order";
 import { CartContext} from "./cart";
+import dayjs from 'dayjs';
+import TextField from '@mui/material/TextField';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
+import { MobileDateTimePicker } from '@mui/x-date-pickers/MobileDateTimePicker';
+import Stack from '@mui/material/Stack';
 
 export function Tables () {
     const [table, setTable] = useState([{"name" : "2 Sit table" , "count" : 0 , "price" : 20}, {"name" : "4 Sit table" , "count" : 0, "price" : 40 } , {"name" : "6 Sit table" , "count" : 0 , "price" : 60}])
     const [time, setTime] = React.useState('');
     const [date, setDate] = React.useState('');
     const [tbList,setTbList] = useState()
+    const [value, setValue] = React.useState(dayjs(Date.now()));
 
     const handleDate = (event) => {
         setDate(event.target.value);    
@@ -20,7 +23,7 @@ export function Tables () {
     const handleTime = (event) => {
         setTime(event.target.value);
     };
-///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
 
     // const {tbList,setTbList} = useContext (TableContext);
     const {cart,setCart} = useContext (CartContext);
@@ -34,7 +37,13 @@ export function Tables () {
         e["image"] = "https://static.rigg.uk/Files/casestudies/bistrotpierretables/sz/w960/bistrolargeroundrestauranttablewoodtopmetalbase.jpg";
         e["capacity"] = 10;
     })
-
+    // function addHours(numOfHours, date = new Date()) {
+    //     const dateCopy = new Date(date.getTime());
+      
+    //     dateCopy.setTime(dateCopy.getTime() + numOfHours * 60 * 60 * 1000);
+      
+    //     return dateCopy;
+    //   }
 
     function inc (t) {
     t.count+=1
@@ -86,7 +95,7 @@ export function Tables () {
         <>
         <div className="menu">
             <div className="DateTime">
-                <div className="date">
+                {/* <div className="date">
                     <Box className="dateBox" color="black">
                     <FormControl fullWidth color="black">
                         <InputLabel id="demo-simple-select-label" color="black">Date</InputLabel>
@@ -96,7 +105,6 @@ export function Tables () {
                         value={date}
                         label="Age"
                         onChange={handleDate}
-
                         >
                         <MenuItem value={"Saturday"}>Saturday</MenuItem>
                         <MenuItem value={"Sunday"}>Sunday</MenuItem>
@@ -130,10 +138,26 @@ export function Tables () {
                         </Select>
                     </FormControl>
                     </Box>
+                </div> */}
+                <div className="timePicker">
+                    <div className="time">
+                        <LocalizationProvider dateAdapter={AdapterDayjs}>
+                        <DateTimePicker
+                            label="Select time"
+                            renderInput={(params) => <TextField {...params} />}
+                            value={value}
+                            onChange={(newValue) => {
+                                setValue(newValue);
+                            }}
+                            />
+                        </LocalizationProvider>
+                    </div>
+                    
+                    <div className="submit">
+                        <button className="submitTime" onClick={handleSubmit} >SUBMIT</button>
+                    </div>
                 </div>
-                <div className="submit">
-                    <button className="submitTime" onClick={handleSubmit} >SUBMIT</button>
-                </div>
+                 
                 
             </div>
 

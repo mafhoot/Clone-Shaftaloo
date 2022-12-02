@@ -10,15 +10,12 @@ export function  RstMenu  ({id}) {
   const [foods,setFoods] = useState();
   const [flag, setFlag] = useState(0);
   const [restMenu,setMenu] = useState()
-
-  var imgURL= "data:image/png;base64,";
   var forFlag = 0;
   const [startFlag,setStart] = useState (0)
   console.log("khar")
 
   useEffect(() => {
     getRestaurant(id).then (m => {
-      //console.log(m.data[0].categories[0])
       setMenu(m.data.menu)
       setStart(() => !startFlag)
     }).catch()
@@ -104,7 +101,7 @@ export function  RstMenu  ({id}) {
               <div className="foods">
                 {foods?.map(x => (
                   <div className="newCard">
-                    <img src={imgURL+x.image} className="imageCard" />
+                    <img src={x.image} className="imageCard" />
                     <h2 className="cardTitle">{x.name}</h2>
                     <div className="foodDetails">
                       <p className="cardDetails">{/*x.details*/}{x.foodDescription}</p>
