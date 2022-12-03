@@ -110,10 +110,10 @@ export const Restaurant_page = () => {
         <CartContext.Provider value={{cart,setCart}}>
 
           <div className="Tab">
-            <button className={(active==1) ? "TabButton active" : "TabButton"} onClick={() => {setNav(<RstMenu id={id} />); setActive(1); }} >MENU</button>
-            <button className={(active==2) ? "TabButton active" : "TabButton"} onClick={() => {setNav (<Tables id={id}/>); setActive(2)}} >TABLE</button>
-            <button className={(active==3) ? "TabButton active" : "TabButton"} onClick={()=>  {setActive(3)}}>COMMENTS</button>
-            <button className={(active==4) ? "TabButton active" : "TabButton"} onClick={()=>  {setNav (<Contact_us/>); setActive(4)}}>INFORMATION</button>
+            <button className={(active==1) ? "TabButton activeButton" : "TabButton"} onClick={() => {setNav(<RstMenu id={id} />); setActive(1); }} >MENU</button>
+            <button className={(active==2) ? "TabButton activeButton" : "TabButton"} onClick={() => {setNav (<Tables id={id}/>); setActive(2)}} >TABLE</button>
+            <button className={(active==3) ? "TabButton activeButton" : "TabButton"} onClick={()=>  {setActive(3)}}>COMMENTS</button>
+            <button className={(active==4) ? "TabButton activeButton" : "TabButton"} onClick={()=>  {setNav (<Contact_us/>); setActive(4)}}>INFORMATION</button>
           </div>
 
           <div className="main">

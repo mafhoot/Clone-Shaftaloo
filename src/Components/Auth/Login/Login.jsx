@@ -1,11 +1,13 @@
 import React, { useState ,useEffect} from "react";
 import { getbearer, S } from "../../../Services/axios";
 import "../Login_SignUp.css"
+import { BrowserRouter , Routes , Route , Navigate , useNavigate} from "react-router-dom";
 
 export const Login = () => {
     const [email, setEmail] = useState('')
     const [pass, setPass] = useState('')
     const [loginFlag,setLogin] = useState ("")
+    const navigate = useNavigate()
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -22,11 +24,10 @@ export const Login = () => {
         .then((x)=>{
             console.log(x)
             console.log(10)
-            setLogin("Logged in")
+            // setLogin("Logged in")
             S("token",x.data.token)
+            navigate('/home')
           })
-
-          
         .catch(function (error) {
             if (error.response) {
               // The request was made and the server responded with a status code
@@ -47,6 +48,7 @@ export const Login = () => {
             }
             console.log(error.config);
           })
+    }
 
           
           
@@ -59,7 +61,6 @@ export const Login = () => {
             console.log ("Login Failed")
             setLogin("ACCOUNT NOT FOUND!")
         }*/
-    }
     const adminuser = { 
         email : "admin@admin.com",
         password : "admin1234"

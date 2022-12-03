@@ -1,14 +1,16 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./sidebar.css";
 import { S, G, getUser, getBearerToken } from "../../Services/axios";
+import { LayoutContext } from "../layout/LayoutContext";
+// import DensitySmallIcon from '@mui/icons-material/DensitySmall';
 
 const sidebarNavItems = [
   {
     display: "Home",
     icon: <i className="bx bx-home"></i>,
-    to: "/",
-    section: "",
+    to: "/home",
+    section: "home",
   },
   {
     display: "User",
@@ -29,6 +31,7 @@ const Sidebar = () => {
   const sidebarRef = useRef();
   const indicatorRef = useRef();
   const location = useLocation();
+  const {cssClass, setCssClass} = useContext(LayoutContext) ;
 
   const [navbarOpen, setNavbarOpen] = useState(true);
 
@@ -44,6 +47,7 @@ const Sidebar = () => {
     } else {
       getUser().then((e) => {
         // console.log(e.data.username);
+        
         setUser({
           name: e.data.fullName,
           img: e.data.img
@@ -66,13 +70,14 @@ const Sidebar = () => {
   useEffect(() => {
     const curPath = window.location.pathname.split("/")[1];
     const activeItem = sidebarNavItems.findIndex(
-      (item) => item.section === curPath
+      (item) => item.section === curPath,
     );
     setActiveIndex(curPath.length === 0 ? 0 : activeItem);
   }, [location]);
 
   const handleToggle = () => {
-    setNavbarOpen(!navbarOpen);
+    // setNavbarOpen(!navbarOpen);
+    setCssClass(!cssClass)
   };
 
   return (
@@ -128,10 +133,7 @@ const Sidebar = () => {
           ></div>
           {sidebarNavItems.map((item, index) => (
             <Link to={item.to} key={index}>
-              <div
-                className={`sidebar__menu__item ${activeIndex === index ? "active" : ""
-                  }`}
-              >
+              <div className={`sidebar__menu__item ${activeIndex === index ? "active" : ""}`}>
                 <div className="sidebar__menu__item__icon">{item.icon}</div>
                 <div className="sidebar__menu__item__text">{item.display}</div>
               </div>

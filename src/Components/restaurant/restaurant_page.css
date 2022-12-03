@@ -123,7 +123,7 @@
     transition-duration: 0.4s;
 }
 
-.active {
+.activeButton {
     background-color: #eeba2c;
     color: black;
     cursor: pointer;
