@@ -61,7 +61,7 @@ export const ListCardRes = () => {
         console.log(item);
         
         tmp.push(
-        <div onClick={()=> navigate('/restaurant?id='+item.id)}>
+        <div className="cartContainer" onClick={()=> navigate('/restaurant?id='+item.id)}>
            <Card 
             key={item.id}
             id={item.id}
@@ -117,7 +117,7 @@ export const ListCardRes = () => {
                   loader={() => loader()}
                   className="infinite"
                   >
-                    {dataGen()}
+                    {dataGen()} 
                 </InfiniteScroll>
               </div>
             </div>

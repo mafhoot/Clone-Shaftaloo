@@ -2,13 +2,14 @@
 .card {
   display: flex;
     flex-direction: column;
-    width: 24%;
+    width: 100%;
     background-color: #161616;
     margin-left: 0.5%;
     margin-right: 0.5%;
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 10px;
+    height: 100%;
 }
 
 .card:hover {
@@ -20,6 +21,13 @@
   border-top-right-radius: 10px;
   width: 100%;
 } */
+
+.cartContainer {
+  width: 24%;
+  margin: 0.5%;
+  color: white;
+  height: 99%;
+}
 
 .img-res {
   border-top-left-radius: 10px;
@@ -142,6 +150,8 @@ button.simple-filter:hover {
   flex-flow: row;
   border-radius: 20px;
   background-color: #262626;
+  padding: 0.5%;
+
 }
 
 .cards-list::after {

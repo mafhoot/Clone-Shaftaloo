@@ -19,7 +19,7 @@ export function getUser (data){
 export function G(key){
     return localStorage.getItem(key);
 }
-export function S(value,key){
+export function S(key,value){
     localStorage.setItem(key,value);
 }
 
@@ -35,7 +35,6 @@ export function getMenu (data){
 }
 
 export function getTable (restID , start , end) {
-    console.log(restID , start , end)
     return axios.get(url+ "api/ReserveTable/GetActiveReserveTablesByRestaurant?restauranId="+restID+"&from="+start+"&to="+end)
 }
 export function getRestaurantCards (tag, number){
