@@ -7,7 +7,9 @@ import {getRestaurant , getMenu} from "../../Services/axios"
 import { RstMenu } from "./menu";
 import { Contact_us } from "./contact_us";
 import { OrderPage } from "./order"
-import { CartContext , TableContext } from "./cart";
+import { TableOrder } from "./tableOrder";
+import { CartContext } from "./cart";
+import { TableContext } from "./tableContext";
 import { Tables } from "./table";
 import './restaurant_page.css'
 import { useSearchParams } from 'react-router-dom'
@@ -22,13 +24,14 @@ export const Restaurant_page = () => {
   const [foods,setFoods] = useState( [{"name" : "Burger" , "count" : 0 , "price" : 183}, {"name" : "Chicken" , "count" : 0, "price" : 223 } , {"name" : "Hot Dog" , "count" : 0 , "price" : 375} , {"name" : "Pasta" , "count" : 0 , "price" : 343} , {"name" : "pizza" , "count" : 0, "price" : 432} , {"name" : "Fried Potato" , "count" : 0 , "price" : 99}])
   const foodTags = ["All", "Burger" ,"Fried", "Dessert" , "Pizza" , "Sandwitch"] 
   const [cart,setCart] = useState([]);
+  const [tableORD, setTableORD] = useState(null)
   const [nav,setNav] = useState()
   const [id,setId] = useState (searchParams.get("id"))
   
   const tabs = ["Menu 1" ,"Menu 2","Table","Cart"]
   const [active, setActive] = useState(1);
-  const [table, setTable] = useState([])
-  const [tbList,setTbList] = useState( [{"name" : "2 Sit table" , "count" : 0 , "price" : 20}, {"name" : "4 Sit table" , "count" : 0, "price" : 40 } , {"name" : "6 Sit table" , "count" : 0 , "price" : 60}])
+  
+  //const [tbList,setTbList] = useState( [{"name" : "2 Sit table" , "count" : 0 , "price" : 20}, {"name" : "4 Sit table" , "count" : 0, "price" : 40 } , {"name" : "6 Sit table" , "count" : 0 , "price" : 60}])
 
   foods.forEach (e =>{
     e["details"] = "Meat, Bread, Pickle, Tomato";
@@ -108,8 +111,8 @@ export const Restaurant_page = () => {
 
 
         <CartContext.Provider value={{cart,setCart}}>
-          <TableContext.Provider value={{table,setTable}}>
-
+          {/* <TableContext.Provider value={{tableORD,setTableORD}}> */}
+          {/* {console.log(tableORD)} */}
           <div className="Tab">
             <button className={(active==1) ? "TabButton activeButton" : "TabButton"} onClick={() => {setNav(<RstMenu id={id} />); setActive(1); }} >MENU</button>
             <button className={(active==2) ? "TabButton activeButton" : "TabButton"} onClick={() => {setNav (<Tables id={id}/>); setActive(2)}} >TABLE</button>
@@ -120,7 +123,7 @@ export const Restaurant_page = () => {
           <div className="main">
             {nav}
           </div>
-          </TableContext.Provider>
+          {/* </TableContext.Provider> */}
         </CartContext.Provider>
         
         <div className="distance"></div>

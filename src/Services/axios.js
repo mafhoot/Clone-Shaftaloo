@@ -41,3 +41,7 @@ export function getRestaurantCards (tag, number){
     return axios.get(url+"api/Restaurant?tag="+tag+"&size=10&number="+number)
 }
 
+
+export function postTable (data) {
+    return axios.post(url+"api/ReserveTable",data)
+}

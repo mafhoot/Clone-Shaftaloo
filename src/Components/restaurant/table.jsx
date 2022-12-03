@@ -1,7 +1,7 @@
 import React, { useState , useEffect , useContext} from "react";
 import "./table.css"
 import { TableOrder } from "./tableOrder";
-import { CartContext, TableContext} from "./cart";
+import { TableContext } from "./tableContext";
 import dayjs from 'dayjs';
 import TextField from '@mui/material/TextField';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
@@ -11,12 +11,13 @@ import { getTable } from "../../Services/axios";
 
 
 export function Tables (id) {
-    const [table, setTable] = useState([{"name" : "2 Sit table" , "count" : 0 , "price" : 20}, {"name" : "4 Sit table" , "count" : 0, "price" : 40 } , {"name" : "6 Sit table" , "count" : 0 , "price" : 60}])
+    const [table, setTable] = useState([]);
     const [time, setTime] = React.useState('');
     const [date, setDate] = React.useState('');
     const [tbList,setTbList] = useState()
     const [timeValue, setTimeValue] = React.useState(dayjs(Date.now()));
     const endDate = new Date ;
+    const [timeState, setTimeState] = useState();
 
     const handleDate = (event) => {
         setDate(event.target.value);    
@@ -24,17 +25,16 @@ export function Tables (id) {
     const handleTime = (event) => {
         setTime(event.target.value);
     };
-///////////////////////////////////////////////////////////////////
 
-    // const {tbList,setTbList} = useContext (TableContext);
-    const {cart,setCart} = useContext (TableContext);
+    const [tableORD,setTableORD] = useState ([]);
+    console.log (tableORD)
 
     const [flag, setFlag] = useState(0);
     var forFlag = 0;
 
     table.forEach (e =>{
         e["image"] = "https://static.rigg.uk/Files/casestudies/bistrotpierretables/sz/w960/bistrolargeroundrestauranttablewoodtopmetalbase.jpg";
-        e["capacity"] = 10;
+        //e["capacity"] = 10;
     })
 
     const imgIMG = "https://static.rigg.uk/Files/casestudies/bistrotpierretables/sz/w960/bistrolargeroundrestauranttablewoodtopmetalbase.jpg"
@@ -50,25 +50,26 @@ export function Tables (id) {
     function inc (t) {
     t.count+=1
     console.log("ezafe")
-    for (let i = 0 ; i < cart?.length ; i++){
-        if (t.number === cart[i].name) {
+    for (let i = 0 ; i < tableORD?.length ; i++){
+        if (t.number === tableORD[i].name) {
         forFlag=1;
-        cart[i].order+=1
+        tableORD[i].order+=1
         break ;
         }
     }
-    if (forFlag===0) {
-        // cart.push({
-        // name : t.number,
-        // price : t.price ,
-        // order : 1 ,
-        // });
 
-        setCart(prev => [...prev, {
+    console.log (tableORD);
+    if (forFlag===0) {
+        tableORD?.push({
         name : t.number,
-        price : t.price ,
         order : 1 ,
-        }])
+        id : t.id
+        });
+
+        // settableORD(prev => [...prev, {
+        // name : t.number,
+        // order : 1 ,
+        // }])
     }
     
 
@@ -78,18 +79,18 @@ export function Tables (id) {
 
     function dec (t) {
     t.count-=1
-    for (let i = 0 ; i < cart.length ; i++){
-        if (t.number === cart[i].name) {
-        cart[i].order-=1;
-        if (cart[i].order===0){
-            setCart( cart.filter( a=>
+    for (let i = 0 ; i < tableORD.length ; i++){
+        if (t.number === tableORD[i].name) {
+        tableORD[i].order-=1;
+        if (tableORD[i].order===0){
+            setTableORD( tableORD.filter( a=>
             a.name !== t.number
             ))
             break;
         }
         }
     }
-    setFlag (() => !flag)
+    setFlag ( !flag)
     }
 
     function handleSubmit (date) {
@@ -98,6 +99,7 @@ export function Tables (id) {
         // console.log("begin : " + from.toJSON())
         // console.log("end : " + to.toJSON())
         getTable (id['id'] , from.toJSON() , to.toJSON()).then (m => {
+            setTimeState(from.toJSON())
             console.log (tbList)
             m.data.forEach (e => {
                 e ["count" ] = 0;
@@ -109,13 +111,12 @@ export function Tables (id) {
     }
 
     useEffect (() => {  
-    },[flag,cart])
+    },[flag,tableORD])
     
       return (
         <>
         <div className="menu">
             <div className="DateTime">
-            
                 <div className="timePicker">
                     <div className="time">
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -158,11 +159,11 @@ export function Tables (id) {
             
         
         </div>
-
+        {/* <TableContext.Provider value={{tableORD, setTableORD}}> */}
         <div className="receipt">
-            <TableOrder/>
+            <TableOrder x={tableORD} />
         </div>
-        
+        {/* </TableContext.Provider> */}
         </>
       )
 }

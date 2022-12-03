@@ -1,6 +1,6 @@
 import React from "react";
 import './order.css'
-import { TableContext ,CartContext } from "./cart";
+import { TableContext } from "./tableContext";
 import { useContext , useState } from "react";
 //import { Recepite } from "./recepite dialog";
 import PropTypes from 'prop-types';
@@ -11,10 +11,10 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import IconButton from '@mui/material/IconButton';
-//import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
 import { ButtonGroup} from '@mui/material';
 import { useEffect } from "react";
+import { postTable } from "../../Services/axios";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -58,8 +58,11 @@ BootstrapDialogTitle.propTypes = {
 
 
 
-export function TableOrder () {
-    const {cart,setCart} = useContext (TableContext);
+export function TableOrder (x , time) {
+    //const {cart,setCart} = useContext (TableContext);
+    const [cart,setCart] = useState (x.x);
+    console.log(cart)
+    console.log(time)
     const [modal, setModal] = useState(false);
     const [prov,setProv] = useState();
 
@@ -69,10 +72,29 @@ export function TableOrder () {
 
     },[cart])
 
+    function onSubmit () {
+      console.log ("ejra shodam")
+      for (let i=0 ; i < cart.length ; i++) {
+          for (let j=0 ; j <cart[i].order ; j++) {
+            postTable({
+              "expireHours": 2,
+              "tableId":cart[i].id ,
+              "reserveTime": {
+                "reserveTime": time
+              }
+            
+            }).then (() => {
+              console.log("sucesssssssssssss")
+            })
+          }
+      }
+      
+    }
+
     function sum (cart) {
         cartSum=0
         for (let i = 0 ; i < cart?.length ; i++){
-          cartSum+=cart[i].order*cart[i].price
+          cartSum+=cart[i].order*cart[i].name
         }
     
         return (
@@ -96,20 +118,20 @@ export function TableOrder () {
         <div className="cart">
           
 
-              <h2 className="orderHeader">Order list</h2>
+              <h2 className="orderHeader">Reserve table</h2>
 
               <div className="List">
                 
                   {cart?.map (x => (
-                    <p className="orderList">{x.order}x : {x.name} : {x.order*x.price}$</p>
+                    <p className="orderList">{x.order}x : {x.name}sit</p>
                 ))}
               </div>
 
               <div className="totalPrice">
-                <div className="totalPriceButton">Total price : {sum(cart)}$</div>
+                <div className="totalPriceButton">Total sits : {sum(cart)}</div>
               </div>
               
-              {cartSum > 0 ? <button className="pay" onClick={handleClickOpen} >Pay</button> : null}
+              {cartSum > 0 ? <button className="pay" onClick={handleClickOpen} >Reserve</button> : null}
           
         </div>
 
@@ -129,19 +151,18 @@ export function TableOrder () {
               <div className="ListDialog">
                 
                   {cart?.map (x => (
-                    <p className="orderList">{x.order}x : {x.name} : {x.order*x.price}$</p>
+                    <p className="orderList">{x.order}x : {x.name}sit</p>
                 ))}
               </div>
 
               <div className="totalPrice">
-                <div className="totalPriceButton">Total price : {sum(cart)}$</div>
+                <div className="totalPriceButton">Total sits: {sum(cart)}</div>
               </div>
 
-              <h3 className="methods">Payment methods:</h3>
+              <h3 className="methods">Submit your reserve:</h3>
               <div className="tabG">
-                <button className="buttG">In Place</button>
-                <button className="buttG middle">Credit Card</button>
-                <button className="buttG">Account</button>
+                <button className="buttG" onClick={() => onSubmit() } >Reserve</button>
+                
               </div>
           
             </div>
