@@ -1,5 +1,5 @@
 import React, { useState ,useEffect} from "react";
-import { getbearer } from "../../../Services/axios";
+import { getbearer, S } from "../../../Services/axios";
 import "../Login_SignUp.css"
 
 export const Login = () => {
@@ -23,6 +23,7 @@ export const Login = () => {
             console.log(x)
             console.log(10)
             setLogin("Logged in")
+            S("token",x.data.token)
           })
 
           

@@ -1,5 +1,5 @@
 import React, { useState,useEffect,useRef } from "react";
-import { postUser } from "../../../Services/axios";
+import { postUser, S } from "../../../Services/axios";
 import "../Login_SignUp.css"
 
 export const Register = () => {
@@ -46,6 +46,7 @@ export const Register = () => {
             "email": email
           } ).then(x=>{
             console.log(x);
+            S('token',x.data.token);
             if (flag==0){
                 alert ("Register completed")
             }

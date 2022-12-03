@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./sidebar.css";
-import { getUser } from "../../Services/axios";
+import { S, G, getUser, getBearerToken } from "../../Services/axios";
 
 const sidebarNavItems = [
   {
@@ -22,7 +22,6 @@ const sidebarNavItems = [
     to: "/order",
     section: "order",
   },
-  
 ];
 const Sidebar = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -36,14 +35,21 @@ const Sidebar = () => {
   const [user, setUser] = useState({ name: "Amir Deldar" });
   const [username, setUsername] = useState("amirdldr@gmail.com");
   useEffect(() => {
-    getUser(username)
-      .then((e) => {
-        //console.log(e.data.username)
+    if (typeof G("token") !== "string") {
+      getBearerToken("amirdldr@gmail.com", "Amir1379").then((x) => {
+        S("token", x.data.token);
+        getUser().then((e) => {
+          console.table(e.data);
+        });
+      });
+    } else {
+      getUser(username).then((e) => {
+        console.log(e.data.username);
         setUser({
           name: e.data.username,
         });
-      })
-      .catch();
+      });
+    }
   }, []);
 
   useEffect(() => {
@@ -71,13 +77,16 @@ const Sidebar = () => {
 
   return (
     <div className="AllSidebar">
-      <span className={`btn-open ${navbarOpen ? " hide-btn" : ""}`} onClick={handleToggle}>
+      <span
+        className={`btn-open ${navbarOpen ? " hide-btn" : ""}`}
+        onClick={handleToggle}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="35"
           height="35"
-        //   viewBox="0 0 29 29"
-        //   style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"
+          //   viewBox="0 0 29 29"
+          //   style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"
         >
           <path d="M12 22c5.514 0 10-4.486 10-10S17.514 2 12 2 2 6.486 2 12s4.486 10 10 10zM10 7l6 5-6 5V7z"></path>
         </svg>

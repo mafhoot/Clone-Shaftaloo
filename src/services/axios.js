@@ -10,17 +10,21 @@ export function getbearer (data){
 }
 
 export function getUser (data){
-    return axios.get(url+"api/User/"+data)
+    const config = {
+        headers: { Authorization: `Bearer ${G("token")}` }
+    };
+    return axios.get(url+"api/User/GetUserData",config)
 }
-export function G(value){
-    return localStorage.getItem(value);
+
+export function G(key){
+    return localStorage.getItem(key);
 }
 export function S(value,key){
     localStorage.setItem(key,value);
 }
 
 export function getBearerToken(email="w@w.w",password="1234567"){
-return axios.post(url+"api/User/BearerToken",{email:email,password:password})
+    return axios.post(url+"api/User/BearerToken",{email:email,password:password})
 }
 export function getRestaurant (data){
     return axios.get(url+"api/Restaurant/"+data)
@@ -37,3 +41,4 @@ export function getTable (restID , start , end) {
 export function getRestaurantCards (tag, number){
     return axios.get(url+"api/Restaurant?tag="+tag+"&size=10&number="+number)
 }
+
