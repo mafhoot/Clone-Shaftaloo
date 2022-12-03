@@ -27,7 +27,7 @@ export const Restaurant_page = () => {
   
   const tabs = ["Menu 1" ,"Menu 2","Table","Cart"]
   const [active, setActive] = useState(1);
-  const [table, setTable] = useState([{ "name" : "2 sit" , "total" : 20 , "full" : 5 } ,{ "name" : "4 sit" , "total" : 20 , "full" : 5 } , { "name" : "6 sit" , "total" : 20 , "full" : 5 }])
+  const [table, setTable] = useState([])
   const [tbList,setTbList] = useState( [{"name" : "2 Sit table" , "count" : 0 , "price" : 20}, {"name" : "4 Sit table" , "count" : 0, "price" : 40 } , {"name" : "6 Sit table" , "count" : 0 , "price" : 60}])
 
   foods.forEach (e =>{
@@ -108,6 +108,7 @@ export const Restaurant_page = () => {
 
 
         <CartContext.Provider value={{cart,setCart}}>
+          <TableContext.Provider value={{table,setTable}}>
 
           <div className="Tab">
             <button className={(active==1) ? "TabButton activeButton" : "TabButton"} onClick={() => {setNav(<RstMenu id={id} />); setActive(1); }} >MENU</button>
@@ -119,7 +120,7 @@ export const Restaurant_page = () => {
           <div className="main">
             {nav}
           </div>
-          
+          </TableContext.Provider>
         </CartContext.Provider>
         
         <div className="distance"></div>

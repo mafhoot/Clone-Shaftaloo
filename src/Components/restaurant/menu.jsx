@@ -108,9 +108,9 @@ export function  RstMenu  ({id}) {
                     </div>
                     <p className="price">{x.price}$</p>
                     <div className="ButtonGroup">
-                    <button className="cardButton" onClick={() => {if (x.foodCnt > 0 && x.foodCnt <= x.count ) {dec(x)}}} >-</button>
+                    <button className="cardButton" onClick={() => {if (x.foodCnt > 0 ) {dec(x)}}} >-</button>
                       <span className="cardButton">{x.foodCnt}</span>
-                      <button className="cardButton" onClick={() => inc(x)}>+</button>
+                      <button className="cardButton" onClick={() => { if (x.foodCnt < x.count) {inc(x)}}}>+</button>
                     </div>
                   </div>
                 ))}

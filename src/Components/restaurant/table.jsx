@@ -1,7 +1,7 @@
 import React, { useState , useEffect , useContext} from "react";
 import "./table.css"
-import { OrderPage } from "./order";
-import { CartContext} from "./cart";
+import { TableOrder } from "./tableOrder";
+import { CartContext, TableContext} from "./cart";
 import dayjs from 'dayjs';
 import TextField from '@mui/material/TextField';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
@@ -27,7 +27,7 @@ export function Tables (id) {
 ///////////////////////////////////////////////////////////////////
 
     // const {tbList,setTbList} = useContext (TableContext);
-    const {cart,setCart} = useContext (CartContext);
+    const {cart,setCart} = useContext (TableContext);
 
     const [flag, setFlag] = useState(0);
     var forFlag = 0;
@@ -50,7 +50,7 @@ export function Tables (id) {
     function inc (t) {
     t.count+=1
     console.log("ezafe")
-    for (let i = 0 ; i < cart.length ; i++){
+    for (let i = 0 ; i < cart?.length ; i++){
         if (t.number === cart[i].name) {
         forFlag=1;
         cart[i].order+=1
@@ -58,11 +58,17 @@ export function Tables (id) {
         }
     }
     if (forFlag===0) {
-        cart.push({
+        // cart.push({
+        // name : t.number,
+        // price : t.price ,
+        // order : 1 ,
+        // });
+
+        setCart(prev => [...prev, {
         name : t.number,
         price : t.price ,
         order : 1 ,
-        });
+        }])
     }
     
 
@@ -144,7 +150,7 @@ export function Tables (id) {
                     <div className="ButtonGroup">
                     <button className="cardButton" onClick={() => {if (x.count > 0 ) {dec(x)}}} >-</button>
                       <span className="cardButton">{x.count}</span>
-                      <button className="cardButton" onClick={() => inc(x)}>+</button>
+                      <button className="cardButton" onClick={() => { if (x.count < x.capacity) {inc(x)}}}>+</button>
                     </div>
                   </div>
                 ))}
@@ -154,7 +160,7 @@ export function Tables (id) {
         </div>
 
         <div className="receipt">
-            <OrderPage/>
+            <TableOrder/>
         </div>
         
         </>
