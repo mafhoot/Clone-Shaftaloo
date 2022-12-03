@@ -11,6 +11,10 @@
     border-bottom: 1px solid white;
     aspect-ratio: 4/1;
   }
+
+  .hideSideLogoMember {
+    border: none;
+  }
   
   .sideLogo {
     float: left;
@@ -39,11 +43,14 @@
   }
   
 
-.sidebar__menu__item__icon {
-    margin-left: -10px;
-  }
+.logoItemIcon {
+  /* margin: auto; */
+  text-align: center;
+  margin-left: -6px;
+}
+
 .sidebar__menu__item__text {
-  margin-left: -10px;
+  margin-left: 10px;
 }
 
   .sidebar__menu__item {
@@ -52,9 +59,9 @@
     margin-left: 20%;
     margin-right: 20%;
     display: flex;
+    padding :1rem;
     align-items: center;
     text-align: center;
-    padding: 1rem ;
     font-size: 1.25rem;
     font-weight: bold;
     color: white;
@@ -65,12 +72,10 @@
     color: black;
   }
   
-  .sidebar__menu__item__icon {
-    margin-right: 1rem;
-  }
   
   .sidebar__menu__item__icon i {
     font-size: 1.75rem;
+    text-align: center;
   }
   
   .sidebar__menu__indicator {
@@ -124,13 +129,42 @@
   }
   
   .btn-close {
-    margin-right: 0px;
     float: right;
     border-radius: 3px;
     background-color: transparent;
     cursor: pointer;
     padding: 2px;
+    color: white;
+    height: 100%;
+    border: none;
+    
   }
+  
+  .hambIcon {
+    margin: auto;
+    text-align: center;
+  }
+
+  .hideMember {
+    display: none;
+  }
+
+.bx-menu {
+  font-size: 50px;
+  text-align: center;
+  
+    border-radius: 3px;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 2px;
+    color: white;
+    height: 100%;
+    border: none;
+}
+
+    /* .closeButton {
+    } */
+
   
   .btn-open{
     z-index: 10;
@@ -142,4 +176,54 @@
   
   .hide-btn{
     z-index: -2;
+  }
+
+
+  .SignButton {
+    margin-top: 50px;
+    width: 100%;
+  }
+
+  .SignInButton {
+    width: 60%;
+    margin-right: 20%;
+    margin-left: 20%;
+    aspect-ratio: 3/1;
+    text-align: center;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    font-size: large;
+    background-color: #0dab12;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .SignInButton:hover {
+    cursor: pointer;
+    color: black;
+    transition-duration: 0.4s;
+    background-color: #eeba2c;
+  }
+
+  .SignOutButton {
+    width: 60%;
+    margin-right: 20%;
+    margin-left: 20%;
+    aspect-ratio: 3/1;
+    text-align: center;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    font-size: large;
+    background-color: #f32112;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .SignOutButton:hover {
+    cursor: pointer;
+    color: black;
+    transition-duration: 0.4s;
+    background-color: #eeba2c;
   }

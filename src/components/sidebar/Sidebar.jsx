@@ -32,6 +32,7 @@ const Sidebar = () => {
   const indicatorRef = useRef();
   const location = useLocation();
   const {cssClass, setCssClass} = useContext(LayoutContext) ;
+  const [closeSide , setCloseSide] = useState(false)
 
   const [navbarOpen, setNavbarOpen] = useState(true);
 
@@ -76,7 +77,8 @@ const Sidebar = () => {
   }, [location]);
 
   const handleToggle = () => {
-    // setNavbarOpen(!navbarOpen);
+    //setNavbarOpen(!navbarOpen);
+    setCloseSide(!closeSide)
     setCssClass(!cssClass)
   };
 
@@ -97,29 +99,30 @@ const Sidebar = () => {
         </svg>
       </span>
       <nav className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
-        <div className="sidebar__logo">
-          <div className="sideLogo">
+        <div className={`sidebar__logo ${closeSide ? " hideSideLogoMember" : ""}`}>
+          <div className={`sideLogo ${closeSide ? " hideMember" : ""}`}>
             <img
               className="logo"
               src={user.img}
               alt=""
             ></img>
           </div>
-          <div className="profName">
+          <div className={`profName ${closeSide ? " hideMember" : ""}`}>
             <div className="text_name">
               <p>{user.name}</p>
             </div>
           </div>
-          <button className="btn-close" onClick={handleToggle}>
+          <button className={`btn-close ${closeSide ? " hambIcon" : ""}`} onClick={handleToggle}>
             {/* {navbarOpen ? (
                         <MdClose style={{ color: "#fff", width: "40px", height: "40px" }} />
                     ) : (
                         <FiMenu style={{ color: "#fff", width: "40px", height: "40px" }} />
                     )} */}
-            <img
+            {/* <img
               src={"https://a.trellocdn.com/prgb/dist/images/workspace-navigation/chevron-left.58243262833f693f6101.svg"}
               alt=""
-            ></img>
+            ></img> */}
+            <i class='bx bx-menu' ></i>
           </button>
         </div>
         <div ref={sidebarRef} className="sidebar__menu">
@@ -134,11 +137,15 @@ const Sidebar = () => {
           {sidebarNavItems.map((item, index) => (
             <Link to={item.to} key={index}>
               <div className={`sidebar__menu__item ${activeIndex === index ? "active" : ""}`}>
-                <div className="sidebar__menu__item__icon">{item.icon}</div>
-                <div className="sidebar__menu__item__text">{item.display}</div>
+                <div className={`sidebar__menu__item__icon ${closeSide ? " logoItemIcon" : ""}`} >{item.icon}</div>
+                <div className={`sidebar__menu__item__text ${closeSide ? " hideMember" : ""}`}>{item.display}</div>
               </div>
             </Link>
           ))}
+        </div>
+        <div className="SignButton">
+          {/* <button className="SignInButton">LOGIN</button> */}
+          <button className="SignOutButton">Sign out</button>
         </div>
       </nav>
     </div>
