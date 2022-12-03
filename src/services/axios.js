@@ -9,7 +9,7 @@ export function getbearer (data){
     return axios.post(url+"api/User/BearerToken",data)
 }
 
-export function getUser (data){
+export function getUser (){
     const config = {
         headers: { Authorization: `Bearer ${G("token")}` }
     };
