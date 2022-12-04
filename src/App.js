@@ -21,7 +21,7 @@ function App() {
         <Route path='/' element={<AppLayout />}>
           <Route path='/home' element={<ListCardRes/>} />
           <Route path='/user' element={<Blank/>} />
-          <Route path='/order' element={<Restaurant_page />} />
+          <Route path='/order' element={<Blank />} />
           <Route path='/restaurant' element={<Restaurant_page />} />
         </Route>
       </Routes>

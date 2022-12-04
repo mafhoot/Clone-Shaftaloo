@@ -107,7 +107,9 @@ export function  RstMenu  ({id}) {
                     <div className="foodDetails">
                       <p className="cardDetails">{/*x.details*/}{x.foodDescription}</p>
                     </div>
+                    <p className="cardDetails">Left : {x.count}</p>
                     <p className="price">{x.price}$</p>
+
                     <div className="ButtonGroup">
                     <button className="cardButton" onClick={() => {if (x.foodCnt > 0 ) {dec(x)}}} >-</button>
                       <span className="cardButton">{x.foodCnt}</span>

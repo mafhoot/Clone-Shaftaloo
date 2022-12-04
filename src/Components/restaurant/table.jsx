@@ -63,7 +63,8 @@ export function Tables (id) {
         tableORD?.push({
         name : t.number,
         order : 1 ,
-        id : t.id
+        id : t.id,
+        capacity : t.capacity
         });
 
         // settableORD(prev => [...prev, {
@@ -143,7 +144,7 @@ export function Tables (id) {
                 {tbList?.map(x => (
                   <div className="newCard">
                     <img src={imgIMG} className="imageCard" />
-                    <h2 className="cardTitle">{x.number}</h2>
+                    <h2 className="cardTitle">NO.{x.number}</h2>
                     <div className="foodDetails">
                       <p className="cardDetails">Capacity: {x.capacity}</p>
                     </div>
@@ -151,7 +152,7 @@ export function Tables (id) {
                     <div className="ButtonGroup">
                     <button className="cardButton" onClick={() => {if (x.count > 0 ) {dec(x)}}} >-</button>
                       <span className="cardButton">{x.count}</span>
-                      <button className="cardButton" onClick={() => { if (x.count < x.capacity) {inc(x)}}}>+</button>
+                      <button className="cardButton" onClick={() => { if (x.count < 1) {inc(x)}}}>+</button>
                     </div>
                   </div>
                 ))}

@@ -106,6 +106,9 @@ export function OrderPage (id) {
           "foods": orderFinal,
         
           "restaurantId": id.id
+        }).then (()=> {
+          alert ("Order completed")
+          setOpen(false);
         })
       }
  

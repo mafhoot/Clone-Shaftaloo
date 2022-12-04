@@ -86,7 +86,7 @@
     border-radius: 10px;
     background-color: #eeba2c;
     z-index: -1;
-    transform: translateX(-50%); 
+    /* transform: translateX(-50%);  */
     transition: 0.3s ease-in-out;
   }
   

@@ -96,16 +96,21 @@ export function TableOrder (props) {
             
             }).then (() => {
               console.log("sucesssssssssssss")
+              
             })
+            
           }
       }
+      alert ("Reserve completed")
+      setOpen(false);
+      setCart(null)
       
     }
 
     function sum (cart) {
         cartSum=0
         for (let i = 0 ; i < cart?.length ; i++){
-          cartSum+=cart[i].order*cart[i].name
+          cartSum+=cart[i].order*cart[i].capacity
         }
     
         return (
@@ -134,7 +139,7 @@ export function TableOrder (props) {
               <div className="List">
                 
                   {cart?.map (x => (
-                    <p className="orderList">{x.order}x : {x.name}sit</p>
+                    <p className="orderList">{x.order}x : {x.capacity}sit</p>
                 ))}
               </div>
 
@@ -162,7 +167,7 @@ export function TableOrder (props) {
               <div className="ListDialog">
                 
                   {cart?.map (x => (
-                    <p className="orderList">{x.order}x : {x.name}sit</p>
+                    <p className="orderList">{x.order}x : {x.capacity}sit</p>
                 ))}
               </div>
 
