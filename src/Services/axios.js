@@ -43,5 +43,17 @@ export function getRestaurantCards (tag, number){
 
 
 export function postTable (data) {
-    return axios.post(url+"api/ReserveTable",data)
+    const config = {
+        headers: { Authorization: `Bearer ${G("token")}` }
+    };
+    return axios.post(url+"api/ReserveTable",data,config)
+    
+}
+
+
+export function postOrder (data) {
+    const config = {
+        headers: { Authorization: `Bearer ${G("token")}` }
+    };
+    return axios.post (url+"api/Order",data,config)
 }

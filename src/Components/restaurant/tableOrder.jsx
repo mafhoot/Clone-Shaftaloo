@@ -58,13 +58,23 @@ BootstrapDialogTitle.propTypes = {
 
 
 
-export function TableOrder (x , time) {
+export function TableOrder (props) {
+  const x=props.x;
+  console.log(x)
+
+  // const time=props.timeVal;
+  const time=props.timeVal;
+  console.log(props);
+  // console.log(time);
+  // console.table(x);
     //const {cart,setCart} = useContext (TableContext);
-    const [cart,setCart] = useState (x.x);
-    console.log(cart)
-    console.log(time)
+    const [cart,setCart] = useState (x);
+    // console.log(cart)
+    // console.log(time)
     const [modal, setModal] = useState(false);
     const [prov,setProv] = useState();
+    const from=new Date(time)
+    console.log(from)
 
     var cartSum=0
 
@@ -73,6 +83,7 @@ export function TableOrder (x , time) {
     },[cart])
 
     function onSubmit () {
+      console.table(time);
       console.log ("ejra shodam")
       for (let i=0 ; i < cart.length ; i++) {
           for (let j=0 ; j <cart[i].order ; j++) {
@@ -80,7 +91,7 @@ export function TableOrder (x , time) {
               "expireHours": 2,
               "tableId":cart[i].id ,
               "reserveTime": {
-                "reserveTime": time
+                "reserveTime": from.toJSON()
               }
             
             }).then (() => {

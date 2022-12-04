@@ -15,6 +15,7 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { ButtonGroup} from '@mui/material';
 import { useEffect } from "react";
+import { postOrder } from "../../Services/axios";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -58,10 +59,11 @@ BootstrapDialogTitle.propTypes = {
 
 
 
-export function OrderPage () {
+export function OrderPage (id) {
     const {cart,setCart} = useContext (CartContext);
     const [modal, setModal] = useState(false);
     const [prov,setProv] = useState();
+    const [orderFinal, setOrderFinal] = useState([]);
 
     var cartSum=0
 
@@ -90,6 +92,22 @@ export function OrderPage () {
         setOpen(false);
       };
 
+      function handleOrder () {
+        console.log(cart)
+        for (let i=0 ; i < cart.length ; i++) {
+          for (let j=0 ; j <cart[i].order ; j++) {
+            orderFinal.push ({id:cart[i].id})
+          }
+        }
+
+        postOrder({
+
+          "stat": 0,
+          "foods": orderFinal,
+        
+          "restaurantId": id.id
+        })
+      }
  
     return (
       <>
@@ -139,7 +157,7 @@ export function OrderPage () {
 
               <h3 className="methods">Payment methods:</h3>
               <div className="tabG">
-                <button className="buttG">In Place</button>
+                <button className="buttG" onClick={()=>handleOrder() } >In Place</button>
                 <button className="buttG middle">Credit Card</button>
                 <button className="buttG">Account</button>
               </div>

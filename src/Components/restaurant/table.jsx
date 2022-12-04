@@ -85,7 +85,7 @@ export function Tables (id) {
         if (tableORD[i].order===0){
             setTableORD( tableORD.filter( a=>
             a.name !== t.number
-            ))
+            ).map(x=>x.time=timeState))
             break;
         }
         }
@@ -99,7 +99,7 @@ export function Tables (id) {
         // console.log("begin : " + from.toJSON())
         // console.log("end : " + to.toJSON())
         getTable (id['id'] , from.toJSON() , to.toJSON()).then (m => {
-            setTimeState(from.toJSON())
+            setTimeState(from)
             console.log (tbList)
             m.data.forEach (e => {
                 e ["count" ] = 0;
@@ -161,7 +161,8 @@ export function Tables (id) {
         </div>
         {/* <TableContext.Provider value={{tableORD, setTableORD}}> */}
         <div className="receipt">
-            <TableOrder x={tableORD} />
+            
+            <TableOrder x={tableORD} timeVal={timeState}/>
         </div>
         {/* </TableContext.Provider> */}
         </>

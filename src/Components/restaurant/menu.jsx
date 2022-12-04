@@ -59,6 +59,7 @@ export function  RstMenu  ({id}) {
         name : t.name,
         price : t.price ,
         order : 1 ,
+        id : t.id,
       });
     }
     
@@ -119,7 +120,7 @@ export function  RstMenu  ({id}) {
           </div>
           
           <div className="receipt">
-            <OrderPage />
+            <OrderPage id={id} />
           </div>
 
 
