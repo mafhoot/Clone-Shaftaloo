@@ -18,7 +18,7 @@ export const Login = () => {
                 "phoneNumber": "",
                 "password": pass,
                 "fullName": "",
-                "email": email
+                "email": email,
         })
 
         .then((x)=>{

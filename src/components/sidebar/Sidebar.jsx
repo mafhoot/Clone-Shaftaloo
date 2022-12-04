@@ -19,10 +19,10 @@ const sidebarNavItems = [
     section: "user",
   },
   {
-    display: "Orders",
+    display: "Restaurants",
     icon: <i className="bx bx-receipt"></i>,
-    to: "/order",
-    section: "order",
+    to: "/restaurant",
+    section: "restaurant",
   },
 ];
 const Sidebar = () => {
