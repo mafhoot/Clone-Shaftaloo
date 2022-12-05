@@ -148,13 +148,6 @@
     border-top-right-radius: 14px;
   }
   
-
-
-
-
-
-/* 
-  ........ */
   img {
     margin: auto;
     width: 150px;
@@ -164,9 +157,6 @@
     margin-top: 75px;
   }
   
-
-
-
   .bold-text {
     font-weight: bold;
     font-size: 1.1rem;
@@ -529,8 +519,6 @@
   
   
   
-
-    /* -------- */
     button {
     border: none;
     background-color: #eeba2c;
