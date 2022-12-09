@@ -61,6 +61,7 @@ BootstrapDialogTitle.propTypes = {
 export function TableOrder (props) {
   const x=props.x;
   console.log(x)
+  const [restThemes, setRestThemes] = useState (["Birthday" , "Politic" , "Funeral"])
 
   // const time=props.timeVal;
   const time=props.timeVal;
@@ -169,11 +170,19 @@ export function TableOrder (props) {
                   {cart?.map (x => (
                     <p className="orderList">{x.order}x : {x.capacity}sit</p>
                 ))}
-              </div>
-
+              </div>  
               <div className="totalPrice">
                 <div className="totalPriceButton">Total sits: {sum(cart)}</div>
               </div>
+
+              <h3 className="methods">Select your theme:</h3>
+              <select className="TableTheme">
+                <option className="ThemeList" value="">None</option>
+                {restThemes.map(t=> (
+                  <option className="ThemeList" value="">{t}</option>
+                ))}
+              </select>
+
 
               <h3 className="methods">Submit your reserve:</h3>
               <div className="tabG">
