@@ -4,6 +4,7 @@ import { Register } from "./Components/Auth/SignUp/Register";
 import { BrowserRouter , Routes , Route} from "react-router-dom";
 import {Restaurant_page} from './Components/restaurant/restaurant_page.jsx'
 import {Checkout} from "./Components/Payment/Checkout"
+import { Receipt } from "./Components/Payment/Receipt";
 
 import 'boxicons/css/boxicons.min.css';
 import AppLayout from './Components/layout/AppLayout';
@@ -19,6 +20,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/sign-up" element={<Register />} />
         <Route path="/payment" element={<Checkout />} />
+        <Route path="/receipt" element={<Receipt />} />
         {/* <Route path='/' element={<Login />}/> */}
         <Route path='/' element={<AppLayout />}>
           <Route path='/home' element={<ListCardRes/>} />

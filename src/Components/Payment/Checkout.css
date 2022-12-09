@@ -125,9 +125,6 @@ body {
 }
 
 .button{
-    /* background: linear-gradient(
-135deg
-, #753370 0%, #298096 100%); */
     background-color: #eeba2c;
     padding: 15px;
     border: none;
