@@ -18,6 +18,9 @@ export const Checkout = () => {
     console.log("order id : "+ orderId)
   },[])
 
+  function handleSubmit () {
+    navigate('/receipt?price='+price+"&OrderId="+orderId+"&id="+id)
+  }
   return (
     
     <div  className="mainscreen">
@@ -56,7 +59,7 @@ export const Checkout = () => {
                 <input type="password" className="inputbox" name="cvv" id="cvv" required />
             </div>
             <p></p>
-            <button type="submit" className="button">CheckOut</button>
+            <button type="submit" className="button" onClick={handleSubmit}>CheckOut</button>
           </form>
         </div>
       </div>

@@ -2,30 +2,23 @@ import React from 'react'
 import "./Receipt.css"
 import { getRestaurant } from '../../Services/axios'
 import { useState,useEffect } from 'react'
+import { useSearchParams } from 'react-router-dom'
 
 export const Receipt = () =>{
-  const [id,setId] = useState (1)
+  const [searchParams, setSearchParams] = useSearchParams()
   const [rest,setRest] = useState({})
   const current = new Date();
   const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+  const [price,setPrice] = useState (searchParams.get("price"))
+  const [id, setId] = useState(searchParams.get("id"))
+  const [orderId , setOrderId] = useState(searchParams.get("OrderId"))
 
 
   useEffect(() => {
     getRestaurant(id).then (e => {
       setRest({
-        city: e.data.
-        address,
-        comments: "chetori",
         name: e.data.name,
-        address: e.data.address,
-        description: e.data.description,
         logoImg: e.data.logoImg,
-        backgroundImg: e.data.backgroundImg,
-        id: e.data.id,
-        dateCreated: e.data.dateCreated,
-        tags : e.data.tags,
-        rate : e.data.avg,
-        headImage : e.data.backgroundImg,
       })
     }).catch()
   },[]);
@@ -48,7 +41,7 @@ export const Receipt = () =>{
             </div>
             <div className='ReceiptList'>
               <p>Order number</p> 
-              <p className='answer'>:</p>
+              <p className='answer'>: {orderId}</p>
             </div>
             <div className='ReceiptList'>
               <p>Date</p> 
@@ -56,7 +49,7 @@ export const Receipt = () =>{
             </div>
             <div className='ReceiptList'>
               <p>Final price</p> 
-              <p className='answer'>:</p>
+              <p className='answer'>: {price}$</p>
             </div>
           </div>
 
