@@ -76,9 +76,9 @@ export const Login = () => {
             <h1>LOGIN</h1>
             <form className="login-form" onSubmit={handleSubmit}>
                 <label htmlFor="email">E-Mail</label>
-                <input value={email} required onChange={(e) => setEmail(e.target.value)}type="email" placeholder="Example@gmail.com" id="email" name="email" />
+                <input className="AuthInout" value={email} required onChange={(e) => setEmail(e.target.value)}type="email" placeholder="Example@gmail.com" id="email" name="email" />
                 <label htmlFor="password">Password</label>
-                <input value={pass} required onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password" />
+                <input className="AuthInout" value={pass} required onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password" />
                 <button className="logButton" type="submit" >Log In</button>
             </form>
             <p className="login-regiser-p">Don't have an account? <a className="link-btn" href="/sign-up">Register Now</a></p>

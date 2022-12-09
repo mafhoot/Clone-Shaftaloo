@@ -92,15 +92,15 @@ export const Register = () => {
             <h1>REGISTER</h1>
         <form className="register-form" onSubmit={handleSubmit}>
             <label htmlFor="name">Full name</label>
-            <input value={name} required onChange={(e) => setName(e.target.value)} name="name" id="name" placeholder="Your full name" />
+            <input className="AuthInout" value={name} required onChange={(e) => setName(e.target.value)} name="name" id="name" placeholder="Your full name" />
             <label htmlFor="email">E-Mail</label>
-            <input value={email} required onChange={(e) => setEmail(e.target.value)}type="email" placeholder="Example@gmail.com" id="email" name="email" />
+            <input className="AuthInout" value={email} required onChange={(e) => setEmail(e.target.value)}type="email" placeholder="Example@gmail.com" id="email" name="email" />
             <span className="registerError">{emailcheck}</span>
             <label htmlFor="password">Password</label>
-            <input value={pass} required onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password" />
+            <input className="AuthInout" value={pass} required onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password" />
             <span className="registerError">{passcheck}</span>
             <label htmlFor="password2">Re-type password</label>
-            <input value={pass2} required onChange={(e) => setPass2(e.target.value)} type="password" placeholder="********" id="password2" name="password2" />
+            <input className="AuthInout" value={pass2} required onChange={(e) => setPass2(e.target.value)} type="password" placeholder="********" id="password2" name="password2" />
             <span className="registerError">{pass2check}</span>
             
             <button className="logButton" type="submit">Register</button>
