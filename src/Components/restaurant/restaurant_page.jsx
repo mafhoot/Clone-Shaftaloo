@@ -13,6 +13,7 @@ import { TableContext } from "./tableContext";
 import { Tables } from "./table";
 import './restaurant_page.css'
 import { useSearchParams } from 'react-router-dom'
+import { BrowserRouter , Routes , Route , Navigate , useNavigate} from "react-router-dom";
 
 export const Restaurant_page = () => {
   
@@ -27,6 +28,7 @@ export const Restaurant_page = () => {
   const [tableORD, setTableORD] = useState(null)
   const [nav,setNav] = useState()
   const [id,setId] = useState (searchParams.get("id"))
+  const navigate = useNavigate()
   
   const tabs = ["Menu 1" ,"Menu 2","Table","Cart"]
   const [active, setActive] = useState(1);

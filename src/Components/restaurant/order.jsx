@@ -16,6 +16,7 @@ import Typography from '@mui/material/Typography';
 import { ButtonGroup} from '@mui/material';
 import { useEffect } from "react";
 import { postOrder } from "../../Services/axios";
+import { BrowserRouter , Routes , Route , Navigate , useNavigate} from "react-router-dom";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -64,6 +65,8 @@ export function OrderPage (id) {
     const [modal, setModal] = useState(false);
     const [prov,setProv] = useState();
     const [orderFinal, setOrderFinal] = useState([]);
+    const navigate = useNavigate()
+
 
     var cartSum=0
 
@@ -92,7 +95,7 @@ export function OrderPage (id) {
         setOpen(false);
       };
 
-      function handleOrder () {
+      function handleOrderInPlace () {
         console.log(cart)
         for (let i=0 ; i < cart.length ; i++) {
           for (let j=0 ; j <cart[i].order ; j++) {
@@ -106,9 +109,30 @@ export function OrderPage (id) {
           "foods": orderFinal,
         
           "restaurantId": id.id
-        }).then (()=> {
+        }).then (e=> {
+          console.log("OrderId :"+ e.data.id)
           alert ("Order completed")
           setOpen(false);
+        })
+      }
+      
+      function handleOrderCredit () {
+        for (let i=0 ; i < cart.length ; i++) {
+          for (let j=0 ; j <cart[i].order ; j++) {
+            orderFinal.push ({id:cart[i].id})
+          }
+        }
+        postOrder({
+
+          "stat": 0,
+          "foods": orderFinal,
+        
+          "restaurantId": id.id
+        }).then (e=> {
+          // alert ("Order completed")
+          // setOpen(false);
+          console.log("OrderId :"+ e.data.id)
+          navigate('/payment?price='+sum(cart)+"&OrderId="+e.data.id+"&id="+id.id)
         })
       }
  
@@ -160,8 +184,8 @@ export function OrderPage (id) {
 
               <h3 className="methods">Payment methods:</h3>
               <div className="tabG">
-                <button className="buttG" onClick={()=>handleOrder() } >In Place</button>
-                <button className="buttG middle">Credit Card</button>
+                <button className="buttG" onClick={()=>handleOrderInPlace() } >In Place</button>
+                <button className="buttG middle" onClick={()=> handleOrderCredit()}>Credit Card</button>
                 <button className="buttG">Account</button>
               </div>
           

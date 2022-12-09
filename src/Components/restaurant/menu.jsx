@@ -12,7 +12,6 @@ export function  RstMenu  ({id}) {
   const [restMenu,setMenu] = useState()
   var forFlag = 0;
   const [startFlag,setStart] = useState (0)
-  console.log("khar")
 
   useEffect(() => {
     getRestaurant(id).then (m => {
@@ -35,7 +34,7 @@ export function  RstMenu  ({id}) {
     setFoods([]);
     for (let i=0 ; i<x.length ; i++) {
       for (let j=0 ; j < x[i].foods.length ; j++) {
-        console.log(x[i].foods[j])
+        // console.log(x[i].foods[j])
         //x.push(x[i].foods[j])
         setFoods(current => [...current, x[i].foods[j]])
       }
