@@ -1,5 +1,5 @@
 import React from "react";
-
+// import "./home.css";
 import "./home.scss";
 
 const Home = () => {
@@ -19,9 +19,9 @@ const Home = () => {
           <div className="row">
             <div className="slogan">
               <h1 className="rte">Restaurant</h1>
-              <p>Try the best food of the week.</p>
+              <p className="uuuuuu" style={{color:'white'}}>Try the best food of the week.</p>
               <div>
-                <a href=""><button>Order Now</button></a>
+                <a href="" ><button style={{color:'white'}}>Order Now</button></a>
               </div>
             </div>
           </div>
