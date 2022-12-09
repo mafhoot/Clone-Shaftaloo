@@ -75,10 +75,10 @@ export const Login = () => {
         <div className="auth-form-container">
             <h1>LOGIN</h1>
             <form className="login-form" onSubmit={handleSubmit}>
-                <label htmlFor="email">E-Mail</label>
-                <input className="AuthInout" value={email} required onChange={(e) => setEmail(e.target.value)}type="email" placeholder="Example@gmail.com" id="email" name="email" />
-                <label htmlFor="password">Password</label>
-                <input className="AuthInout" value={pass} required onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password" />
+                <label className="AuthLabel" htmlFor="email">E-Mail</label>
+                <input className="AuthInput" value={email} required onChange={(e) => setEmail(e.target.value)}type="email" placeholder="Example@gmail.com" id="email" name="email" />
+                <label className="AuthLabel" htmlFor="password">Password</label>
+                <input className="AuthInput" value={pass} required onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password" />
                 <button className="logButton" type="submit" >Log In</button>
             </form>
             <p className="login-regiser-p">Don't have an account? <a className="link-btn" href="/sign-up">Register Now</a></p>

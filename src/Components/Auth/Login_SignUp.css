@@ -6,7 +6,7 @@
   justify-content: center;
   color: white;
   background-color: #262626;
-  background-image: url("food.jpg");
+  background-image: url("../../Images/food.jpg");
   margin: -8px;
 }
 
@@ -60,20 +60,19 @@ span.registerError {
   font-family: gilroy;
 }
 
-label {
+.AuthLabel {
   text-align: left;
   padding: 0.25rem 0;
-  font-size: 1rem;
-  margin-bottom: -0.2rem;
-  margin-top: 0.5rem;
+  font-size:medium;
+  margin-bottom: 5px;
+  margin-top: 20px;
   color: white;
   font-family: gilroy;
-
 }
 
 
 .AuthInput {
-  margin: 0.5rem 0;
+  
   padding: 1rem;
   border: none;
   border-radius: 10px;
