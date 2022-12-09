@@ -21,10 +21,11 @@ export function  Card  ({name, location, image_res, logo_res, tags}) {
           <img className="img-res" src={image_res} alt="restaurant-card" />
           <img className="cardlogo" src={logo_res} alt="logo" />
           <h1 className="restCardName">{name}</h1>
-          <p className="location">Location : {location}</p>
-          <p className="tags">Tags : 
-          {tagGen()}
-        </p>      
+          <div className="card-discription">
+            <p className="location">Location : {location}</p>
+            <p className="tags">Tags : {tagGen()}</p>   
+          </div>
+             
       </div>
     )
 }

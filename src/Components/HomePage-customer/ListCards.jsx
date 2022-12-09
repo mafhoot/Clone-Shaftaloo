@@ -115,7 +115,7 @@ export const ListCardRes = () => {
                   next={() => add_the_number()}
                   hasMore={() => getRestaurantCards(currentFilter, number+1)}
                   loader={() => loader()}
-                  className="infinite"
+                  
                   >
                     {dataGen()} 
                 </InfiniteScroll>
