@@ -1,7 +1,6 @@
 /***    card    ***/
 .card {
-  display: flex;
-  align-items: center;
+    display: flex;
     flex-direction: column;
     width: 100%;
     background-color: #161616;
@@ -11,10 +10,14 @@
     margin-bottom: 10px;
     border-radius: 10px;
     height: 100%;
+    transition-duration: 0.4s;
 }
 
 .card:hover {
   cursor: pointer;
+  transform: scale(1.1);
+  transition-duration: 0.4s;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 /* .card-top {
@@ -27,7 +30,7 @@
   width: 24%;
   margin: 0.5%;
   color: white;
-  height: 99%;
+  height: 100%;
 }
 
 .img-res {
@@ -51,32 +54,35 @@
 }
 
 .cardlogo {
-  width: 60px;
-  height: 60px;
+  width: 30%;
+  aspect-ratio: 1/1;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 100%;
+  margin-top: -30px;
+  align-self: center;
 }
 
 .restCardName {
   display: flex;
   align-items: center;
   overflow: auto;
-  /* text-overflow: ellipsis; */
-  font-size: 30px;
+  font-size: 25px;
   color: #eeba2c;
-  margin-left: 16px;
+  text-transform: uppercase;
+  align-self: center;
 }
 
 .location {
-  margin-left: 25px;
-}
-
-.simple-loc {
-  font-size: 20px;
+  margin-left: 20px;
+  font-size: large;
+  font-weight: bold;
 }
 
 .tags {
-  margin: 25px;
+  margin-top: -5px;
+  margin-left: 20px;
+  font-size: large;
+  font-weight: bold;
 }
 
 .simple-tag {
@@ -112,7 +118,7 @@
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  min-height: 100mv;
+  height: 500px;
 }
 
 .filters {
@@ -157,7 +163,6 @@ button.simple-filter:hover {
   border-radius: 20px;
   background-color: #262626;
   padding: 0.5%;
-
 }
 
 .cards-list::after {
@@ -181,14 +186,12 @@ button.simple-filter:hover {
 
 @media screen and (max-width: 1000px) {
   .simple-card-inlist {
-    width: 50%;
-    display: block;
   }
 }
 
 @media screen and (max-width: 700px) {
   .simple-card-inlist {
     width: 100%;
-    display: block;
+
   }
 }

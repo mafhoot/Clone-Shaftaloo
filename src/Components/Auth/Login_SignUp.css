@@ -46,7 +46,7 @@
   }
 }
 
-span.loginError {
+.loginError {
   color: rgb(255, 0, 0);
   padding-top: 1rem;
   font-family: gilroy;
@@ -54,7 +54,7 @@ span.loginError {
   font-size: 1.5rem;
 }
 
-span.registerError {
+.registerError {
   color: rgb(255, 0, 0);
   margin-top: -0.2rem;
   font-family: gilroy;
@@ -100,7 +100,7 @@ span.registerError {
   font-weight: bold;
 }
 
-h1{
+.AuthTitle{
   margin: 0rem;
   margin-bottom: 2rem;
   font-size: 3rem;

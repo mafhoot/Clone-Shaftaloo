@@ -73,7 +73,7 @@ export const Login = () => {
 
       
         <div className="auth-form-container">
-            <h1>LOGIN</h1>
+            <h1 className="AuthTitle">LOGIN</h1>
             <form className="login-form" onSubmit={handleSubmit}>
                 <label className="AuthLabel" htmlFor="email">E-Mail</label>
                 <input className="AuthInput" value={email} required onChange={(e) => setEmail(e.target.value)}type="email" placeholder="Example@gmail.com" id="email" name="email" />

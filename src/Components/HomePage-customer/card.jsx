@@ -4,10 +4,6 @@ import './homePageCustomer.css'
 
 export function  Card  ({name, location, image_res, logo_res, tags}) {
 
-  //const image_res = "https://foodexiran.com/wp-content/uploads/2022/08/store-banner.jpg";
-  //const logo_res = "https://wpcdn.us-east-1.vip.tn-cloud.net/www.klkntv.com/content/uploads/2020/08/KFC-LOGO-1024x881.jpg";
-  //const tags = ["chicken", "fast-food"]
-
   const tagGen = () => {
     const tmp=[]
     tags.forEach(item=>{
@@ -22,18 +18,11 @@ export function  Card  ({name, location, image_res, logo_res, tags}) {
     return (
       <div className="card">
         
-          <img className="img-res"
-               src={image_res} 
-               alt="restaurant-card" />
-        
-        <div className="card-discription">
-          <img className="cardlogo" 
-               src={logo_res}
-               alt="logo" />
+          <img className="img-res" src={image_res} alt="restaurant-card" />
+          <img className="cardlogo" src={logo_res} alt="logo" />
           <h1 className="restCardName">{name}</h1>
-        </div>
-        <p className="location">Location : <span className="simple-loc">{location}</span></p>
-        <p className="tags">tags : 
+          <p className="location">Location : {location}</p>
+          <p className="tags">Tags : 
           {tagGen()}
         </p>      
       </div>

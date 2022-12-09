@@ -89,7 +89,7 @@ export const Register = () => {
     return (
       <div className="App">
         <div className="auth-form-container">
-            <h1>REGISTER</h1>
+            <h1 className="AuthTitle">REGISTER</h1>
         <form className="register-form" onSubmit={handleSubmit}>
             <label className="AuthLabel" htmlFor="name">Full name</label>
             <input className="AuthInput" value={name} required onChange={(e) => setName(e.target.value)} name="name" id="name" placeholder="Your full name" />
