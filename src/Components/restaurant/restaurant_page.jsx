@@ -95,20 +95,7 @@ export const Restaurant_page = () => {
         <img className="HeadImage" src={rest.headImage}></img>
         <img className="restLogo" src={rest.logoImg}></img>
         <div className="details">
-          <div className="info" >
-            <label className="name">{rest.name}</label>
-            <p className="description" >About : {rest.description}</p>
-            <p className="restLocation">City : {rest.city}</p>
-            <p className="RestTags">Tags : 
-              <ButtonGroup color="neutral" variant="text" aria-label="text button group">
-                {rest.tags?.map(u => (
-                  <Button>{u.value}</Button>
-                  //console.log(u)
-                ))}
-              </ButtonGroup>
-            </p>
-            <span className="Rate">Rating :</span> <Rating className="rating" name="half-rating-read" defaultValue={rest.rate} precision={0.5} readOnly  />
-          </div>
+          <label className="name">{rest.name}</label>
         </div>
 
 
@@ -119,7 +106,7 @@ export const Restaurant_page = () => {
             <button className={(active==1) ? "TabButton activeButton" : "TabButton"} onClick={() => {setNav(<RstMenu id={id} />); setActive(1); }} >MENU</button>
             <button className={(active==2) ? "TabButton activeButton" : "TabButton"} onClick={() => {setNav (<Tables id={id}/>); setActive(2)}} >TABLE</button>
             <button className={(active==3) ? "TabButton activeButton" : "TabButton"} onClick={()=>  {setActive(3)}}>COMMENTS</button>
-            <button className={(active==4) ? "TabButton activeButton" : "TabButton"} onClick={()=>  {setNav (<Contact_us/>); setActive(4)}}>INFORMATION</button>
+            <button className={(active==4) ? "TabButton activeButton" : "TabButton"} onClick={()=>  {setNav (<Contact_us rest={rest}/>); setActive(4)}}>INFORMATION</button>
           </div>
 
           <div className="main">
