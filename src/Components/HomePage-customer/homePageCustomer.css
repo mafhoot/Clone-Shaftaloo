@@ -19,8 +19,8 @@
   transition-duration: 0.4s;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   position: relative;
-  /* background-color: #eeba2c;
-  color: #161616 ; */
+  background-color: #eeba2c;
+  color: #161616 ;
 }
 
 
@@ -87,7 +87,7 @@
   align-items: center;
   overflow: auto;
   font-size: 25px;
-  color: #eeba2c;
+  /* color: #eeba2c; */
   text-transform: uppercase;
   font-weight: bolder;
   align-self: center;

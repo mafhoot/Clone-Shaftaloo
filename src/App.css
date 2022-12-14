@@ -23,8 +23,7 @@ a {
 .AppLayoutAll{
     width: 100%;
     box-sizing: border-box;
-    /* display: flex; */
-    margin: -8px;
+    /* margin: -8px; */
     /* margin-top: -8px;
     margin-right:-8px ; */
     width: 100%;
@@ -32,7 +31,7 @@ a {
 
 .SideAll {
     float: left;
-    width: 15%;
+    width: 250px;
     transition: 0.4s;
     /* margin-left: -8px;
     margin-top: -8px; */
@@ -41,19 +40,19 @@ a {
 
 
 .ContentAll {
-    float: left;
-    width: 85%;
+    float: right;
+    width:calc(100% - 250px);
     transition: 0.4s;
     /* margin-left: -8px; */
 }
 
 .hideSide {
-    width: 4%;
+    width: 76px;
     transition: 0.4s;
 }
 
 .showAll {
-    width: 96%;
+    width: calc(100% - 76px);
     transition: 0.4s;
 }
 

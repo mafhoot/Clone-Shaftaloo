@@ -2,6 +2,7 @@ import { useState ,useContext ,useEffect} from "react";
 import { CartContext} from "./cart";
 import { OrderPage } from "./order";
 import { getMenu ,getRestaurant} from "../../Services/axios";
+import {url} from "../../Services/consts"
 
 
 export function  RstMenu  ({id}) {
@@ -101,7 +102,7 @@ export function  RstMenu  ({id}) {
               <div className="foods">
                 {foods?.map(x => (
                   <div className="newCard">
-                    <img src={x.image} className="imageCard" />
+                    <img src={url+"www/"+x.imgName} className="imageCard" />
                     <h2 className="cardTitle">{x.name}</h2>
                     <div className="foodDetails">
                       <p className="cardDetails">{/*x.details*/}{x.foodDescription}</p>

@@ -440,7 +440,7 @@
     .menu, .receipt {   
       width: 100%;
     }
-    .logo {
+    .restLogo {
         width: 20%;
         margin-left: 40%;
         margin-right: 40%;
@@ -467,7 +467,7 @@
         height: 100px;
     }
 
-    .logo {
+    .restLogo {
         margin-top: -4rem;
     }
   }

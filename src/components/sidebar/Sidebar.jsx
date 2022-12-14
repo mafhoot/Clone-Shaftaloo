@@ -4,6 +4,7 @@ import "./sidebar.css";
 import { S, G, getUser, getBearerToken } from "../../Services/axios";
 import { LayoutContext } from "../layout/LayoutContext";
 // import DensitySmallIcon from '@mui/icons-material/DensitySmall';
+import HamImg from "../../Images/Hamburger.png"
 
 const sidebarNavItems = [
   {
@@ -112,30 +113,17 @@ const Sidebar = () => {
       </span>
       <nav className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
         <div className={`sidebar__logo ${closeSide ? " hideSideLogoMember" : ""}`}>
-          <div className={`sideLogo ${closeSide ? " hideMember" : ""}`}>
-            <img
-              className="logo"
-              src={user.img}
-              alt=""
-            ></img>
-          </div>
-          <div className={`profName ${closeSide ? " hideMember" : ""}`}>
-            <div className="text_name">
-              <p>{user.name}</p>
+          <div className={`LogoAndProf ${closeSide ? " hideMember" : ""}`}>
+            <div className={`sideLogo ${closeSide ? " hideMember" : ""}`}>
+              <img className="logo" src={user.img} alt=""/>
+            </div>
+            <div className={`profName ${closeSide ? " hideMember" : ""}`}>
+              <div className="text_name">
+                <p>{user.name}</p>
+              </div>
             </div>
           </div>
-          <button className={`btn-close ${closeSide ? " hambIcon" : ""}`} onClick={handleToggle}>
-            {/* {navbarOpen ? (
-                        <MdClose style={{ color: "#fff", width: "40px", height: "40px" }} />
-                    ) : (
-                        <FiMenu style={{ color: "#fff", width: "40px", height: "40px" }} />
-                    )} */}
-            {/* <img
-              src={"https://a.trellocdn.com/prgb/dist/images/workspace-navigation/chevron-left.58243262833f693f6101.svg"}
-              alt=""
-            ></img> */}
-            <i class='bx bx-menu' ></i>
-          </button>
+          <img className={` ${closeSide ? " hambIcon" : "btn-close"}`} src={HamImg} onClick={handleToggle} />
         </div>
         <div ref={sidebarRef} className="sidebar__menu">
           <div

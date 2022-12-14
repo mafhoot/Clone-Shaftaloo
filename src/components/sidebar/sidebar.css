@@ -5,30 +5,36 @@
 .sidebar__logo {
     width: 100%;
     box-sizing: border-box;
-    padding: 3%;
     color: white;
     font-family: Gilroy;
     border-bottom: 1px solid white;
-    aspect-ratio: 4/1;
+    height: 60px;
   }
 
+.LogoAndProf {
+  height: 100%;
+  width: calc(100% - 55px);
+  float: left;
+  display: flex;
+  transition: 0.4s;
+}
   .hideSideLogoMember {
     border: none;
   }
   
   .sideLogo {
     float: left;
-    height: 100%;
-    aspect-ratio: 1/1;
+    height: 50px;
+    width: 50px;
+    margin: 5px;
+    transition: 0.4s;
   }
-  
   .profName {
-    float: left;
-    width: 40%;
-    margin-left: 20px;
+    margin-left: 10px;
     display: flex;
     height: 100%;
-    align-items: center
+    align-self: center;
+    transition: 0.4s;
   }
 
   .text_name {
@@ -39,7 +45,7 @@
   
   .sidebar__menu {
     position: relative;
-    margin-top: 30px;
+    margin-top: 10px;
   }
   
 
@@ -130,19 +136,29 @@
   
   .btn-close {
     float: right;
-    border-radius: 3px;
     background-color: transparent;
     cursor: pointer;
-    padding: 2px;
     color: white;
-    height: 100%;
+    width: 50px;
+    height: 50px;
     border: none;
-    
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
   }
   
   .hambIcon {
-    margin: auto;
     text-align: center;
+    border: none;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    float: right;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 13px;
+    margin-left: 13px;
   }
 
   .hideMember {
@@ -160,6 +176,11 @@
     color: white;
     height: 100%;
     border: none;
+}
+
+.closeButton {
+  width: 40px;
+  align-self: center;
 }
 
     /* .closeButton {
