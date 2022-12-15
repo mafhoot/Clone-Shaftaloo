@@ -12,7 +12,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { ButtonGroup} from '@mui/material';
+import { ButtonGroup} from '@mui/material'; 
 import { useEffect } from "react";
 import { postTable } from "../../Services/axios";
 import Box from '@mui/material/Box';
@@ -92,8 +92,9 @@ export function TableOrder (props) {
               "tableId":cart[i].id ,
               "reserveTime": {
                 "reserveTime": from.toJSON()
-              }
-            
+              },
+              "paymentType" : "Online",
+              "paymentState" : "Succeed"             
             }).then (() => {
               console.log("sucesssssssssssss")
               setFlag(1)
@@ -151,23 +152,16 @@ export function TableOrder (props) {
     return (
       <>
         <div className="cart">
-          
-
               <h2 className="orderHeader">Reserve table</h2>
-
               <div className="List">
-                
                   {cart?.map (x => (
                     <p className="orderList">{x.order}x : {x.capacity}sit</p>
                 ))}
               </div>
-
               <div className="totalPrice">
                 <div className="totalPriceButton">Total sits : {sum(cart)}</div>
               </div>
-              
               {cartSum > 0 ? <button className="pay" onClick={handleClickOpen} >Reserve</button> : null}
-          
         </div>
 
         <div className="payDialog">
@@ -179,12 +173,8 @@ export function TableOrder (props) {
           >
             <DialogContent dividers className="dialog">
             <div className="dialogList">
-          
-
               <h2 className="orderHeader">Your order</h2>
-
               <div className="ListDialog">
-                
                   {cart?.map (x => (
                     <p className="orderList">{x.order}x : {x.capacity}sit</p>
                 ))}
@@ -193,25 +183,21 @@ export function TableOrder (props) {
                 <div className="totalPriceButton">Total sits: {sum(cart)}</div>
               </div>
               <h3 className="methods">Select your theme:</h3>
-              <Box>
-                <FormControl fullWidth>
-                  <InputLabel id="demo-simple-select-label">ُTheme</InputLabel>
+              <Box className="themeSelect">
+                <FormControl fullWidth className="themeSelect">
+                  <InputLabel className="themeSelect" id="demo-simple-select-label">ُTheme</InputLabel>
                   <Select
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
                     value={theme}
-                    label="Age"
-                    onChange={handleChange}
-                  >
+                    label="Theme"
+                    onChange={handleChange} className="themeSelect">
                     {restThemes.map(t=> (
                     <MenuItem value={restThemes.indexOf(t)}>{t}</MenuItem>
                     ))}
                   </Select>
                 </FormControl>
               </Box>
-              
-
-
               <h3 className="methods">Submit your reserve:</h3>
               <div className="tabG">
                 <button className="buttG" onClick={() => onSubmit() } >Reserve</button>

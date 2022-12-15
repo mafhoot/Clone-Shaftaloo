@@ -82,3 +82,14 @@
 .butbut {
     width: 100%;
 }
+.themeSelect:focus {
+    color: #161616;
+    border-color: #161616;
+}
+
+.css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper {
+    background-color:#161616
+}
+.MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+    color: #161616;
+}

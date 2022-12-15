@@ -161,3 +161,13 @@
 .ThemeList:hover {
     cursor: pointer;
 }
+
+
+.MuiSelect-icon {
+    color: black;
+}
+
+.themeSelect {
+    color: #161616;
+    border-color: #161616;
+}
