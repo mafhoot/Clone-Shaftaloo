@@ -11,9 +11,12 @@ export const User_order = () => {
         
             <div className="user-order">
                 <div className="order-container">
-                    <Order_card/>
-                    <Order_card/>
-                    <Order_card/>
+                    <div className="">
+                        <Order_card/>
+                        <Order_card/>
+                        <Order_card/>
+                        <Order_card/>
+                    </div>
                 </div>
             </div>
 
