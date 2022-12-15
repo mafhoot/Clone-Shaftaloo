@@ -2,7 +2,7 @@ import React from "react";
 
 import './user-order.css'
 
-export const Order_card = () => {
+export const Order_card = (/*{restaurant_name, order_time, logo_res, order_cost, factor, status}*/) => {
 
     const logo_res = "https://wpcdn.us-east-1.vip.tn-cloud.net/www.klkntv.com/content/uploads/2020/08/KFC-LOGO-1024x881.jpg";
 
