@@ -47,11 +47,10 @@ export const Restaurant_page = () => {
   },[active])
 
   useEffect(() => {
-    console.log(searchParams.get("id"));
     getRestaurant(id).then (e => {
       setRest({
-        city: e.data.
-        address,
+        address: e.data.address,
+        city: e.data.city.cityName,
         comments: "chetori",
         name: e.data.name,
         address: e.data.address,
@@ -65,7 +64,6 @@ export const Restaurant_page = () => {
         headImage : e.data.backgroundImg,
       })
       setValue(e.data.avg)
-      console.log(e.data.avg)
     }).catch()
     setNav(<RstMenu id={id} />)
   },[]);

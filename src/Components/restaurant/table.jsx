@@ -27,7 +27,6 @@ export function Tables (id) {
     };
 
     const [tableORD,setTableORD] = useState ([]);
-    console.log (tableORD)
 
     const [flag, setFlag] = useState(0);
     var forFlag = 0;
@@ -101,12 +100,10 @@ export function Tables (id) {
         // console.log("end : " + to.toJSON())
         getTable (id['id'] , from.toJSON() , to.toJSON()).then (m => {
             setTimeState(from)
-            console.log (tbList)
             m.data.forEach (e => {
                 e ["count" ] = 0;
             })
             setTbList(m.data)
-            console.log(m.data);
         })
 
     }

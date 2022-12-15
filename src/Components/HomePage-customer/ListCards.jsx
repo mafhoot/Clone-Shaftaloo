@@ -17,10 +17,11 @@ export const ListCardRes = () => {
     const [data, setData] = useState([])
     const [currentFilter, setCurrentFilter] = useState("all")
     const [number, setNember] = useState(0)
+    const [cityID, setCityID] = useState(-1)
      const navigate = useNavigate()
 
     useEffect(() => {
-      getRestaurantCards(currentFilter, number)
+      getRestaurantCards(currentFilter, number, cityID)
       .then((response)=>{
         console.log("response : ", response.data)
         setData(response.data)

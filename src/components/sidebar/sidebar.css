@@ -24,9 +24,9 @@
   
   .sideLogo {
     float: left;
-    height: 50px;
-    width: 50px;
-    margin: 5px;
+    height: 45px;
+    width: 45px;
+    margin: 7.5px;
     transition: 0.4s;
   }
   .profName {
@@ -206,10 +206,13 @@
   }
 
   .SignInButton {
-    width: 60%;
-    margin-right: 20%;
-    margin-left: 20%;
-    aspect-ratio: 3/1;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 1000px;
+    width: 80%;
+    margin-right: 10%;
+    margin-left: 10%;
+    height: 60px;
     text-align: center;
     font-weight: bold;
     border: none;

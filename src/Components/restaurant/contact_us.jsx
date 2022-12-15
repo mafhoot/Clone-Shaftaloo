@@ -6,12 +6,12 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Button} from '@mui/material';
 
 
-export function Contact_us (rest) {
+export const  Contact_us = ({rest}) => {
     return (
         <div className="info" >
-            <label className="name">{rest.name}</label>
             <p className="description" >About : {rest.description}</p>
             <p className="restLocation">City : {rest.city}</p>
+            <p className="restLocation">Address : {rest.address}</p>
             <p className="RestTags">Tags : 
               <ButtonGroup color="neutral" variant="text" aria-label="text button group">
                 {rest.tags?.map(u => (

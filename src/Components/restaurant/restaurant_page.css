@@ -39,6 +39,7 @@
     /*margin-top: -4rem;*/
     width: 80%;
     margin-top: 2rem;
+    text-align: center;
     
 }
 
@@ -56,6 +57,8 @@
     font-weight: bolder;
     font-size: 2rem;
     text-transform: uppercase;
+    text-align: center;
+    color: #eeba2c;
 }
 
 .Rate {
@@ -100,6 +103,8 @@
     top: 10px;
     z-index: 1;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation-name: fadeInLeft;
+    animation-duration: 1.25s;
 }
 
 .TabButton {
@@ -313,6 +318,11 @@
 
 .cardDetails{
     margin-top: -10px;
+    color: white;
+    padding-left: 10px;
+}
+
+.cardLeft {
     color: white;
     padding-left: 10px;
 }

@@ -102,12 +102,10 @@ export function  RstMenu  ({id}) {
               <div className="foods">
                 {foods?.map(x => (
                   <div className="newCard">
-                    <img src={url+"www/"+x.imgName} className="imageCard" />
+                    <img src={x.imgName} className="imageCard" />
                     <h2 className="cardTitle">{x.name}</h2>
-                    <div className="foodDetails">
-                      <p className="cardDetails">{/*x.details*/}{x.foodDescription}</p>
-                    </div>
-                    <p className="cardDetails">Left : {x.count}</p>
+                    <p className="cardDetails">{/*x.details*/}{x.foodDescription}</p>
+                    <p className="cardLeft">Left : {x.count}</p>
                     <p className="price">{x.price}$</p>
 
                     <div className="ButtonGroup">

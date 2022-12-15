@@ -15,6 +15,11 @@ import Typography from '@mui/material/Typography';
 import { ButtonGroup} from '@mui/material';
 import { useEffect } from "react";
 import { postTable } from "../../Services/axios";
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -60,22 +65,15 @@ BootstrapDialogTitle.propTypes = {
 
 export function TableOrder (props) {
   const x=props.x;
-  console.log(x)
-  const [restThemes, setRestThemes] = useState (["Birthday" , "Politic" , "Funeral"])
+  const [restThemes, setRestThemes] = useState (["Causual" , "Birthday" , "Anniversery" , "Meeting" , "Funeral" , "Other"])
+  const [theme,setTheme] = useState(0);
 
-  // const time=props.timeVal;
   const time=props.timeVal;
-  console.log(props);
-  // console.log(time);
-  // console.table(x);
-    //const {cart,setCart} = useContext (TableContext);
     const [cart,setCart] = useState (x);
-    // console.log(cart)
-    // console.log(time)
     const [modal, setModal] = useState(false);
     const [prov,setProv] = useState();
     const from=new Date(time)
-    console.log(from)
+    const [flag,setFlag] = useState(0);
 
     var cartSum=0
 
@@ -90,6 +88,7 @@ export function TableOrder (props) {
           for (let j=0 ; j <cart[i].order ; j++) {
             postTable({
               "expireHours": 2,
+              "theme" : theme,
               "tableId":cart[i].id ,
               "reserveTime": {
                 "reserveTime": from.toJSON()
@@ -97,14 +96,18 @@ export function TableOrder (props) {
             
             }).then (() => {
               console.log("sucesssssssssssss")
-              
+              setFlag(1)
             })
             
           }
       }
-      alert ("Reserve completed")
-      setOpen(false);
-      setCart(null)
+
+      if (flag === 1) {
+        alert ("Reserve completed")
+        setOpen(false);
+        setCart(null)
+      }
+      
       
     }
 
@@ -128,6 +131,21 @@ export function TableOrder (props) {
       const handleClose = () => {
         setOpen(false);
       };
+
+      function themeSubmit (x) {
+        setTheme(restThemes.indexOf(x))
+      }
+
+      // const [age, setAge] = React.useState('');
+
+      const handleChange = (event) => {
+        setTheme(event.target.value);
+        console.log(event.target.value)
+      };
+
+      // const handleChange = (event) => {
+      //   setAge(event.target.value);
+      // };
 
  
     return (
@@ -174,14 +192,24 @@ export function TableOrder (props) {
               <div className="totalPrice">
                 <div className="totalPriceButton">Total sits: {sum(cart)}</div>
               </div>
-
               <h3 className="methods">Select your theme:</h3>
-              <select className="TableTheme">
-                <option className="ThemeList" value="">None</option>
-                {restThemes.map(t=> (
-                  <option className="ThemeList" value="">{t}</option>
-                ))}
-              </select>
+              <Box>
+                <FormControl fullWidth>
+                  <InputLabel id="demo-simple-select-label">ُTheme</InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={theme}
+                    label="Age"
+                    onChange={handleChange}
+                  >
+                    {restThemes.map(t=> (
+                    <MenuItem value={restThemes.indexOf(t)}>{t}</MenuItem>
+                    ))}
+                  </Select>
+                </FormControl>
+              </Box>
+              
 
 
               <h3 className="methods">Submit your reserve:</h3>

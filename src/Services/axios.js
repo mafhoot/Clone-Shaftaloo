@@ -37,8 +37,8 @@ export function getMenu (data){
 export function getTable (restID , start , end) {
     return axios.get(url+ "api/ReserveTable/GetActiveReserveTablesByRestaurant?restauranId="+restID+"&from="+start+"&to="+end)
 }
-export function getRestaurantCards (tag, number){
-    return axios.get(url+"api/Restaurant?tag="+tag+"&size=10&number="+number)
+export function getRestaurantCards (tag, number, id){
+    return axios.get(url+"api/Restaurant?tag="+tag+"&size=10&number="+number+"&cityid="+id)
 }
 
 

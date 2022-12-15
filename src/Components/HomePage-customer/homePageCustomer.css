@@ -35,10 +35,26 @@
   margin: 0.5%;
   color: white;
   height: 200px;
+  
   margin-top: 10px;
   margin-bottom: 10px;
   overflow: none;
   z-index: 0;
+  transition-duration: 0.4s;
+}
+
+@media screen and (max-width: 1200px) {
+  .cartContainer {
+    height: 150px;
+    transition-duration: 0.4s;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .cartContainer {
+    height: 100px;
+    transition-duration: 0.4s;
+  }
 }
 
 .img-res {
@@ -92,6 +108,24 @@
   font-weight: bolder;
   align-self: center;
   margin-left: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+  .restCardName {
+    font-size: 15px;
+    transition-duration: 0.4s;
+  }
+  .location {
+    font-size: 10px !important;
+  
+  }
+  .tags {
+    font-size: 10px !important;
+    
+  }
+  .simple-tag {
+    font-size: 7px !important;
+  }
 }
 
 .location {
