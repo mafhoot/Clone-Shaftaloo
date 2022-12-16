@@ -13,11 +13,14 @@ export function  RstMenu  ({id}) {
   const [restMenu,setMenu] = useState()
   var forFlag = 0;
   const [startFlag,setStart] = useState (0)
+  
+  const [favoriteFoods, setFavoriteFoods] = useState();
 
   useEffect(() => {
     getRestaurant(id).then (m => {
       setMenu(m.data.menu)
       setStart(() => !startFlag)
+      setFavoriteFoods(m.data.favorites)
     }).catch()
   },[])
 
@@ -28,7 +31,7 @@ export function  RstMenu  ({id}) {
 
   function loadMenu (i) {
     console.table(i.foods)
-    setFoods(i.foods)
+    setFoods(i)
     //console.log(i.foods[0])
   }
 
@@ -94,9 +97,10 @@ export function  RstMenu  ({id}) {
             <div> 
               <div className="categories">
                 <button onClick={() => loadAll(restMenu)} className="catButton">All</button>
+                <button onClick={() => loadMenu(favoriteFoods)} className="catButton">Favorite</button>
                 {restMenu?.map (tag => (
                   //JSON.stringify(tag.categories)
-                  <button onClick={() => loadMenu(tag)} className="catButton">{tag.categoryName}</button>
+                  <button onClick={() => loadMenu(tag.foods)} className="catButton">{tag.categoryName}</button>
                 ))}
               </div>
 
