@@ -27,6 +27,7 @@ export function  RstMenu  ({id}) {
   // },[startFlag])
 
   function loadMenu (i) {
+    console.table(i.foods)
     setFoods(i.foods)
     //console.log(i.foods[0])
   }
@@ -102,12 +103,11 @@ export function  RstMenu  ({id}) {
               <div className="foods">
                 {foods?.map(x => (
                   <div className="newCard">
-                    <img src={x.imgName} className="imageCard" />
+                    <img src={url+"api/www/ImgGet/"+x.photo.id} className="imageCard" />
                     <h2 className="cardTitle">{x.name}</h2>
                     <p className="cardDetails">{/*x.details*/}{x.foodDescription}</p>
                     <p className="cardLeft">Left : {x.count}</p>
                     <p className="price">{x.price}$</p>
-
                     <div className="ButtonGroup">
                     <button className="cardButton" onClick={() => {if (x.foodCnt > 0 ) {dec(x)}}} >-</button>
                       <span className="cardButton">{x.foodCnt}</span>

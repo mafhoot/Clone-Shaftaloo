@@ -48,19 +48,15 @@ const Sidebar = () => {
       // });
     } else {
       getUser().then((e) => {
-        // console.log(e.data.username);
-        // console.log(e.status);
         setUser({
           name: e.data.fullName,
-          img: e.data.img
+          img: e.data.picture
         });
       });      
     }
     getUser().then((e) => {
       setLogin(true);
-      // console.log(e.status);
     }).catch(error=>{
-      // console.log(error.response.status);
       setLogin(false);
     });
     
@@ -105,8 +101,6 @@ const Sidebar = () => {
           xmlns="http://www.w3.org/2000/svg"
           width="35"
           height="35"
-        //   viewBox="0 0 29 29"
-        //   style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"
         >
           <path d="M12 22c5.514 0 10-4.486 10-10S17.514 2 12 2 2 6.486 2 12s4.486 10 10 10zM10 7l6 5-6 5V7z"></path>
         </svg>

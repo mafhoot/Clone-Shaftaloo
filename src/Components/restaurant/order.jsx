@@ -105,10 +105,11 @@ export function OrderPage (id) {
 
         postOrder({
 
-          "stat": 0,
+          "stat": "paid",
           "foods": orderFinal,
         
-          "restaurantId": id.id
+          "restaurantId": id.id,
+          "paymentType" : "InPlace",
         }).then (e=> {
           console.log("OrderId :"+ e.data.id)
           alert ("Order completed")
@@ -124,13 +125,12 @@ export function OrderPage (id) {
         }
         postOrder({
 
-          "stat": 0,
+          "stat": "inProcess",
           "foods": orderFinal,
         
-          "restaurantId": id.id
+          "restaurantId": id.id,
+          "paymentType" : "Online"
         }).then (e=> {
-          // alert ("Order completed")
-          // setOpen(false);
           console.log("OrderId :"+ e.data.id)
           navigate('/payment?price='+sum(cart)+"&OrderId="+e.data.id+"&id="+id.id)
         })

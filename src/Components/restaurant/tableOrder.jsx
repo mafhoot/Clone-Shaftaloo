@@ -73,7 +73,8 @@ export function TableOrder (props) {
     const [modal, setModal] = useState(false);
     const [prov,setProv] = useState();
     const from=new Date(time)
-    const [flag,setFlag] = useState(0);
+     const [tableFlag,setTableFlag] = useState(0);
+    // var flag=0;
 
     var cartSum=0
 
@@ -85,31 +86,27 @@ export function TableOrder (props) {
       console.table(time);
       console.log ("ejra shodam")
       for (let i=0 ; i < cart.length ; i++) {
-          for (let j=0 ; j <cart[i].order ; j++) {
-            postTable({
-              "expireHours": 2,
-              "theme" : theme,
-              "tableId":cart[i].id ,
-              "reserveTime": {
-                "reserveTime": from.toJSON()
-              },
-              "paymentType" : "Online",
-              "paymentState" : "Succeed"             
-            }).then (() => {
-              console.log("sucesssssssssssss")
-              setFlag(1)
-            })
-            
-          }
+        postTable({
+          "expireHours": 2,
+          "theme" : theme,
+          "tableId":cart[i].id ,
+          "reserveTime": {
+            "reserveTime": from.toJSON()
+          },
+          "paymentType" : "Online",
+          "paymentState" : "Succeed"             
+        }).then (() => {
+          console.log("sucesssssssssssss")
+        }).catch (()=> {
+          setOpen(false);
+          setCart(null)
+          alert ("Reserve failed")
+          return ;
+        })    
       }
-
-      if (flag === 1) {
-        alert ("Reserve completed")
-        setOpen(false);
-        setCart(null)
-      }
-      
-      
+      alert ("Reserve completed")
+      setOpen(false);
+      setCart(null)
     }
 
     function sum (cart) {
