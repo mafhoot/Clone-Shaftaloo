@@ -61,3 +61,7 @@ export function postOrder (data) {
 export function postPayment (data) {
     return axios.post (url+"api/Payment",data)
 }
+
+export function getTag (){
+    return axios.get (url+"api/Tag")
+}

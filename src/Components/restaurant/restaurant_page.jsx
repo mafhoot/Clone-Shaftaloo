@@ -32,12 +32,8 @@ export const Restaurant_page = () => {
   
   const tabs = ["Menu 1" ,"Menu 2","Table","Cart"]
   const [active, setActive] = useState(1);
-  
-  //const [tbList,setTbList] = useState( [{"name" : "2 Sit table" , "count" : 0 , "price" : 20}, {"name" : "4 Sit table" , "count" : 0, "price" : 40 } , {"name" : "6 Sit table" , "count" : 0 , "price" : 60}])
-
   foods.forEach (e =>{
     e["details"] = "Meat, Bread, Pickle, Tomato";
-    // e["image"] = "https://realfood.tesco.com/media/images/Burger-31LGH-a296a356-020c-4969-86e8-d8c26139f83f-0-1400x919.jpg";
   })
   
   
@@ -98,8 +94,6 @@ export const Restaurant_page = () => {
 
 
         <CartContext.Provider value={{cart,setCart}}>
-          {/* <TableContext.Provider value={{tableORD,setTableORD}}> */}
-          {/* {console.log(tableORD)} */}
           <div className="Tab">
             <button className={(active==1) ? "TabButton activeButton" : "TabButton"} onClick={() => {setNav(<RstMenu id={id} />); setActive(1); }} >MENU</button>
             <button className={(active==2) ? "TabButton activeButton" : "TabButton"} onClick={() => {setNav (<Tables id={id}/>); setActive(2)}} >TABLE</button>
@@ -110,7 +104,6 @@ export const Restaurant_page = () => {
           <div className="main">
             {nav}
           </div>
-          {/* </TableContext.Provider> */}
         </CartContext.Provider>
         
         <div className="distance"></div>

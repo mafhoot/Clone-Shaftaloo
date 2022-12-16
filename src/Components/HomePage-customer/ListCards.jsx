@@ -12,7 +12,7 @@ import './homePageCustomer.css'
 
 export const ListCardRes = () => {
 
-    const filters = ['all', 'Fast Food', 'Chicken', 'Irani', 'Pizza']
+    const [filters,setFilters] = useState (['all', 'Fast Food', 'Chicken', 'Irani', 'pizza'])
     const [cards, setCards] = useState();
     const [data, setData] = useState([])
     const [currentFilter, setCurrentFilter] = useState("all")
@@ -23,7 +23,6 @@ export const ListCardRes = () => {
     useEffect(() => {
       getRestaurantCards(currentFilter, number, cityID)
       .then((response)=>{
-        console.log("response : ", response.data)
         setData(response.data)
       
         const newCard =[];
@@ -58,9 +57,7 @@ export const ListCardRes = () => {
 
     const dataGen = () => {
       const tmp=[]
-      data.forEach(item=>{
-        console.log(item);
-        
+      data.forEach(item=>{        
         tmp.push(
         <div className="cartContainer" onClick={()=> navigate('/restaurant?id='+item.id)}>
            <Card 
