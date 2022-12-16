@@ -4,6 +4,8 @@ import IMG from "../../Images/food.jpg"
 import { useState , useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { BrowserRouter , Routes , Route , Navigate , useNavigate} from "react-router-dom";
+import { postPayment } from '../../Services/axios'
+
 
 export const Checkout = () => {
   const [searchParams, setSearchParams] = useSearchParams()
@@ -19,7 +21,14 @@ export const Checkout = () => {
   },[])
 
   function handleSubmit () {
+    postPayment({
+      "paymentType" : "Online",
+      "paymentState" : 3,
+      "orderId" : orderId,
+      "identityId" : "32412"
+    })
     navigate('/receipt?price='+price+"&OrderId="+orderId+"&id="+id)
+
   }
   return (
     

@@ -57,3 +57,7 @@ export function postOrder (data) {
     };
     return axios.post (url+"api/Order",data,config)
 }
+
+export function postPayment (data) {
+    return axios.post (url+"api/Payment",data)
+}

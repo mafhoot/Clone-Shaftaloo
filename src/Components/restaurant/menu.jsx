@@ -103,7 +103,6 @@ export function  RstMenu  ({id}) {
                   <button onClick={() => loadMenu(tag.foods)} className="catButton">{tag.categoryName}</button>
                 ))}
               </div>
-
               <div className="foods">
                 {foods?.map(x => (
                   <div className="newCard">

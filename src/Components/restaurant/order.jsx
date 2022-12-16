@@ -15,7 +15,7 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { ButtonGroup} from '@mui/material';
 import { useEffect } from "react";
-import { postOrder } from "../../Services/axios";
+import { postOrder, postPayment } from "../../Services/axios";
 import { BrowserRouter , Routes , Route , Navigate , useNavigate} from "react-router-dom";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
@@ -127,9 +127,9 @@ export function OrderPage (id) {
 
           "stat": "inProcess",
           "foods": orderFinal,
-        
           "restaurantId": id.id,
-          "paymentType" : "Online"
+          "paymentType" : "Online",
+          
         }).then (e=> {
           console.log("OrderId :"+ e.data.id)
           navigate('/payment?price='+sum(cart)+"&OrderId="+e.data.id+"&id="+id.id)
