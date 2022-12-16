@@ -57,3 +57,7 @@ export function postOrder (data) {
     };
     return axios.post (url+"api/Order",data,config)
 }
+
+export function get_user_orders () {
+    return axios.get(url+'/api/Order/GetUserActiveOrder')
+}
