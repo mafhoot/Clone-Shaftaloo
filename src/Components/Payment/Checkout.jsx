@@ -22,12 +22,14 @@ export const Checkout = () => {
 
   function handleSubmit () {
     postPayment({
-      "paymentType" : "Online",
-      "paymentState" : 3,
+      "paymentType" : 1,
+      "paymentState" : 0,
       "orderId" : orderId,
-      "identityId" : "32412"
-    })
-    navigate('/receipt?price='+price+"&OrderId="+orderId+"&id="+id)
+    }).then ( e => {
+      navigate('/receipt?price='+price+"&OrderId="+orderId+"&id="+id)
+    }
+    )
+    
 
   }
   return (

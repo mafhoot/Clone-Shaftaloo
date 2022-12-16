@@ -10,6 +10,7 @@ export const Register = () => {
     const [emailcheck ,setEmailcheck] = useState("")
     const [passcheck,setPasscheck] = useState ("")
     const [pass2check,setPass2check] = useState ("")
+    const [city,setCity] = useState ("")
     var flag=0
     
     const adminuser = { 
@@ -43,7 +44,10 @@ export const Register = () => {
             "phoneNumber": "",
             "password": pass,
             "fullName": name,
-            "email": email
+            "email": email,
+            "gender" : "male",
+            "city" : city,
+            "picture" : ""
           } ).then(x=>{
             console.log(x);
             S('token',x.data.token);
@@ -102,6 +106,8 @@ export const Register = () => {
             <label className="AuthLabel" htmlFor="password2">Re-type password</label>
             <input className="AuthInput" value={pass2} required onChange={(e) => setPass2(e.target.value)} type="password" placeholder="********" id="password2" name="password2" />
             <span className="registerError">{pass2check}</span>
+            <label className="AuthLabel" htmlFor="city">City</label>
+            <input className="AuthInput" value={city} required onChange={(e) => setCity(e.target.value)}type="city" placeholder="Tehran" id="city" name="city" />
             
             <button className="logButton" type="submit">Register</button>
         </form>

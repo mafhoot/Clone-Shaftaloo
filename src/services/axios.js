@@ -59,7 +59,10 @@ export function postOrder (data) {
 }
 
 export function postPayment (data) {
-    return axios.post (url+"api/Payment",data)
+    const config = {
+        headers: { Authorization: `Bearer ${G("token")}` }
+    };
+    return axios.post (url+"api/Payment",data,config)
 }
 
 export function getTag (){

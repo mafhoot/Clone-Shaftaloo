@@ -2,14 +2,10 @@ import React,{useState , useEffect , useRef } from "react";
 import Rating from '@mui/material/Rating';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Button} from '@mui/material';
 import {getRestaurant , getMenu} from "../../Services/axios"
 import { RstMenu } from "./menu";
 import { Contact_us } from "./contact_us";
-import { OrderPage } from "./order"
-import { TableOrder } from "./tableOrder";
 import { CartContext } from "./cart";
-import { TableContext } from "./tableContext";
 import { Tables } from "./table";
 import './restaurant_page.css'
 import { useSearchParams } from 'react-router-dom'
@@ -20,8 +16,6 @@ export const Restaurant_page = () => {
   const [searchParams, setSearchParams] = useSearchParams()
   const [rest,setRest] = useState({id : null , name : null , date : null , address : "America" })
   const [value, setValue] = useState(3.5);
-  const [headImageLink ,setHeadImageLink] = useState ("https://foodexiran.com/wp-content/uploads/2022/08/store-banner.jpg")
-  const [logoImage ,setLogoImage] = useState ("https://wpcdn.us-east-1.vip.tn-cloud.net/www.klkntv.com/content/uploads/2020/08/KFC-LOGO-1024x881.jpg")
   const [foods,setFoods] = useState( [{"name" : "Burger" , "count" : 0 , "price" : 183}, {"name" : "Chicken" , "count" : 0, "price" : 223 } , {"name" : "Hot Dog" , "count" : 0 , "price" : 375} , {"name" : "Pasta" , "count" : 0 , "price" : 343} , {"name" : "pizza" , "count" : 0, "price" : 432} , {"name" : "Fried Potato" , "count" : 0 , "price" : 99}])
   const foodTags = ["All", "Burger" ,"Fried", "Dessert" , "Pizza" , "Sandwitch"] 
   const [cart,setCart] = useState([]);
