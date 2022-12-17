@@ -25,6 +25,12 @@ const sidebarNavItems = [
     to: "/restaurant",
     section: "restaurant",
   },
+  {
+    display: "Orders",
+    icon: <i className="bx bx-order"></i>,
+    to: "/orders",
+    section: "orders",
+  },
 ];
 const Sidebar = () => {
   const [activeIndex, setActiveIndex] = useState(0);

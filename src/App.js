@@ -28,7 +28,7 @@ function App() {
           <Route path='/user' element={<Blank/>} />
           <Route path='/order' element={<Blank />} />
           <Route path='/restaurant' element={<Restaurant_page />} />
-          <Route path='/my-order' element={<User_order />} />
+          <Route path='/orders' element={<User_order />} />
         </Route>
       </Routes>
       </BrowserRouter>
