@@ -61,7 +61,7 @@ export const Receipt = () =>{
 
           <div className='ReceiptBottom'>
             <p>You can follow up your order from here:</p>
-            <button className='ReceiptButton' onClick={handleSubmit()}>Order status</button>
+            <button className='ReceiptButton' onClick={()=>handleSubmit()}>Order status</button>
           </div>
         </div> 
       </div>

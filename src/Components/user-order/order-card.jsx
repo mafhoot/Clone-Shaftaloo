@@ -16,6 +16,7 @@ export const Order_card = ({order}) => {
     const [order_cost, setOrderCost] = useState()
     const [factor, setFactor] = useState(order.foods)
     const [status, setStatus] = useState(order.stat)
+    const orderStatus = ["Finished" , "inProcess" , "Accepted" , "Paid"]
     
     getRestaurant(order.restaurantId)
     .then((res) => {
@@ -52,18 +53,18 @@ export const Order_card = ({order}) => {
                         <div className="order-res-name-and-time">
                             <h2 className="order">{res_name}</h2>
                             <div className="order-time">
-                                <h3 className="order">{order_time}</h3>
+                                <h3 className="order">{ Date(order_time) }</h3>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="order-card-right">
-                    <div className="order-cost">
+                    {/* <div className="order-cost">
                         <h2 className="order">Order cost : {order_cost}</h2>
-                    </div>
+                    </div> */}
                     <div className="order-factor-and-status">
-                        <button className="status-button">{status}</button>
-                        <button className="factor-button"  /*onClick={showModal}*/>factor</button>
+                        <button className="status-button">{orderStatus[status]}</button>
+                        <button className="factor-button"  /*onClick={showModal}*/>Factor</button>
                         {/** factor modal
                         <Modal
                           title="Basic Modal"
