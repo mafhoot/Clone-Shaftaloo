@@ -66,5 +66,11 @@ export function postPayment (data) {
 }
 
 export function getTag (){
-    return axios.get (url+"api/Tag")
+    return axios.get (url+"api/Tag")}
+    
+export function get_user_orders () {
+    const config = {
+        headers: { Authorization: `Bearer ${G("token")}` }
+    };
+    return axios.get(url+'api/UserApis/GetOrdersHistory', config)
 }
