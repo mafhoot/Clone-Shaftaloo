@@ -46,40 +46,7 @@ export const User_order = () => {
                         <h1 className="title-order-container">My orders</h1>
                     </div>
                     <div className="">
-                        {/*orders_gen()*/}
-                        <div className="order-card">
-                <div className="order-card-left">
-                    <div className="order-res-info">
-                        <img className="order-res-logo" src={res_logo} alt="" />
-                        <div className="order-res-name-and-time">
-                            <h2 className="order">restaurant</h2>
-                            <div className="order-time">
-                                <h3 className="order">22:15:00</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="order-card-right">
-                    <div className="order-cost">
-                        <h2 className="order">Order cost : 23$</h2>
-                    </div>
-                    <div className="order-factor-and-status">
-                        <button className="status-button">Finished</button>
-                        <button className="factor-button"  /*onClick={showModal}*/>factor</button>
-                        {/** factor modal
-                        <Modal
-                          title="Basic Modal"
-                          open={visible}
-                          onOk={handleOk}
-                          onCancel={handleCancel}
-                        >
-                          <p>Some contents...</p>
-                          <p>Some contents...</p>
-                          <p>Some contents...</p>
-                        </Modal>*/}
-                    </div>
-                </div>
-            </div>
+                        {orders_gen()}
                     </div>
                 </div>
             </div>
