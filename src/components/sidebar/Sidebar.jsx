@@ -21,13 +21,13 @@ const sidebarNavItems = [
   },
   {
     display: "Restaurants",
-    icon: <i className="bx bx-receipt"></i>,
+    icon: <i className="bx bx-restaurant"></i>,
     to: "/restaurant",
     section: "restaurant",
   },
   {
     display: "Orders",
-    icon: <i className="bx bx-order"></i>,
+    icon: <i className="bx bx-receipt"></i>,
     to: "/orders",
     section: "orders",
   },

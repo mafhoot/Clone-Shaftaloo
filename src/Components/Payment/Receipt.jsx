@@ -3,6 +3,7 @@ import "./Receipt.css"
 import { getRestaurant } from '../../Services/axios'
 import { useState,useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
+import { BrowserRouter , Routes , Route , Navigate , useNavigate} from "react-router-dom";
 
 export const Receipt = () =>{
   const [searchParams, setSearchParams] = useSearchParams()
@@ -12,6 +13,7 @@ export const Receipt = () =>{
   const [price,setPrice] = useState (searchParams.get("price"))
   const [id, setId] = useState(searchParams.get("id"))
   const [orderId , setOrderId] = useState(searchParams.get("OrderId"))
+  const navigate = useNavigate()
 
 
   useEffect(() => {
@@ -22,6 +24,10 @@ export const Receipt = () =>{
       })
     }).catch()
   },[]);
+
+  function handleSubmit () {
+    navigate('/orders')
+  }
 
   return (
     <div className='ReceiptMain'>
@@ -55,7 +61,7 @@ export const Receipt = () =>{
 
           <div className='ReceiptBottom'>
             <p>You can follow up your order from here:</p>
-            <button className='ReceiptButton'>Order status</button>
+            <button className='ReceiptButton' onClick={handleSubmit()}>Order status</button>
           </div>
         </div> 
       </div>
