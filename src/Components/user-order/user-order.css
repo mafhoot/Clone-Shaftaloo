@@ -15,12 +15,16 @@
     border-radius: 8px;
     background-color: #262626;
     align-items: center;
-    width: 1200px;
+    max-width: 1200px;
     padding: 4px;
     display:block;
     position: relative;
 }
 
+.title-order-container {
+    margin-left: 8px;
+    color: #eeba2c;
+}
 
 /*** order card ***/
 .order-card {
@@ -93,6 +97,7 @@ h3.order {
     height: 50px;
     width: 30%;
     text-align: center;
+    min-width: fit-content;
 }
 
 .factor-button {
@@ -108,10 +113,31 @@ h3.order {
     margin-left: 10px;
     height: 50px;
     width: 30%;
+    min-width: fit-content;
 }
 
 .factor-button:hover {
     -webkit-text-fill-color: white;
     background-color: #161616;
     border: solid 1px #161616;
+}
+
+@media screen and (max-width: 700px) {
+    .order-card {
+        display: block;
+        margin: auto;
+    }
+
+    .order-card-left {
+        margin: auto;
+        margin-top: 25px;
+    }
+
+    .order-card-right {
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
 }
