@@ -98,7 +98,7 @@
 }
 
 .restCardName {
-  width: 20%;
+  width: 25%;
   display: flex;
   align-items: center;
   overflow: auto;
@@ -159,6 +159,8 @@
 
 .homePage-customer {
   background-color: #161616;
+  /* background-image: url("../../Images/food.jpg"); */
+
   font-family: gilroy;
   min-height: 200vh;
   /* margin: -8px; */
@@ -174,6 +176,7 @@
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  
 }
 
 .filters {
@@ -185,6 +188,7 @@
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 button.simple-filter {
@@ -224,6 +228,8 @@ button.simple-filter:hover {
   overflow: visible;
   z-index: 0;
   position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
 }
 
 .cards-list::after {

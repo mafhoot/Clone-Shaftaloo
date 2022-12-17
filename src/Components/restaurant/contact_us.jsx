@@ -7,10 +7,11 @@ import { Button} from '@mui/material';
 
 
 export const  Contact_us = ({rest}) => {
+  console.log(rest)
     return (
         <div className="info" >
             <p className="description" >About : {rest.description}</p>
-            <p className="restLocation">City : {rest.city}</p>
+            
             <p className="restLocation">Address : {rest.address}</p>
             <p className="RestTags">Tags : 
               <ButtonGroup color="neutral" variant="text" aria-label="text button group">

@@ -14,7 +14,7 @@ import { BrowserRouter , Routes , Route , Navigate , useNavigate} from "react-ro
 export const Restaurant_page = () => {
   
   const [searchParams, setSearchParams] = useSearchParams()
-  const [rest,setRest] = useState({id : null , name : null , date : null , address : "America" })
+  const [rest,setRest] = useState({id : "" , name : "" , date : "" , address : "" })
   const [value, setValue] = useState(3.5);
   const [foods,setFoods] = useState( [{"name" : "Burger" , "count" : 0 , "price" : 183}, {"name" : "Chicken" , "count" : 0, "price" : 223 } , {"name" : "Hot Dog" , "count" : 0 , "price" : 375} , {"name" : "Pasta" , "count" : 0 , "price" : 343} , {"name" : "pizza" , "count" : 0, "price" : 432} , {"name" : "Fried Potato" , "count" : 0 , "price" : 99}])
   const foodTags = ["All", "Burger" ,"Fried", "Dessert" , "Pizza" , "Sandwitch"] 
@@ -29,18 +29,16 @@ export const Restaurant_page = () => {
   foods.forEach (e =>{
     e["details"] = "Meat, Bread, Pickle, Tomato";
   })
-  
-  
 
   useEffect (() => {
 
   },[active])
 
   useEffect(() => {
+    console.log(id)
     getRestaurant(id).then (e => {
       setRest({
         address: e.data.address,
-        city: e.data.city.cityName,
         comments: "chetori",
         name: e.data.name,
         address: e.data.address,
@@ -54,6 +52,7 @@ export const Restaurant_page = () => {
         headImage : e.data.backgroundImg,
       })
       setValue(e.data.avg)
+      console.log(rest)
     }).catch()
     setNav(<RstMenu id={id} />)
   },[]);
