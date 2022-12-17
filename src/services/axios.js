@@ -59,5 +59,8 @@ export function postOrder (data) {
 }
 
 export function get_user_orders () {
-    return axios.get(url+'/api/Order/GetUserActiveOrder')
+    const config = {
+        headers: { Authorization: `Bearer ${G("token")}` }
+    };
+    return axios.get(url+'/api/UserApis/GetOrdersHistory', config)
 }

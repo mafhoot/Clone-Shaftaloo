@@ -6,7 +6,7 @@ import './user-order.css'
 
 export const User_order = () => {
 
-    const [orders, setOrders] = useState()
+    const [orders, setOrders] = useState([])
 
     useEffect(() => {
 

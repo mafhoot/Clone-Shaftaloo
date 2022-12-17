@@ -61,18 +61,17 @@ export const ListCardRes = () => {
         console.log(item);
         
         tmp.push(
-        <div className="cartContainer" onClick={()=> navigate('/restaurant?id='+item.id)}>
-           <Card 
-            key={item.id}
-            id={item.id}
-            name={item.name}
-            location={item.address}
-            image_res={item.backgroundImg}
-            logo_res={item.logoImg}
-            tags={item.tags}
-          />
-        </div>
-         
+          <div className="cartContainer" onClick={()=> navigate('/restaurant?id='+item.id)}>
+            <Card 
+             key={item.id}
+             id={item.id}
+             name={item.name}
+             location={item.address}
+             image_res={item.backgroundImg}
+             logo_res={item.logoImg}
+             tags={item.tags}
+            />
+          </div>
         )
       })
       return tmp;
