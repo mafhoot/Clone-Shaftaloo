@@ -1,0 +1,48 @@
+.landingAll {
+
+}
+
+.landingNav {
+    height: 70px;
+    background-color: #eeba2c;
+    display: flex;
+
+}
+
+.nameButton {
+    color: #161616;
+    border: none;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 5%;
+    font-size: 2rem;
+    font-weight: bolder;
+    background-color: #eeba2c;
+    cursor: pointer;
+}
+
+.navButtons {
+    color: black;
+    border: none;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 1rem;
+    font-weight: bolder;
+    background-color: #eeba2c;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.navLogin {
+    color: black;
+    border: none;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 1rem;
+    font-weight: bolder;
+    background-color: #eeba2c;
+    margin-right: 5%;
+    margin-left: auto;
+    cursor: pointer;
+    float: right;
+}

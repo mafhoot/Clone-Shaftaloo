@@ -6,7 +6,7 @@ import {Restaurant_page} from './Components/restaurant/restaurant_page.jsx'
 import {Checkout} from "./Components/Payment/Checkout"
 import { Receipt } from "./Components/Payment/Receipt";
 import { User_order } from "./Components/user-order/user-order";
-
+import { Landing } from "./pages/Landing";
 import 'boxicons/css/boxicons.min.css';
 import AppLayout from './Components/layout/AppLayout';
 import Blank from './pages/Blank';
@@ -22,6 +22,7 @@ function App() {
         <Route path="/sign-up" element={<Register />} />
         <Route path="/payment" element={<Checkout />} />
         <Route path="/receipt" element={<Receipt />} />
+        <Route path="/landing" element={<Landing />} />
         {/* <Route path='/' element={<Login />}/> */}
         <Route path='/' element={<AppLayout />}>
           <Route path='/home' element={<ListCardRes/>} />
