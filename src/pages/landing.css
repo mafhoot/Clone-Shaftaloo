@@ -1,5 +1,6 @@
 .landingAll {
-
+    background-image: url("../Images/landingFood.jpg");
+    min-height: 100vh;
 }
 
 .landingNav {
@@ -31,11 +32,19 @@
     background-color: #eeba2c;
     margin-left: 20px;
     cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.097);
+    padding: 12px;
+}
+
+.navButtons:hover {
+    color: #eeba2c;
+    background-color: #161616;
+    transition-duration: 0.4s;
 }
 
 .navLogin {
     color: black;
-    border: none;
+    border: 1px solid black ;
     margin-top: auto;
     margin-bottom: auto;
     font-size: 1rem;
@@ -45,4 +54,103 @@
     margin-left: auto;
     cursor: pointer;
     float: right;
+    padding: 10px;
+    border-radius: 8px;
 }
+
+.navLogin:hover {
+    color: #eeba2c;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 1rem;
+    font-weight: bolder;
+    background-color: #161616;
+    margin-right: 5%;
+    margin-left: auto;
+    cursor: pointer;
+    float: right;
+    padding: 10px;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+}
+
+
+
+.landingTitleHolder {
+    margin-left: 10%;
+    margin-top: 150px;
+    width: 800px;
+}
+
+.landingSubTitle {
+    color: white;
+    margin-bottom: -30px;
+    font-size: large;
+}
+
+.landingTitle {
+    color: white;
+    font-size: 5rem;
+    font-weight: bolder;
+}
+
+.landingDetails {
+    color: white;
+    margin-top: -70px;
+    font-size: large;
+}
+
+.landingButton {
+    border: none;
+    background-color: #eeba2c;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    margin-top: 50px;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.landingButton:hover {
+    background-color: black;
+    color: #eeba2c;
+    transition-duration: 0.4s;
+}
+
+/* .landingAcc {
+    width: 80%;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    transition-duration: 0.4s !important;
+    
+}
+
+.accHead {
+    font-size: larger;
+}
+
+.MuiAccordion-root {
+    border-radius: 10px;
+}
+
+
+.MuiAccordionSummary-root {
+    background-color: #161616 !important;
+    color: #eeba2c !important;
+
+}
+
+.MuiAccordionDetails-root {
+    background-color: #262626;
+    color: white;
+}
+
+.css-v84d5j-MuiSvgIcon-root {
+    color: #eeba2c ;
+}
+
+.MuiAccordionActions-root {
+    transition-duration: 0.4s !important;
+} */
