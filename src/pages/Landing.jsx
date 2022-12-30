@@ -65,7 +65,7 @@ export const Landing = () => {
                 <button className='navLogin' onClick={()=> navigate('/login')}>Login/Register</button>
              </div>
             <div className='landingTitleHolder'>
-                <p className='landingSubTitle'>ORDER - EAT - ENJOY</p>
+                <p className='landingSubTitle'>ORDER - EAT - ENJOY</p> 
                 <p className='landingTitle'>Want an easy meal? Leave this to us!</p>
                 <p className='landingDetails'>Nowdays, ordering a food have plenty of ways, but in shaftaloo with over 100000 active restaurant
                 , we do our best to make a happy and easy
@@ -113,9 +113,6 @@ export const Landing = () => {
                     </AccordionDetails>
                 </Accordion>
              </div> */}
-
-
-
         </div>
     )
 }

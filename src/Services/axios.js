@@ -74,3 +74,11 @@ export function get_user_orders () {
     };
     return axios.get(url+'api/UserApis/GetOrdersHistory', config)
 }
+
+export function get_poll () {
+    return axios.get (url+"api/Poll/question")
+}
+
+export function postPoll (data) {
+    return axios.post(url+"api/Poll",data)
+}

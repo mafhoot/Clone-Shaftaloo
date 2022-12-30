@@ -1,0 +1,40 @@
+.qTitle {
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+}
+
+.pollAll {
+    color: white;
+    text-align: left;
+    background-color: #262626;
+    border-radius: 2rem;
+    padding: 2rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 30px
+}
+
+.pollSubmit {
+    color: black;
+    background-color: #eeba2c;
+    font-size: large;
+    font-weight: bold;
+    border: none ;
+    width: 100px;
+    height: 40px;
+    border-radius: 8PX;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.pollSubmit:hover {
+    color: #eeba2c;
+    background-color: #161616;
+    transition-duration: 0.4s;
+}
+
+.pollQuestion {
+    border-top: 1px solid #161616;
+    padding-top: 20px;
+}
+

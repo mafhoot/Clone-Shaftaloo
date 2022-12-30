@@ -10,9 +10,9 @@ import { Tables } from "./table";
 import './restaurant_page.css'
 import { useSearchParams } from 'react-router-dom'
 import { BrowserRouter , Routes , Route , Navigate , useNavigate} from "react-router-dom";
+import { Poll } from "./poll";
 
 export const Restaurant_page = () => {
-  
   const [searchParams, setSearchParams] = useSearchParams()
   const [rest,setRest] = useState({id : "" , name : "" , date : "" , address : "" })
   const [value, setValue] = useState(3.5);
@@ -88,7 +88,7 @@ export const Restaurant_page = () => {
           <div className="Tab">
             <button className={(active==1) ? "TabButton activeButton" : "TabButton"} onClick={() => {setNav(<RstMenu id={id} />); setActive(1); }} >MENU</button>
             <button className={(active==2) ? "TabButton activeButton" : "TabButton"} onClick={() => {setNav (<Tables id={id}/>); setActive(2)}} >TABLE</button>
-            <button className={(active==3) ? "TabButton activeButton" : "TabButton"} onClick={()=>  {setActive(3)}}>COMMENTS</button>
+            <button className={(active==3) ? "TabButton activeButton" : "TabButton"} onClick={()=>  {setNav (<Poll id={id}/>); setActive(3)}}>POLL</button>
             <button className={(active==4) ? "TabButton activeButton" : "TabButton"} onClick={()=>  {setNav (<Contact_us rest={rest}/>); setActive(4)}}>INFORMATION</button>
           </div>
 
