@@ -75,21 +75,28 @@
     border-radius: 4px;
 }
 
+.logo-resss {
+    width: 16%;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
 .order-card-left {
-    width: 50%;
-    margin-left: 45px;
+    width: 42%;
 }
 
 .order-card-right {
-    width: 50%;
+    width: 42%;
     text-align: right;
     display: block;
     margin-right: 45px;
 }
 
 img.order-res-logo {
-    width: 85px;
-    height: 85px;
+    border: solid 4px #eeba2c;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
     border-radius: 50%;
 }
@@ -104,10 +111,11 @@ img.order-res-logo {
 }
 
 h2.order {
+    color: #eeba2c;
     margin: 0;
 }
 
-h3.order {
+h4.order {
     margin: 0;
 }
 
