@@ -21,6 +21,10 @@ export const User_order = () => {
         
     }, [])
 
+    const handlClick = () => {
+        console.log("go to restaurant page!")
+    }
+
     const orders_gen = () => {
         const tmp=[]
         orders.forEach(o => {
@@ -32,6 +36,20 @@ export const User_order = () => {
                 </div>
             )
       })
+      if (tmp.length == 0) {
+        return (
+            <div className="nothing">
+                <label className="label-btnnn">You have not registered an order yet, Go order :</label>
+                <button 
+                    className="btn-go-to-res-page"
+                    onClick={() => handlClick()}
+                    >
+                        restaurants
+                </button>
+            </div>
+        )
+      }
+                
       return tmp;
     }
 
@@ -42,8 +60,8 @@ export const User_order = () => {
         
             <div className="user-order">
                 <div className="order-container">
-                    <div>
-                        <h1 className="title-order-container">My orders</h1>
+                    <div className="title-orders">
+                        <h1 className="title-orders-h1">My orders</h1>
                     </div>
                     <div className="">
                         {orders_gen()}

@@ -11,20 +11,57 @@
 
 .order-container {
     margin: auto;
-    margin-top: 120px;
+    margin-top: 30px;
     border-radius: 8px;
     background-color: #262626;
     align-items: center;
+    min-height: 120px;
     max-width: 1200px;
     padding: 4px;
     display:block;
     position: relative;
 }
 
-.title-order-container {
+.title-orders {
+    border-bottom: solid 1px #161616;
+}
+
+.title-orders-h1 {
     margin-left: 8px;
     color: #eeba2c;
 }
+
+
+.nothing {
+    text-align: center;
+    margin: 20px;
+}
+
+.label-btnnn {
+    margin-right: 10px;
+    color: white;
+}
+
+.btn-go-to-res-page {
+    border: solid 1px #262626;
+    background-color: #eeba2c;
+    padding: 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    transition-duration: 0.4s;
+    margin-top: 0px;
+    width: fit-content;
+}
+
+.btn-go-to-res-page:hover {
+    -webkit-text-fill-color: white;
+    background-color: #161616;
+    border: solid 1px #ffffff;
+}
+
 
 /*** order card ***/
 .order-card {
