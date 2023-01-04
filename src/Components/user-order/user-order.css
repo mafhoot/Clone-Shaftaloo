@@ -73,6 +73,7 @@
     align-items: center;
     min-height: 125px;
     border-radius: 4px;
+    background-color: #161616;
 }
 
 .logo-resss {
@@ -164,7 +165,7 @@ h4.order {
 .factor-button:hover {
     -webkit-text-fill-color: white;
     background-color: #161616;
-    border: solid 1px #161616;
+    border: solid 1px white;
 }
 
 @media screen and (max-width: 700px) {

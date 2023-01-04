@@ -61,7 +61,7 @@ export const Order_card = ({order}) => {
         <>
             <div className="order-card">
                 <div className="logo-resss">
-                        <img className="order-res-logo" src={res_logo} alt="" />
+                    <img className="order-res-logo" src={res_logo} alt="" />
                 </div>
                 <div className="order-card-left">
                     <div className="order-res-info">
