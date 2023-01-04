@@ -32,6 +32,13 @@
     width: 100%;
 }   
 
+.qrCode {
+    position:absolute;
+    top:50px;
+    right: 30px;
+    height: 200px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
 .details {
     justify-content: center;
@@ -458,6 +465,11 @@
     .HeadImage {
         height: 200px;
     }
+    .qrCode {
+        height: 150px;
+        top: 25px;
+        right: 25px;
+    }
   }
 
   @media screen and (max-width: 700px) {
@@ -475,6 +487,11 @@
     }
     .HeadImage {
         height: 100px;
+    }
+    .qrCode {
+        height: 60px;
+        top: 20px;
+        right: 20px;
     }
 
     .restLogo {

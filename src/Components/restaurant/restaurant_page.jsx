@@ -11,7 +11,8 @@ import './restaurant_page.css'
 import { useSearchParams } from 'react-router-dom'
 import { BrowserRouter , Routes , Route , Navigate , useNavigate} from "react-router-dom";
 import { Poll } from "./poll";
-import { QRCode } from 'antd';
+// import { QRCode } from 'antd';
+import QRCode from "react-qr-code";
 
 export const Restaurant_page = () => {
   const [searchParams, setSearchParams] = useSearchParams()
@@ -85,7 +86,11 @@ export const Restaurant_page = () => {
         <div className="details">
           <label className="name">{rest.name}</label>
         </div>
-        <QRCode value="https://ant.design/" />
+        {/* <QRCode value="https://ant.design/" /> */}
+        <div className="qrCode">
+          <QRCode style={{ height: "100%", width: "100%" }} value={"http://localhost:3000/restaurant?id="+id} />
+        </div>
+        
         <CartContext.Provider value={{cart,setCart}}>
           <div className="Tab">
             <button className={(active==1) ? "TabButton activeButton" : "TabButton"} onClick={() => {setNav(<RstMenu id={id} />); setActive(1); }} >MENU</button>
