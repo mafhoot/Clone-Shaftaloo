@@ -11,6 +11,7 @@ import './restaurant_page.css'
 import { useSearchParams } from 'react-router-dom'
 import { BrowserRouter , Routes , Route , Navigate , useNavigate} from "react-router-dom";
 import { Poll } from "./poll";
+import { QRCode } from 'antd';
 
 export const Restaurant_page = () => {
   const [searchParams, setSearchParams] = useSearchParams()
@@ -84,6 +85,7 @@ export const Restaurant_page = () => {
         <div className="details">
           <label className="name">{rest.name}</label>
         </div>
+        <QRCode value="https://ant.design/" />
         <CartContext.Provider value={{cart,setCart}}>
           <div className="Tab">
             <button className={(active==1) ? "TabButton activeButton" : "TabButton"} onClick={() => {setNav(<RstMenu id={id} />); setActive(1); }} >MENU</button>
