@@ -82,3 +82,7 @@ export function get_poll () {
 export function postPoll (data) {
     return axios.post(url+"api/Poll",data)
 }
+
+export function getLanding (data) {
+    return axios.get (url+"api/LandingPage?id="+data)
+}

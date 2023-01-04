@@ -118,39 +118,48 @@
     transition-duration: 0.4s;
 }
 
-/* .landingAcc {
-    width: 80%;
-    margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    transition-duration: 0.4s !important;
-    
-}
-
-.accHead {
-    font-size: larger;
-}
-
-.MuiAccordion-root {
-    border-radius: 10px;
-}
-
-
-.MuiAccordionSummary-root {
-    background-color: #161616 !important;
-    color: #eeba2c !important;
-
-}
-
-.MuiAccordionDetails-root {
-    background-color: #262626;
+.landingFooter {
+    display: flex;
     color: white;
+
+    margin-left: 10%;
+    margin-top: 50px;
 }
 
-.css-v84d5j-MuiSvgIcon-root {
-    color: #eeba2c ;
+.landingPhoneNumber {
+    margin-right: 20px;
+    background-color: rgba(255, 255, 255, 0.097);
+    padding-top: 5px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    transition-duration: 0.4s;
 }
 
-.MuiAccordionActions-root {
-    transition-duration: 0.4s !important;
-} */
+.landingPhoneNumber:hover {
+    transform: scale(1.1);
+    transition-duration: 0.4s;
+    background-color: #161616;
+}
+
+.landingPhoneTitle{
+    font-weight: bolder ;
+    font-size: 1.5rem;
+}
+
+.landingAddress{
+    background-color: rgba(255, 255, 255, 0.097);
+    padding-top: 5px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    transition-duration: 0.4s;
+}
+
+.landingAddress:hover {
+    transform: scale(1.1);
+    transition-duration: 0.4s;
+    background-color: #161616;
+}
