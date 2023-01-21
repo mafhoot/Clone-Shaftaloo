@@ -86,3 +86,10 @@ export function postPoll (data) {
 export function getLanding (data) {
     return axios.get (url+"api/LandingPage?id="+data)
 }
+
+export function putUser(data) {
+    const config = {
+        headers: { Authorization: `Bearer ${G("token")}` }
+    };
+    return axios.put(url+"api/User",data,config)
+}
