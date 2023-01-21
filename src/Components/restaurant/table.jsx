@@ -63,7 +63,8 @@ export function Tables (id) {
         name : t.number,
         order : 1 ,
         id : t.id,
-        capacity : t.capacity
+        capacity : t.capacity,
+        image : t.img
         });
 
         // settableORD(prev => [...prev, {
@@ -133,8 +134,6 @@ export function Tables (id) {
                         <button className="submitTime" onClick={() => handleSubmit(timeValue)} >SUBMIT</button>
                     </div>
                 </div>
-                 
-                
             </div>
 
             <div className="foods">

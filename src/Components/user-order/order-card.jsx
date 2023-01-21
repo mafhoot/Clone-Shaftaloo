@@ -17,11 +17,14 @@ export const Order_card = ({order}) => {
     const [factor, setFactor] = useState(order.foods)
     const [status, setStatus] = useState(order.stat)
     const orderStatus = ["Finished" , "inProcess" , "Accepted" , "Paid"]
+
+    console.log(order.dateCreated)
     
     getRestaurant(order.restaurantId)
     .then((res) => {
         setResLogo(res.data.logoImg)
         setResName(res.data.name)
+        
     })
     .catch((e) => {
         console.log(e)

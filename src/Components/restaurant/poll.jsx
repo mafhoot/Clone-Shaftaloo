@@ -37,6 +37,8 @@ export const Poll = (id) => {
             "score5": value[4],
             "score6": value[5],
             "score7": value[6], 
+        }).then (() => {
+            alert("Thanks for your cooporation")
         })
     }
 

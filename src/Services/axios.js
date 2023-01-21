@@ -86,3 +86,7 @@ export function postPoll (data) {
 export function getLanding (data) {
     return axios.get (url+"api/LandingPage?id="+data)
 }
+
+export function getTheme(data) {
+    return axios.get (url+ "api/ReserveTable/Theme/id?id="+data)
+}

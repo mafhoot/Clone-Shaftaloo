@@ -18,6 +18,7 @@ import { useEffect } from "react";
 import { postOrder, postPayment } from "../../Services/axios";
 import { BrowserRouter , Routes , Route , Navigate , useNavigate} from "react-router-dom";
 
+
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
     padding: theme.spacing(2),
@@ -107,13 +108,20 @@ export function OrderPage (id) {
 
           "stat": "paid",
           "foods": orderFinal,
-        
           "restaurantId": id.id,
           "paymentType" : "InPlace",
         }).then (e=> {
           console.log("OrderId :"+ e.data.id)
           alert ("Order completed")
           setOpen(false);
+          postPayment({
+            "paymentType" : 2,
+            "paymentState" : 0,
+            "orderId" : e.data.id,
+          }).then ( e => {
+            navigate('/receipt?price='+sum(cart)+"&OrderId="+e.data.id+"&id="+id.id)
+          }
+          )
         })
       }
       

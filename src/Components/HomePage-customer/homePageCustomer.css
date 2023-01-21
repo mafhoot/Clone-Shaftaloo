@@ -2,15 +2,16 @@
 .card {
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 98%;
     background-color: #161616;
-    margin-left: 0.5%;
-    margin-right: 0.5%;
+    margin-left: 1%;
+    margin-right: 1%;
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 10px;
     height: 100%;
     transition-duration: 0.4s;
+    overflow: auto;
 }
 
 .card:hover {
@@ -31,16 +32,16 @@
 } */
 
 .cartContainer {
-  width: 99%;
+  width: 100%;
   margin: 0.5%;
   color: white;
   height: 200px;
-  
   margin-top: 10px;
   margin-bottom: 10px;
   overflow: none;
   z-index: 0;
   transition-duration: 0.4s;
+
 }
 
 @media screen and (max-width: 1200px) {
@@ -181,21 +182,32 @@
 }
 
 .filters {
+  display: flex;
+    flex-flow:row;
+    overflow: auto;
   margin-left: auto;
   margin-right: auto;
   background: #262626;
   width: 100%;
   border-radius: 15px;
-  display: flex;
-  flex-wrap: wrap;
   margin-bottom: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  min-height: 35px;
+}
+.filters::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;;
+}
+
+.filters::-webkit-scrollbar-thumb {
+  background-color:#eeba2c;
+  border-radius: 10px;
 }
 
 button.simple-filter {
-  margin-right: 10px;
-  margin-left: 10px;
-  height: 35px;
+  margin-right: 5px;
+  margin-left: 5px;
+  min-height: 35px;
   font-size: large;
   font-family: gilroy;
   color: white;
@@ -207,6 +219,8 @@ button.simple-filter {
   margin-top: 10px;
   margin-bottom: 10px;
   font-weight: bold;
+  /* width: 100%; */
+  flex-direction: row;
 
 }
 
@@ -255,7 +269,16 @@ button.simple-filter:hover {
   justify-content: center;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 500px) {
+  .img-res {
+    display: none;
+  }
+  .cardlogo {
+    margin-left: 10px;
+  }
+.container{
+  padding: 20px ;
+}
 }
 
 @media screen and (max-width: 700px) {

@@ -20,6 +20,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import { getTheme } from "../../Services/axios";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -65,7 +66,7 @@ BootstrapDialogTitle.propTypes = {
 
 export function TableOrder (props) {
   const x=props.x;
-  const [restThemes, setRestThemes] = useState (["Causual" , "Birthday" , "Anniversery" , "Meeting" , "Funeral" , "Other"])
+  const [restThemes, setRestThemes] = useState ([])
   const [theme,setTheme] = useState(0);
 
   const time=props.timeVal;
@@ -77,6 +78,14 @@ export function TableOrder (props) {
     // var flag=0;
 
     var cartSum=0
+
+    useEffect(()=> {
+      getTheme(2).then (m => {
+        setRestThemes(m.data)
+        console.log(m.data);
+      }).catch()
+      
+    })
 
     useEffect (()=> {
 
