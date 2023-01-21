@@ -14,10 +14,10 @@ const sidebarNavItems = [
     section: "home",
   },
   {
-    display: "User",
+    display: "Profile",
     icon: <i className="bx bx-user"></i>,
-    to: "/user",
-    section: "user",
+    to: "/user-profile",
+    section: "user-profile",
   },
   {
     display: "Restaurants",

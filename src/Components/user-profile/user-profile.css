@@ -1,0 +1,55 @@
+.gradient-custom {
+    background: #f12711;  
+    background: -webkit-linear-gradient(to right, #f5af19, #f16e11);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #f5af19, #f15f11); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  }
+.admin-name{
+  color: black;
+  font-weight: bold;
+}
+.adminUserName{
+  font-size: 22px;
+}
+.personal-form-input{
+  background-color: aliceblue;
+  border-color: #f6d365;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.logout{
+  padding-top: 10px;
+}
+
+.personal-profile{
+  background-image: url("./background.png");
+  background-size: cover;
+}
+
+.my-5 {
+  margin-top: 3rem !important;
+  margin-bottom: 3rem !important;
+  border-radius: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.h4 {
+  font-size: calc(1.275rem + 0.3vw);
+  font-weight: bold !important ;
+}
+
+.g-0 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.uploadImg{
+  margin-left: 0px;
+  padding-left:0px;
+}

@@ -12,6 +12,7 @@ import AppLayout from './Components/layout/AppLayout';
 import Blank from './pages/Blank';
 import { Card } from "./Components/HomePage-customer/card";
 import { ListCardRes } from "./Components/HomePage-customer/ListCards"
+import { User_profile } from "./Components/user-profile/User-profile";
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
         {/* <Route path='/' element={<Login />}/> */}
         <Route path='/' element={<AppLayout />}>
           <Route path='/home' element={<ListCardRes/>} />
-          <Route path='/user' element={<Blank/>} />
+          <Route path='/user-profile' element={<User_profile/>} />
           <Route path='/order' element={<Blank />} />
           <Route path='/restaurant' element={<Restaurant_page />} />
           <Route path='/orders' element={<User_order />} />

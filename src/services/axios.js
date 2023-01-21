@@ -90,3 +90,9 @@ export function getLanding (data) {
 export function getTheme(data) {
     return axios.get (url+ "api/ReserveTable/Theme/id?id="+data)
 }
+export function putUser(data) {
+    const config = {
+        headers: { Authorization: `Bearer ${G("token")}` }
+    };
+    return axios.put(url+"api/User",data,config)
+}
