@@ -26,7 +26,7 @@ export const Login = () => {
             console.log(10)
             // setLogin("Logged in")
             S("token",x.data.token)
-            navigate('/home')
+            navigate('/user/home')
           })
         .catch(function (error) {
             if (error.response) {

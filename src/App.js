@@ -23,14 +23,14 @@ function App() {
         <Route path="/sign-up" element={<Register />} />
         <Route path="/payment" element={<Checkout />} />
         <Route path="/receipt" element={<Receipt />} />
-        <Route path="/landing" element={<Landing />} />
+        <Route path="/" element={<Landing />} />
         {/* <Route path='/' element={<Login />}/> */}
-        <Route path='/' element={<AppLayout />}>
-          <Route path='/home' element={<ListCardRes/>} />
-          <Route path='/user-profile' element={<User_profile/>} />
-          <Route path='/order' element={<Blank />} />
-          <Route path='/restaurant' element={<Restaurant_page />} />
-          <Route path='/orders' element={<User_order />} />
+        <Route path='/user' element={<AppLayout />}>
+          <Route path='/user/home' element={<ListCardRes/>} />
+          <Route path='/user/user-profile' element={<User_profile/>} />
+          <Route path='/user/order' element={<Blank />} />
+          <Route path='/user/restaurant' element={<Restaurant_page />} />
+          <Route path='/user/orders' element={<User_order />} />
         </Route>
       </Routes>
       </BrowserRouter>

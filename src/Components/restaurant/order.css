@@ -33,6 +33,8 @@
     text-align: center;
     color: #161616;
     margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 25px;
 }
 
 .tabG {
@@ -77,6 +79,8 @@
     border-radius: 10px;
     padding-left: 10px;
     padding-right: 10px;
+    margin-top: 10px;
+    padding-top: 10px;
 }
 
 

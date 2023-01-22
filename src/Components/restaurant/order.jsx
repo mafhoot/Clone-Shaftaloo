@@ -194,7 +194,7 @@ export function OrderPage (id) {
               <div className="tabG">
                 <button className="buttG" onClick={()=>handleOrderInPlace() } >In Place</button>
                 <button className="buttG middle" onClick={()=> handleOrderCredit()}>Credit Card</button>
-                <button className="buttG">Account</button>
+                {/* <button className="buttG">Account</button> */}
               </div>
           
             </div>

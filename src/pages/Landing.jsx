@@ -21,8 +21,8 @@ export const Landing = () => {
     return (
         <div className='landingAll'>
              <div className='landingNav'>
-                <button className='nameButton' onClick={()=> navigate('/landing')} >SHAFTALOO</button>
-                <button className='navButtons' onClick={()=> navigate('/home')}>Restaurants</button>
+                <button className='nameButton' onClick={()=> navigate('/')} >SHAFTALOO</button>
+                <button className='navButtons' onClick={()=> navigate('/user/home')}>Restaurants</button>
                 <button className='navLogin' onClick={()=> navigate('/login')}>Login/Register</button>
              </div>
             <div className='landingTitleHolder'>
@@ -31,7 +31,7 @@ export const Landing = () => {
                 <p className='landingDetails'>Nowdays, ordering a food have plenty of ways, but in shaftaloo with over 100000 active restaurant
                 , we do our best to make a happy and easy
                 experience for you </p>
-                <button className='landingButton'>LOGIN NOW !</button>
+                <button className='landingButton' onClick={()=> navigate('/login')}>LOGIN NOW !</button>
             </div>
             <div className='landingFooter'>
                 <div className='landingPhoneNumber'>

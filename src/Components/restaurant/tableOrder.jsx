@@ -66,8 +66,10 @@ BootstrapDialogTitle.propTypes = {
 
 export function TableOrder (props) {
   const x=props.x;
+  const id=props.id.id
+  console.log(x)
   const [restThemes, setRestThemes] = useState ([])
-  const [theme,setTheme] = useState(0);
+  const [theme,setTheme] = useState("");
 
   const time=props.timeVal;
     const [cart,setCart] = useState (x);
@@ -80,12 +82,13 @@ export function TableOrder (props) {
     var cartSum=0
 
     useEffect(()=> {
-      getTheme(2).then (m => {
+      getTheme(id).then (m => {
         setRestThemes(m.data)
+        console.log(id)
         console.log(m.data);
       }).catch()
       
-    })
+    },[])
 
     useEffect (()=> {
 
@@ -93,6 +96,7 @@ export function TableOrder (props) {
 
     function onSubmit () {
       console.table(time);
+      console.log(theme)
       console.log ("ejra shodam")
       for (let i=0 ; i < cart.length ; i++) {
         postTable({
@@ -198,8 +202,9 @@ export function TableOrder (props) {
                     value={theme}
                     label="Theme"
                     onChange={handleChange} className="themeSelect">
+                    <MenuItem value={""}>{"None"}</MenuItem>
                     {restThemes.map(t=> (
-                    <MenuItem value={restThemes.indexOf(t)}>{t}</MenuItem>
+                    <MenuItem value={t.theme}>{t.theme}</MenuItem>
                     ))}
                   </Select>
                 </FormControl>

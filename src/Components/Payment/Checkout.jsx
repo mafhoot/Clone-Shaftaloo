@@ -46,8 +46,8 @@ export const Checkout = () => {
         </div>
         <div className="rightside">
           <form action="">
-            <h1>CheckOut</h1>
-            <h2>Payment Information</h2>
+            <h1 className='checkOutHead'>CheckOut</h1>
+            <h2 className='checkOutDetail'>Payment Information</h2>
             <p>Payable price: {price}$</p>
             <p className="CheckoutLabel">Cardholder Name</p>
             <input type="text" className="inputbox" name="name" required />

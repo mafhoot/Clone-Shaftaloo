@@ -50,7 +50,7 @@ export const Restaurant_page = () => {
         id: e.data.id,
         dateCreated: e.data.dateCreated,
         tags : e.data.tags,
-        rate : e.data.avg,
+        rate : e.data.rate,
         headImage : e.data.backgroundImg,
       })
       setValue(e.data.avg)
@@ -88,7 +88,7 @@ export const Restaurant_page = () => {
         </div>
         {/* <QRCode value="https://ant.design/" /> */}
         <div className="qrCode">
-          <QRCode style={{ height: "100%", width: "100%" }} value={"http://localhost:3000/restaurant?id="+id} />
+          <QRCode style={{ height: "100%", width: "100%" }} value={"http://localhost:3000/user/restaurant?id="+id} />
         </div>
         
         <CartContext.Provider value={{cart,setCart}}>

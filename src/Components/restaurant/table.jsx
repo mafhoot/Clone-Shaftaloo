@@ -159,7 +159,7 @@ export function Tables (id) {
         {/* <TableContext.Provider value={{tableORD, setTableORD}}> */}
         <div className="receipt">
             
-            <TableOrder x={tableORD} timeVal={timeState}/>
+            <TableOrder x={tableORD} timeVal={timeState} id={id}/>
         </div>
         {/* </TableContext.Provider> */}
         </>

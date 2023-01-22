@@ -59,7 +59,7 @@ export const ListCardRes = () => {
       const tmp=[]
       data.forEach(item=>{        
         tmp.push(
-          <div className="cartContainer" onClick={()=> navigate('/restaurant?id='+item.id)}>
+          <div className="cartContainer" onClick={()=> navigate('/user/restaurant?id='+item.id)}>
             <Card 
              key={item.id}
              id={item.id}

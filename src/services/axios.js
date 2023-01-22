@@ -88,7 +88,7 @@ export function getLanding (data) {
 }
 
 export function getTheme(data) {
-    return axios.get (url+ "api/ReserveTable/Theme/id?id="+data)
+    return axios.get (url+ "api/Theme/ByRestauntId?restaurantid="+data)
 }
 export function putUser(data) {
     const config = {

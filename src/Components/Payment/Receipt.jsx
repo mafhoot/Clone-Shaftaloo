@@ -26,7 +26,7 @@ export const Receipt = () =>{
   },[]);
 
   function handleSubmit () {
-    navigate('/orders')
+    navigate('/user/orders')
   }
 
   return (

@@ -3,6 +3,9 @@ import { Modal } from 'antd';
 
 import './user-order.css'
 import { getRestaurant } from "../../Services/axios";
+import { BrowserRouter , Routes , Route , Navigate , useNavigate} from "react-router-dom";
+
+
 
 
 
@@ -17,6 +20,10 @@ export const Order_card = ({order}) => {
     const [factor, setFactor] = useState(order.foods)
     const [status, setStatus] = useState(order.stat)
     const orderStatus = ["Finished" , "inProcess" , "Accepted" , "Paid"]
+    const navigate = useNavigate()
+    const current = new Date();
+    const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+
 
     console.log(order.dateCreated)
     
@@ -29,23 +36,14 @@ export const Order_card = ({order}) => {
     .catch((e) => {
         console.log(e)
     })
-    /*** factor modal ***
-    const [visible, setVisible] = useState(false)
 
-    const showModal = () => {
-        console.log('dadfasdfasdfasdfasdfasdf')
-      setVisible(true)
-    };
 
-    const handleOk = e => {
-      console.log(e);
-      setVisible(false)
-    };
-
-    const handleCancel = e => {
-      console.log(e);
-      setVisible(false)
-    };*/
+    function handleSubmit () {
+        if (order.stat == 0) {
+            navigate('/receipt?price='+(order.foods[0].price)*3+"&OrderId="+order.id+"&id="+order.restaurantId)
+        }
+          
+    }
 
     return (
         <>
@@ -56,29 +54,16 @@ export const Order_card = ({order}) => {
                         <div className="order-res-name-and-time">
                             <h2 className="order">{res_name}</h2>
                             <div className="order-time">
-                                <h3 className="order">{ Date(order_time) }</h3>
+                                <h3 className="order">Date: { date }</h3>
                             </div>
+                            <p>Order ID :{order.id }</p>
                         </div>
                     </div>
                 </div>
                 <div className="order-card-right">
-                    {/* <div className="order-cost">
-                        <h2 className="order">Order cost : {order_cost}</h2>
-                    </div> */}
                     <div className="order-factor-and-status">
                         <button className="status-button">{orderStatus[status]}</button>
-                        <button className="factor-button"  /*onClick={showModal}*/>Receipt</button>
-                        {/** factor modal
-                        <Modal
-                          title="Basic Modal"
-                          open={visible}
-                          onOk={handleOk}
-                          onCancel={handleCancel}
-                        >
-                          <p>Some contents...</p>
-                          <p>Some contents...</p>
-                          <p>Some contents...</p>
-                        </Modal>*/}
+                        <button className="factor-button"  onClick={()=>handleSubmit()}>Receipt</button>
                     </div>
                 </div>
             </div>
