@@ -46,8 +46,7 @@ export const Register = () => {
             "fullName": name,
             "email": email,
             "gender" : "male",
-            "city" : city,
-            "picture" : ""
+            "city" : city
           } ).then(x=>{
             console.log(x);
             S('token',x.data.token);
