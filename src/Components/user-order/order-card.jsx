@@ -67,7 +67,7 @@ export const Order_card = ({order}) => {
                     </div> */}
                     <div className="order-factor-and-status">
                         <button className="status-button">{orderStatus[status]}</button>
-                        <button className="factor-button"  /*onClick={showModal}*/>Factor</button>
+                        <button className="factor-button"  /*onClick={showModal}*/>Receipt</button>
                         {/** factor modal
                         <Modal
                           title="Basic Modal"

@@ -91,7 +91,7 @@ export const User_profile = () => {
                   />
                   <div className="admin-name">
                     <p className="adminUserName">{userName}</p>
-                    <p>Manager</p>
+                    <p>Member</p>
                   </div>
                 </MDBCol>
                 <MDBCol md="8">

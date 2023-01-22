@@ -53,6 +53,7 @@
 }
 
 .submitTime {
+    margin-top: -10px;
     padding: 10px;
     background-color: #161616;
     color: #eeba2c;

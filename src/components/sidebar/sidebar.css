@@ -17,6 +17,7 @@
   float: left;
   display: flex;
   transition: 0.4s;
+  
 }
   .hideSideLogoMember {
     border: none;
@@ -35,6 +36,7 @@
     height: 100%;
     align-self: center;
     transition: 0.4s;
+    margin-top: 25px;
   }
 
   .text_name {
@@ -53,10 +55,12 @@
   /* margin: auto; */
   text-align: center;
   margin-left: -6px;
+  
 }
 
 .sidebar__menu__item__text {
   margin-left: 10px;
+  margin-top: -12px;
 }
 
   .sidebar__menu__item {
@@ -134,7 +138,7 @@
     opacity: 0.999; 
   }
   
-  .btn-close {
+  .btn_close {
     float: right;
     background-color: transparent;
     cursor: pointer;

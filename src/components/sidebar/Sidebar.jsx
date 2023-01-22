@@ -123,7 +123,7 @@ const Sidebar = () => {
               </div>
             </div>
           </div>
-          <img className={` ${closeSide ? " hambIcon" : "btn-close"}`} src={HamImg} onClick={handleToggle} />
+          <img className={` ${closeSide ? " hambIcon" : "btn_close"}`} src={HamImg} onClick={handleToggle} />
         </div>
         <div ref={sidebarRef} className="sidebar__menu">
           <div
