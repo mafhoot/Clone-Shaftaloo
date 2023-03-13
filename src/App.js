@@ -29,6 +29,7 @@ function App() {
           <Route path='/user/home' element={<ListCardRes/>} />
           <Route path='/user/user-profile' element={<User_profile/>} />
           <Route path='/user/order' element={<Blank />} />
+          <Route path='/user/example' element={<Blank />} />
           <Route path='/user/restaurant' element={<Restaurant_page />} />
           <Route path='/user/orders' element={<User_order />} />
         </Route>
