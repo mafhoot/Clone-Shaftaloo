@@ -32,6 +32,7 @@ function App() {
           <Route path='/user/example' element={<Blank />} />
           <Route path='/user/restaurant' element={<Restaurant_page />} />
           <Route path='/user/orders' element={<User_order />} />
+          {/* comment */}
         </Route>
       </Routes>
       </BrowserRouter>
